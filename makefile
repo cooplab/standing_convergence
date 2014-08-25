@@ -70,14 +70,14 @@ setup :
 	git checkout --orphan gh-pages
 	-rm $(shell git ls-files -c)
 	git rm --cached $(shell git ls-files --cached)
-	echo "display/" > .gitignore
-	git add .gitignore
+	echo "display/" >> .gitignore
+	-git add .gitignore
 	git commit -m 'initialized gh-pages branch'
 	git checkout $(GITBRANCH)
 
 clean : 
 	-rm -f $(shell git ls-files --other display/*)
-	-rm -f *.aux *.log *.bbl *.blg *.out *.toc *.nav *.snm *.vrb texput.* LaTeXML.cache
+	-cd display; rm -f *.aux *.log *.bbl *.blg *.out *.toc *.nav *.snm *.vrb texput.* LaTeXML.cache
 
 
 # make pdfs locally
@@ -144,7 +144,7 @@ $(DISPLAYDIR)/%.png : %.pdf
 skelml.index ::
 	echo '<html xmlns="http://www.w3.org/1999/xhtml"> <head> <title></title> <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8"/> <link rel="stylesheet" href="pandoc.css" type="text/css" /></head> <body>' >display/index.html
 	echo '<h1>html files in this repository</h1><ul>' >> display/index.html
-	for x in $$(echo display/*html | sed -e 's_\<display/__g'); do echo "<li><a href=\"$${x}\">$${x}</a></li>" >> display/index.html; done
+	for x in $$(echo display/*html | grep -v index.html | sed -e 's_\<display/__g'); do echo "<li><a href=\"$${x}\">$${x}</a></li>" >> display/index.html; done
 	echo '</ul><p>Create your own <code>index.md</code> file to make this look nicer.</p>' >> display/index.html
 	echo '</body></html>' >> display/index.html
 
