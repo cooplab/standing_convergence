@@ -205,14 +205,13 @@ much of sub-Saharan Africa; the Med allele found in the Mediterranean and middle
 east; and the Mahidol allele found Myanmar and Thailand.
 The $A-$ and Mahidol alleles have been shown
 to be protective against {\it Plasmodium falciparum} and {\it P. vivax} in both
-hemizygote males and both heterozygote and homozygotes females \citep{Ruwende-g6pd ,
+hemizygote males and both heterozygote and homozygotes females \citep{Ruwende-g6pd,
 Louicharoen-g6pd}. Haplotype-based analysis of genetic diversity surrounding
 the $A-$, Med, and Mahidol suggest that they have spread in past few
-thousand years \citet{tishkoff-g6pd, Slatkin-age-est,Saunders-g6pd,Louicharoen-g6pd}, 
+thousand years \citet{tishkoff-g6pd,Slatkin-age-est,Saunders-g6pd,Louicharoen-g6pd}, 
 consistent with the age of other malaria resistance alleles. 
 These population genetic analyses suggest that three variants each have a hemizygote/heterozygote 
-selection coefficient of $0.05-0.3$ \citep{tishkoff-g6pd
-  Slatkin-age-est,Saunders-g6pd,Louicharoen-g6pd}, consistent with
+selection coefficient of $0.05-0.3$ \citep{tishkoff-g6pd,Slatkin-age-est,Saunders-g6pd,Louicharoen-g6pd}, consistent with
 the results of \citet{Ruwende-g6pd} on the basis of the present day increased resistance to malaria of the
 $A-$ allele. 
 Given such a strong pressure on these alleles they should have risen
@@ -261,15 +260,13 @@ We use $\sigma=10,~50,$ and $100$ as our dispersal parameter.
 \begin{figure}[ht]
 \begin{center}
   \includegraphics[width=1.0\textwidth]{G6pd_Howes_et_al_1475-2875-12-418-4}   %{charlen-by-sd-limit}
-\caption{ %
-{\bf Map of G6pd-deficiency allele frequencies across Asia.} The pie chart shows
+\caption{ 
+Map of G6pd-deficiency allele frequencies across Asia. The pie chart shows
   the frequency of G6pd-deficiency alleles. The size of the pie chart
   indicates the number of G6pd-deficient individuals sampled.
 . Countries with
   endemic malaria are colored yellow. Figure taken from
-  \citet{Howes-g6pd-variants} \url{http://www.malariajournal.com/content/12/1/418}.
- 
-}
+  \citet{Howes-g6pd-variants} \url{http://www.malariajournal.com/content/12/1/418}.}
 \end{center}
 \end{figure}
 
@@ -485,7 +482,7 @@ $v$.
 \end{align}
 
 \begin{equation}
-    z_0 = \int_0^\infty {\lambda_{0,j} \pi v^2 t^2 - \lambda_j \pi v^2 t^3 / 3} \; \exp \left( - \lambda_{0,j} \pi v^2 t^2 - \lambda_j \pi v^2 t^3 / 3 \right) dt .
+    z_0 = \int_0^\infty {2 \lambda_{0,j} \pi v^2 t - \lambda_j \pi v^2 t^3 } \; \exp \left(\sum_j - \lambda_{0,j} \pi v^2 t^2 - \lambda_j \pi v^2 t^3 / 3 \right) dt .
 \end{equation}
 
 
@@ -584,33 +581,42 @@ adapt via different genetic routes, as the constellation of alleles
 best positioned to initially respond to positive selection, i.e. those at
 intermediate frequency, will be somewhat different.  
 
-\paragraph{}
+%%Mayr: [t]he steady and high genetic input caused by gene flow is the main factor responsible for genetic cohesion among the populations of a species.
+
+\paragraph{Are species held together by wide-spread selective sweeps?}
 Our results touch on an old debate on the evolutionary coherence of
-species. 
-Mayr and others have argued that species are coherent \citep{} 
-as they are united by shared gene flow. However, this arguement has
+species. Mayr and many others have argued that species are coherent
+evolutionary units as they are united by shared gene flow \citep[pages
+521–522 ][]{Mayr:SpeciesEvol}. However, this argument has
 questioned by a number of authors based on relatively high levels of 
-differentiation in many species \citep{}.
+differentiation, and low rates of dispersal, in many species \citep{EhrlichRaven:69,Levin:79}.
 \citet{Rieseberg2001,MorjanRieseberg:04} argued that while gene flow
 may not be high enough to prevent neutral differentiation, species
 should be viewed as being united as levels of gene flow were still
-high enough for selected alleles to spread across the entire species.
-Our work on geographic convergent adaptation
-\citep[see also][]{ralph2010parallel,RalphCoop:14} brings these conclusions partially into
-question. Our results suggest that wide-spread species should often
-repeatedly adapt in parallel rather than waiting for a single allele
-to migrate across the range.
+high enough for selected alleles to spread across the entire species \citep{Ellstrand2014s}.
+Indeed large scale genotyping and sequencing, along with more
+sophisticated methods, are highlighting ever more signals of gene flow
+between populations and species \citep{}.
+However, our work on geographic convergent adaptation
+\citep[see also][]{ralph2010parallel,RalphCoop:14} brings the
+conclusion that this gene flow will lead to the rapid spread of
+selected alleles partially into
+question. Our results suggest that species should often adapt to
+wide-spread selection pressures through convergent evolution rather
+than waiting for a single allele to migrate across the range over
+length-scales determined by our characteristic length.
  
 In support of this idea recent selective sweeps are often
 geographically restricted \citep{}, but see XXX. This is likely in part due to the
-relatively low occurance of species-wide selection pressures \citep{},
+relatively low incidence of wide-spread selection pressures \citep{},
 but as noted above even when we know of wide-spread selection
 pressures (e.g. Malaria) the response is usually convergent across large enough
 spatial scales. This view is potentially contradicted by the
 introgression of adaptive alleles across species and sub-species
 boundaries, suggesting that selected alleles do sometimes spread
-despite low migration rates \citep{}. However, at least some of
-these cases reflect the introgression of haplotypes of multiple tightly linked beneficial
+despite low migration rates \citep{hedrick2013adaptive}. However, at least some of
+these cases likely reflect the introgression of haplotype complexes
+consisting of multiple tightly linked beneficial
 alleles.  
 
 % \gc{Needed?:} This view is potentially contradicted by the
@@ -623,37 +629,97 @@ alleles.
 % and coming in contact with preadapted populations, potentially
 % lessening the chance of convergent adaptation \citep{}.
 
-If gene flow rarely rapidly spread selected alleles across
-species range, how then do selected alleles ever become fixed within species? 
-Repeated bouts of adaptation in particular genomic regions may act to slowly
+\paragraph{How then do substitutions occur?}
+It is rare for gene flow to rapidly spread selected alleles across
+species range, how then do selected alleles ever become fixed within
+species? Repeated bouts of adaptation in particular genomic regions may act 
 push a subset of previously selected alleles to fixation across the
 species range, through the spread of the genetic backgrounds on which they arise.  
 However, it seems likely that this is a slow process compared to the
 initial rapid spread of selected alleles.
 
-One potential hypothesis is that many selected alleles only achieve
+\paragraph{Speciation and extinction as phases of molecular evolution?}
+One potential resolution is that many selected alleles achieve
 fixation, not through their own species-wide spread, but rather
-through subsequent large-scale
-changes in geographic range size induced by extirpation of the species
-over part of its range. Such drops in range size may fix alleles, or radically change the
+through subsequent large-scale changes in geographic range size
+induced by extirpation of the species over parts of its range. Such drops in range size may fix, or radically change the
 species-wide frequency, of alleles previously restricted to small portion of a species range. 
-Range sizes are in constant in flux, with  
+Also many modes of speciation are proposed to occur through a
+geographically-limited subset of populations forming the basis of new species, e.g. the splitting off
+of part of the range through a vicariance event or dispersal of a
+subset of individuals. As such specation will lead to the geographic assorting of
+polymorphic ancestral variation, again acting to fix variants within
+newly formed species that were previously polymorphic across ancestral species ranges. 
 
-Similarly the range fragmentation accompanying speciation may act to fix variants within newly formed
-species that were polymorphic across ancestral species ranges. 
+Somewhat along similar lines, Futuyma has argued that much of the adaptive differentiation,
+e.g. adaptation to local conditions, within species maybe ephemeral and
+subject to loss due to local extinction and the mixing following the collapse of population
+structure \citep{Futuyma:10,FUTUYMA:87}. In part this represented a
+response to punctuated equilibrium \citep{eldredgegould72}, arguing
+that the observation of stasis and rapid anagensis associated with
+speciation were consistent with micro-evolution . 
+Futuyma argued that despite rapid adaptation over short time-scales, we
+may observe morphological stasis in the
+fossil record as
+much of this adaptation is lost \citep[see
+also][]{Eldredge:05}. Furthermore, he suggests that speciation
+may act as rachet to prevent the loss of differentiation, acting to
+maintain adaptive changes among populations, and prevent their loss by
+interbreeding. At face value the rate of species formation seems too low to
+contribute to this process. However, as \citep{Rosenblum:12}, and many
+others, have argued that in fact the rate of speciation may well be very high,
+but that the majority of incipient species do not persist long due to
+reabsorption or extinction. Repeated bouts of extinction and
+speciation will send waves of alleles
+to fixation along particular lineages. 
 
-Note that this does not mean that:
-Any change in neutral fixation rate.
-Any change in  
+This link between speciation and substitution does not imply that
+substitutions should be thought of as being clustered at splits in
+inferred phylogenies \citep[see ][for a recent exhange on
+this]{Venditti:10, Pennell:14,Venditti:14,Pennell:14B}. 
+(Note that neutral substitutions will be to be unaffected by this process, as they
+will accumulate in a clock like manner along lineages, as dictated by
+the mutation rate, regardless of the geographic details of their
+polymorphic stage.)
+Firstly, it it likely that splits in
+phylogenies are likely only a tiny proportion of all incipient
+speciation events because extinction rates may be high
+\citep{Rosenblum:12}, such that every lineage has likely past through
+many ``speciation events'' in addition to the observed ones.
+Secondly, under this view, the origination process of alleles and their fixation process
+are uncoupled \citep[in the sense of ][ page XXX]{Gillespiebook} by the geographic structure.
+Such that spatial polymorphisms may accumulate gradually, in
+geographically restricted populations, between large-scale 
+biogeographic events. 
+%Thus selected alleles that eventually become a
+%substitutions may have arisen long before they reach fixation. 
+ 
+Nor does this view imply that adaptive evolution or speciation is driven by the
+shifting balance or genetic revolutions \citep{Wright:32,
+  Mayr-genetic-revol:1954}, whereby extreme genetic drift allows
+populations to cross fitness valleys and substitute novel epistatic
+combinations. While geographic lineage sorting via speciation and
+extinction can be thought of as very large-scale genetic drift events,
+the initial spread of our alleles is due to selection they are only later sorted 
 
+This view suggests that the alleles that substitute along a lineage
+may not be those but rather are in part those lucky enough to have
+spread across areas not 
+
+
+contributing to 
+
+
+In reality the evolution of range size is not independent of
+adaptation. 
 Many DMIs are locally restricted \citep{Cutter:12}.
 
 species range evolution
 splitting of species.
-\citep{Rosenblum:12}
 
 
-Futuyma has argued that much of the differentiation within species is \citep{Futuyma:10,FUTUYMA:87}
+
+
 
 \bibliography{standing_patches_refs}
 

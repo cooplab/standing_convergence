@@ -137,3 +137,27 @@ paramString <- function(ps=c("mu","rho","sb","sd","sigma"), pos=-1) {
     paste( sapply( 1:length(ps), function (k) { sprintf( "%s=%.2g", names(ps)[k], ps[k] ) } ), collapse=", " )
 }
 
+
+MultipleTypes <- function (mu, rho, sb, sd, sigma) {
+    # proportion of space arising from standing variation
+    # is int_0^\infty 2 * lambda0 * pi * v^2 * t * exp( - lambda0 * pi * v^2 * t^2 - lambda * pi * v^2 * t^3 /3 ) dt
+    if (any(sd==1)) {
+        return( list(value=0) )
+    } else if (sd==0) {
+        return( list(value=1) )
+    } else { 
+        lambda.1 <- 2*mu[1]*rho[1]*sb[1]
+        lambdaoh.1 <- lambda.1/ log(1/(1-sd[1]))
+        lambda.2 <- 2*mu[2]*rho[2]*sb[2]]
+        lambdaoh.2 <- lambda.2/ log(1/(1-sd[2]))
+ 
+        v <- sigma * sqrt(2*sb)
+        f <- function (t) {
+            2 * lambdaoh * pi * v^2 * t * exp( - lambdaoh*pi*v^2*t^2 - lambda*pi*v^2*t^3 /3 )
+        }
+        xx <- 2^(-30:30)
+        yy <- sapply(xx, function(x) { f(x) } )
+        scale <- xx[ which.min( abs(10-yy*xx) ) ]
+        return( integrate(function(x) { f(x*scale)*scale }, 0, Inf) )
+    }
+}
