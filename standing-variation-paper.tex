@@ -5,7 +5,7 @@
 \usepackage{marginnote}
 \usepackage{graphicx}
 \usepackage{hyperref}
-%\usepackage{latexml} % for \iflatexml
+\usepackage{latexml} % for \iflatexml
 \usepackage{color}
 \newcommand{\gc}[1]{{\it\color{green}(#1)} }
 \newcommand{\plr}[1]{{\it\color{blue}(#1)}}
@@ -14,6 +14,11 @@
 \renewcommand{\P}{\mathbb{P}}
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\R}{\mathbb{R}}
+
+\iflatexml  % no margin notes in latexml
+% \newcommand{\marginnote}[1]{}
+\newcommand{\marginnote}[1]{{\it\color{red}(#1)}}
+\fi
 
 \bibliographystyle{plain}
 
@@ -266,7 +271,8 @@ Map of G6pd-deficiency allele frequencies across Asia. The pie chart shows
   indicates the number of G6pd-deficient individuals sampled.
 . Countries with
   endemic malaria are colored yellow. Figure taken from
-  \citet{Howes-g6pd-variants} \url{http://www.malariajournal.com/content/12/1/418}.}
+  \citet{Howes-g6pd-variants} \url{http://www.malariajournal.com/content/12/1/418}.
+}
 \end{center}
 \end{figure}
 
