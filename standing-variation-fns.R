@@ -138,22 +138,29 @@ paramString <- function(ps=c("mu","rho","sb","sd","sigma"), pos=-1) {
 }
 
 
-MultipleTypes <- function (mu, rho, sb, sd, sigma) {
+MultipleTypes <- function (mu, rho, sb, sd, sigma,include.new=TRUE,standing.var.calc=FALSE) {
     # proportion of space arising from standing variation
     # is int_0^\infty 2 * lambda0 * pi * v^2 * t * exp( - lambda0 * pi * v^2 * t^2 - lambda * pi * v^2 * t^3 /3 ) dt
     if (any(sd==1)) {
         return( list(value=0) )
-    } else if (sd==0) {
-        return( list(value=1) )
+    } else if (any(sd==0)) {
+        return( list(value="wrong") )
     } else { 
-        lambda.1 <- 2*mu[1]*rho[1]*sb[1]
+        lambda.1 <- 2*mu[1]*rho*sb[1]
         lambdaoh.1 <- lambda.1/ log(1/(1-sd[1]))
-        lambda.2 <- 2*mu[2]*rho[2]*sb[2]]
+        lambda.2 <- 2*mu[2]*rho*sb[2]
         lambdaoh.2 <- lambda.2/ log(1/(1-sd[2]))
  
-        v <- sigma * sqrt(2*sb)
+ 		if(standing.var.calc){
+ 			return(list(value=lambdaoh.1/(lambdaoh.1+lambdaoh.2)))
+ 		} 
+ 		
+        v.1 <- sigma * sqrt(2*sb[1])
+        v.2 <- sigma * sqrt(2*sb[2])
+        stopifnot(v.1==v.2)
+    #    recover()
         f <- function (t) {
-            2 * lambdaoh * pi * v^2 * t * exp( - lambdaoh*pi*v^2*t^2 - lambda*pi*v^2*t^3 /3 )
+            (2 * lambdaoh.1 * pi * v.1^2 * t +  include.new*lambda.1 * pi * v.1^2 * t^2 )* exp( - (lambdaoh.1*v.1^2+lambdaoh.2*v.1^2)*pi*t^2 - include.new*(lambda.1*v.1^2+lambda.2*v.2^2)*pi*t^3 /3 )
         }
         xx <- 2^(-30:30)
         yy <- sapply(xx, function(x) { f(x) } )

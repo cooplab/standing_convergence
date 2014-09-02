@@ -5,7 +5,7 @@
 \usepackage{marginnote}
 \usepackage{graphicx}
 \usepackage{hyperref}
-\usepackage{latexml} % for \iflatexml
+%\usepackage{latexml} % for \iflatexml
 \usepackage{color}
 \newcommand{\gc}[1]{{\it\color{green}(#1)} }
 \newcommand{\plr}[1]{{\it\color{blue}(#1)}}
@@ -15,17 +15,16 @@
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\R}{\mathbb{R}}
 
-\iflatexml  % no margin notes in latexml
+%\iflatexml  % no margin notes in latexml
 % \newcommand{\marginnote}[1]{}
-\newcommand{\marginnote}[1]{{\it\color{red}(#1)}}
-\fi
+%\newcommand{\marginnote}[1]{{\it\color{red}(#1)}}
+%\fi
 
 \bibliographystyle{plain}
 
 \begin{document}
 
 \section{Introduction}
-
 
 
 In \citep{RalphCoop} we formulated a simple model of parallel adaptation in a geographic setting
@@ -38,22 +37,6 @@ References on parallel adaptation, standing variation, etc.:
   coop,
   pennings and hermisson.
 Note pennings and hermisson found standing deleterious variation was very important.  
-
-recall peromyscus examples with patchy environments
-
-Summarize previous paper
-
-Question assumptions of no standing variation and homogenous selection
-
-\section{General model}
-
-outline here assumptions common to both models.
-
-Stick to constant-speed waves.
-Note monty's empirical speeds paper.
-
-
-\section{Standing variation}
 
 \subsection{The set-up}
 
@@ -77,9 +60,8 @@ and that after time $t=0$,
 the mutant type has fitness $1+s_b$,
 where $s_b>0$ will usually be assumed to be small, and $0<s_d<1$.
 We assume that diploid fitness is additive, or at least that the
-important early dynamics are determined by the haploid fitness
-\gc{heterozygous fitness, with no reference to the fitness of the
-  homozygote for the mutant alleles}.
+important early dynamics are determined by the heterozygous fitness, with no reference to the fitness of the
+  homozygote for the mutant alleles.
 The number of offspring has finite variance, which to keep the formulas simple we assume to be equal to one.
 (If the mutation is recessive, XXX more complicated things happen.)
 As for the other parameters,
@@ -89,6 +71,10 @@ The species occupies an area with mean density
 $\rho$ haploid individuals (or chromosomes) per unit area.
 \marginnote{XXX or do diploid? below is haploid.}
 
+We assume that dispersal occurs by local movement of
+individuals. Specifically we will assume that individuals dispersal a
+normally distributed distance, with the mean squared distance between parent and child is $\sigma^2$
+(i.e.\ $\sigma$ is the dispersal distance)
 
 % Branching-process-sized point mass approx. to local groups present at $t=0$
 % -- depends on local population density large enough relative to migration (to be "branching")
@@ -108,8 +94,6 @@ is well--approximated by a Poisson process in space and time.
 This the rate of this Poisson process, 
 the rate per unit area at which new mutants appear and establish locally after $t=0$ in areas not already occupied by the mutant type
 is approximately $\lambda = 2 \mu \rho s_b$.
-
-
 
 Before $t=0$, on the other hand, the mutation is deleterious, so the
 genetic descendants of each new mutation are (with high probability)
@@ -139,40 +123,72 @@ resulting in the approximation
     \lambda_0 &= \mu \rho \int_0^\infty 2s_b (1-s_d)^{T} dT \\
         &= \frac{ 2 \mu \rho s_b }{ -\log(1-s_d) } .
 \end{align}
-
+Note that this is closely related to the standard frequency of a
+allele at mutation selection balance $\mu/s_d$ \citep{Haldane?}
 
 \plr{XXX More discussion on whether this is a good approximation?  
 Compute typical size and radius of a standing cluster?}
-\gc{Point out connection to standard mutation selection balance formula}
 
 
 \paragraph{Geographic spread of alleles} 
 Once an allele has become local established it can begin to spatially spread. 
 We assume that the allele, having become established, quickly settles
-down to spread as a traveling wave of constant speed. The behavior of
+down to spread spatially as a traveling wave of constant speed. The behavior of
 this wave of advance of a beneficial allele was first described by 
-\citet{fisher1937wave} and \citet*{KPP1937}. 
+\citet{fisher1937wave} and \citet*{KPP1937}. Under reasonably general
+conditions the speed of advance
+of this wave will be $v = \sigma \sqrt{2s}$. See
+\citet{ralph2010parallel} for a fuller review of the Fisher-KPP as it
+applies to this scenerio. Note that the speed of the wave can be
+changed 
 
-If the mean squared distance between parent and child is $\sigma^2$
-(i.e.\ $\sigma$ is the dispersal distance) then the speed of advance
-of this wave will be $v = \sigma \sqrt{2s}$. 
-
-\plr{recall PPP computations; draw cones of opportunity for new mutations }
-
-\paragraph{}
+\paragraph{Putting it together.}
 So we can put these ingredients together for a simple model of the
 geographic spread of alleles. A cartoon example of this process is
 shown in Figure \ref{fig:cartoon} Initially, when the selection
 pressures change at $t=0$, a set of standing variants can start to
 spread having escaped loss through drift. These variants are shown as
 little lightning bolts, and occur at a density $\lambda_0$ across
-space. 
-They spread at velocity $v$ carving out cones in space-time. As these
+space. They spread at velocity $v$ carving out cones in space-time. As these
 alleles proceed in their geographic spread other new alleles can arise
 and become established in parallel, these are shown as little
 stars. These new mutations arise and become established at rate $\lambda$.
 
+As we previously outlined in \citet{ralph2010parallel} this model of
+geographic convergent evolution, when $\lambda_0=0$, is analogous to the \citet{kolmogorov-crystallization}
+model of crystallization. In \citet{kolmogorov-crystallization} model nucleation points form at randomly at
+a constant rate in time and space 
+and initiate the radial growth of new crystals. The crystals at the
+end point of this process form a random tessellation covering space
+the properties of which have been extensively studied by \citet{moller92,moller95} and others \citep{bollobas-crystallization,gilbert-crystallization}. 
+The generalized version of this process, for non-constant wave speeds
+and imhomogeneous Poisson processes is termed the 
+Kolmogorov-Johnson-Mehl-Avrami tessellation \citep[KJMA, see ][]{fanfoni-tomellini}.
+Our combined process with both standing variation and new mutation is
+a specially case of the KJMA tessellation, where the
+spatial-temporally homogeneous
+Poisson origination process of new mutations, is supplemented by a
+single pulse of origination points at time zero with spatial density $\lambda_0$.
 
+If we only allow standing variation then everything about the process
+is relatively simple. All of the
+points in space closer to a particular origination point will be
+reached by that allele before any other
+allele has a chance to spread there. Formally then the spatial patterning,
+given a set of origination points, would be specified by the Voronoi
+tessellation (i.e. the cells formed by assigning points to their
+nearest origin). All of the properties of the patterning of space by alleles is
+determined by the spatial locations of the initiation points, as
+specified by the spatially homogeneous Poisson process, independent of
+the rate of spatial spread. So that the properties
+of the spatial tessellation with standing variation depends only on
+$\lambda_0$, and this
+model is commonly called the Poisson-Voronoi tesselation.
+
+In our previous paper \citep{ralph2010parallel} we also provided results for non-constant wave
+speeds, as can arise due to fat-tailed dispersal kernels. Here we
+restict ourselves to constant wave speeds for simplicity but similar
+calculations could be done by expansion of the results of the previous paper. 
 
 \begin{figure}[ht]
   \begin{center}
@@ -185,9 +201,10 @@ Cartoon of the geographic spread of standing and new mutations.
   
 \end{figure}
 
-
-
-\subsection{G6PD}
+\subsection{G6PD example}
+We will describe a number of properties of our process, but we first
+want to introduce a motivating example to provide some concrete
+numbers to use for illustrative purposes.
 
 Over the past ten thousand years malaria resistance alleles have arisen at a number
 of genes and spread through human populations in areas where malaria is endemic \citep{Kwiatkowski:05}. 
@@ -227,7 +244,6 @@ Hemizygous males and homozygous females suffer from G6PD deficiency,
 leading to hemolytic anemia when exposed to a variety of compounds, notably
 those present in fava beans. 
 
-
 The wave of advance works in the case of heterozygote advantage
 \citep{aronson1975nonlinear}, with the selected allele spreading
 locally to the equilibrium frequency (rather than fixation). As such
@@ -236,9 +252,6 @@ our framework is applicable here.
 % G6PD frequency across world http://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.plosmedicine.org%2Farticle%2Finfo%3Adoi%2F10.1371%2Fjournal.pmed.1001339.g002%2Flargerimage&imgrefurl=http%3A%2F%2Fwww.plosmedicine.org%2Farticle%2Finfo%253Adoi%252F10.1371%252Fjournal.pmed.1001339&h=2938&w=2381&tbnid=oD_tX3ea8IbLfM%3A&zoom=1&docid=k37axqAZDS7ljM&ei=5rdOU5TVDMqj8QGntICYBg&tbm=isch&ved=0CF8QMygLMAs&iact=rc&uact=3&dur=1447&page=1&start=0&ndsp=15
 
 % Spatial distribution of G6PD alleles:  http://www.malariajournal.com/content/12/1/418
-
-
-
 
 %Hedrick sex-specific review http://www.eeslmu.de/eeswiki/images/Hedrick_Review.pdf
 % Fry: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3654548/
@@ -250,17 +263,22 @@ our framework is applicable here.
 
 The geographic area of Central and Eastern Asia with malaria is on the
 order of $\sim 10$ million $km^2$. In that area there are at least $15$
-common variants \citep{Howes-g6pd-variants}. So the average width of
+common variants \citep{Howes-g6pd-variants} (see Figure \ref{fig-G6PD-map}). So the average width of
 an area occupied by an allele is $\sqrt{10^7/15} \approx  800$km. 
-
-
-G6pd is 515 codons long, with 140 variants reported in it REF. Assuming a
+The coding region of G6pd is 515 codons long, with $\sim$140
+functional, distinct variants that cause reduced G6PD activity. Assuming a
 mutation rate of $\approx 10^{-8}$ per base-pair per generation, we assume
 $\mu \approx 1 \times 10^{-6}$ a generation. 
-The dispersal and demographic parameters of humans is unclear,
-particularly as we are concerned with the effective population density.
+The dispersal and demographic parameters of humans in the past few
+thousans years is unclear,
+particularly as we are concerned with the effective population
+density. 
 We use $\rho=2$ and $0.2$ people per $km^2$ as two choices of our effective population density.
-We use $\sigma=10,~50,$ and $100$ as our dispersal parameter.
+We use $\sigma=10,~50,$ and $100$ as our dispersal parameter. 
+We note that obviously human migration has been
+shaped both by local dispersal and larger-scale expansions \citep[see
+][for a recent discussion]{}, so these parameters are for
+illustrative purposes only.
 
 \begin{figure}[ht]
 \begin{center}
@@ -271,8 +289,10 @@ Map of G6pd-deficiency allele frequencies across Asia. The pie chart shows
   indicates the number of G6pd-deficient individuals sampled.
 . Countries with
   endemic malaria are colored yellow. Figure taken from
-  \citet{Howes-g6pd-variants} \url{http://www.malariajournal.com/content/12/1/418}.
-}
+  \citet{Howes-g6pd-variants}
+  \url{http://www.malariajournal.com/content/12/1/418}. \gc{Not sure
+    whether to include this.}
+} \label{fig-G6PD-map}
 \end{center}
 \end{figure}
 
@@ -284,8 +304,6 @@ Map of G6pd-deficiency allele frequencies across Asia. The pie chart shows
 % } \label{Fig-G6PD-charlength}
 % \end{center}
 % \end{figure}
-
-
 
 %$A-$ ?? risk lower of severe malaria for both female heterozygotes and male
  %hemizygotes estimates of selection pressure \citep {Ruwende-g6pd}
@@ -307,7 +325,7 @@ Map of G6pd-deficiency allele frequencies across Asia. The pie chart shows
 
 % a characteristic length of regions and a proportion of haplotypes (or of space?) that are from standing variation
 
-In \citet{ralphcoop2010}, studying the model without standing variation,
+In \citet{ralph2010parallel}, studying the model without standing variation,
 we defined a {\em characteristic length} which gave the spatial scale across with mutants with distinct origins would establish.
 This was proportional to the mean distance between neighboring established mutants,
 but had the advantage of being easier to calculate.
@@ -363,7 +381,7 @@ and it is an elementary consequence of the Poisson process that
 (In one dimension, $\pi_0 = 2 \lambda_0 \chi$.)
 
 In Figure \ref{Fig-G6PD-charlength} we show the range of characteristic lengths
-calculated for our G6pd parameters.
+calculated for our G6pd parameters. 
 
 
 \begin{figure}[ht]
@@ -386,7 +404,6 @@ calculated for our G6pd parameters.
 
 
 \subsection{Standing Variation -- Results} 
-
 The quantity that is perhaps easiest to compute is the mean time until adaptation.
 Fix some geographic location, and let $\tau\ge0$ be the time at which the point is reached by the advantageous mutations.
 Then, as shown in Figure XX,
@@ -474,22 +491,84 @@ Compare to panmictic results.
 \subsubsection{Multiple variant types}
 
 One interesting problem that we can seek to address with this work is
-the extent to which 
+the extent to which the degree of pleiotropy biases the 
+adaptation towards the repeated use of particular subset of loci
+(i.e. convergence at genetic level). 
+While many alleles may result in the benefical phenotype, many of
+these may be unlikely to contribute to adaptation due to their
+negative pleiotropic consequences. There are at least two ways that
+negative pleiotropy can contribute to high rates of
+convergence when adapting when a single change is sufficient for
+adaptation. 
+First, negative pleiotropic effects can reduce the overall beneficial
+selection coefficient of an allele in the new environment making them
+unlikely to become established and slow to spread (and in the worst
+case making them deleterious). This effect has been studied by a
+number of authors \citep{}. A second contribution of negative
+pleiotropy to shaping genetic convergence, is that alleles that have
+less negative pleiotropy are more likely to segregate before the
+environmental shift, and so get a head start in contributing to
+adaptation. This effect is seemingly less well studied, perhaps in
+part because many modeling approaches tend to use the strong-selection
+weak mutation limit and so ignore standing variation. \gc{Is this fair?}
 
+Here we focus primarily on the second effect. 
 Lets imagine for the moment that all classes of beneficial allele have
 the same beneficial selection coefficient. 
 Each class of mutations could have its own mutation rate $\mu_j$ and
 have a disadvantage $s_{d,j}$ prior to the switch. As they have the
 same selection coefficient all of the waves travel outward at a rate
 $v$. 
-
+The the rate of type $k$ standing variants per unit area and the rate of de
+novo variants per unit area per generation are
 \begin{align}
     \lambda_{0,j} = \frac{ 2 \mu_j \rho s_b }{ -\log(1-s_{d,j}) } ; ~~      \lambda_{j} = \mu_j \rho s_b;
 \end{align}
-
-\begin{equation}
-    z_0 = \int_0^\infty {2 \lambda_{0,j} \pi v^2 t - \lambda_j \pi v^2 t^3 } \; \exp \left(\sum_j - \lambda_{0,j} \pi v^2 t^2 - \lambda_j \pi v^2 t^3 / 3 \right) dt .
+Using these rates it follows that, at the time when every location has been reached by an adaptive allele,
+the proportion of the species range covered by alleles of type $k$ is
+\begin{equation} \label{eqn-prop-space-allele-k}
+    p_k = \int_0^\infty  \big( 2 \lambda_{0,j} \pi v^2 t + \lambda_j
+    \pi v^2 t^3 \big)  \; \exp \left(\sum_k - \lambda_{0,k} \pi v^2 t^2 - \lambda_k \pi v^2 t^3 / 3 \right) dt .
 \end{equation}
+If we only allow standing variation this collapses to 
+\begin{equation}  \label{eqn-prop-space-allele-k-standing-room-only}
+    p_k = \frac{  \mu_j / \log(1-s_{d,j}) }{\sum_k  \mu_k / \log(1-s_{d,k}) }
+\end{equation}
+while if we only allow new variation, i.e. if all variants are highly
+deleterious before the environment switches, then $p_k =\mu_j / (\sum_k  \mu_k)$
+
+To illustrate some of the properties of this model lets imagine the
+somewhat extreme scenerio that there is a single base-pair where
+a mutation change is relatively free of negative pleiotropy (class $1$), and a
+larger mutational target where changes have more serious pleiotropic
+consequences in the ancestral environment (class $2$). We set $s_{d,1}
+\leq s_{d,2}$ and $\mu_1=1 \times 10^{-8}$, and think of the second
+class mutational target being ten, a hundred, or one thousand base
+pairs. We set  . We show the expected proportion of space covered by
+the rarer class $1$ mutations in Figure \ref{fig-pleiotropy_calc},
+assuming that both classes share a beneficial selection coefficient
+$s_b=0.05$ once the environment switches. 
+Intuitively the contribution of the rarer mutation decreases as the
+mutational target of the other class becomes larger, and as the
+difference in the negative pleiotropoc consequences of the two classes
+of alleles decreases. The case with standing variation only is the best
+case scenerio for the rarer mutation as we force them to have the same
+advantage in the new environment, so its rate of introduction is
+necessarily lower. However the standing variation only case does seems
+to provide a reasonable rule of thumb. Especially for parameter combinations, higher population densities and
+high dispersal distances, that increase the contribution of standing
+variation (and similarly for high $s_b$). 
+
+\begin{figure}[ht]
+\begin{center}
+  \includegraphics[width=1.0\textwidth]{pleiotropy_calc}
+\caption{ %
+{\bf Proportion of space covered by rarer but less pleiotropic
+  mutation}. Empty circles give the result for standing variation only,
+  eqn. \eqref{eqn-prop-space-allele-k-standing-room-only}. Lines give
+  the result allowing both standing and de novo mutations  eqn. \eqref{eqn-prop-space-allele-k}}   \label{fig-pleiotropy_calc}
+\end{center}
+\end{figure}
 
 
 \section{Local establishment and comparison to panmixia}
