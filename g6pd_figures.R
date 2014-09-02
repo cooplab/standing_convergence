@@ -5,6 +5,38 @@ library("wesanderson")
 
 my.col<-wes.palette(5, "Darjeeling")  #wes.palette(2, "Royal1")
 
+
+###################################################
+###################Char length as function of sd
+###################################################
+
+ mu=1e-6; rhos=c(0.2,2); sd=0.05; sbvals=seq(0.001,0.3,length=800); 
+
+sigmas=c(100,50,10)
+
+layout(t(1:2))
+par(mar=c(4,4.1,2,0.3))
+for(j in 1:2){
+	rho=rhos[j]
+	if(j == 1) plot(sbvals,sbvals,type="n",ylim=c(100,1500),lwd=2,col=my.col[1],xlab=expression(s[b]),ylab=expression(chi),cex.lab=1.5,cex.axis=1.4,main=expression(rho==0.2))
+	if(j == 2) plot(sbvals,sbvals,type="n",ylim=c(100,800),lwd=2,col=my.col[1],xlab=expression(s[b]),ylab="",cex.lab=1.5,cex.axis=1.4,main=expression(rho==2))
+	for(i in 1:3){
+	sigma=sigmas[i]; charlength.sb<-sapply(sbvals, function (sb) { charLength(mu,rho,sb,sd=sd,sigma)$value } )
+	 lines(sdvals,charlength.sb,lwd=2,col=my.col[i]); 
+	 
+	 charlength.new.only<-sapply(sbvals, function (sb) {  newCharLength(mu, rho, sb, sd=NA, sigma)$value})
+	 lines(sdvals,charlength.new.only,col=my.col[i],lwd=2,lty=2)  ##new mut. only
+	}
+	 ##contribution of standing var only, i.e. old variation
+	 charlength.standing.only<-sapply(sbvals, function (sb) {  oldCharLength(mu, rho, sb, sd=sd, sigma)$value})
+	 lines(sdvals,charlength.standing.only ,lwd=2,col="black",lty=3)
+	  if(j == 2) legend("topright",col=c("grey","grey","black",my.col[1:3]),lty=c(2,3,1,rep(NA,3)),pch=c(NA,NA,NA,rep(19,3)),legend= as.expression( c("No Standing var.","No new mut.","Both",
+	 	lapply(sigmas , function(x){  {substitute( sigma==myS, list(myS=x) )} }))))
+ 	}
+
+###################################################
+###################Char length as function of sd
+###################################################
  mu=1e-6; rhos=c(0.2,2); sb=0.05; sdvals=seq(0.0001,0.3,length=800); 
 
 sigmas=c(100,50,10)
@@ -92,7 +124,7 @@ dev.copy2pdf(file="~/Dropbox/postdocs/Peter/standing_parallelism/G6PD_standing_v
  
  ####effect of pleiotropy on standing variation
   more.cols<-wes.palette(n=3,"FantasticFox")
-  sd.1<-c(,10^(-seq(log10(0.05),5,length=100)));
+  sd.1<-10^(-seq(-log10(0.05),5,length=100));
   plot(x=range(sd.1),y=c(0,1),type="n",log="x",xlab=expression(s[d1]),ylab=expression(p[1]),cex.lab=1.5,cex.axis=1.5)
  mu.2s<-c(1e-7,1e-6,1e-5)
  

@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage{fullpage}
 \usepackage{amsmath,amssymb}
-\usepackage{natbib}
+\usepackage[authoryear]{natbib}
 \usepackage{marginnote}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -19,10 +19,29 @@
 % \newcommand{\marginnote}[1]{}
 %\newcommand{\marginnote}[1]{{\it\color{red}(#1)}}
 %\fi
+\bibliographystyle{amnat}
+%\bibliographystyle{plain}
 
-\bibliographystyle{plain}
+
+\title{The role of standing variation in parallel adaptation}
+\author{Peter L. Ralph$^1$ \\ email: pralph@usc.edu  \and Graham Coop$^2$ \\ email: gmcoop@ucdavis.edu }
+
 
 \begin{document}
+
+
+\maketitle
+\date{}
+
+\begin{center}
+
+$^1$ Computational Biology and Bioinformatics \\ 
+University of Southern California, Los Angeles, CA \\
+$^2$Center for Population Biology \& Department of Evolution and Ecology \\ 
+University of California -- Davis, Davis, CA, 95616
+\end{center}
+
+\section*{Abstract}
 
 \section{Introduction}
 
@@ -71,10 +90,10 @@ The species occupies an area with mean density
 $\rho$ haploid individuals (or chromosomes) per unit area.
 \marginnote{XXX or do diploid? below is haploid.}
 
-We assume that dispersal occurs by local movement of
-individuals. Specifically we will assume that individuals dispersal a
-normally distributed distance, with the mean squared distance between parent and child is $\sigma^2$
-(i.e.\ $\sigma$ is the dispersal distance)
+%We assume that dispersal occurs by local movement of
+%individuals. Specifically we will assume that individuals dispersal a
+%normally distributed distance, with the mean squared distance between parent and child is $\sigma^2$
+%(i.e.\ $\sigma$ is the dispersal distance)
 
 % Branching-process-sized point mass approx. to local groups present at $t=0$
 % -- depends on local population density large enough relative to migration (to be "branching")
@@ -139,8 +158,11 @@ this wave of advance of a beneficial allele was first described by
 conditions the speed of advance
 of this wave will be $v = \sigma \sqrt{2s}$. See
 \citet{ralph2010parallel} for a fuller review of the Fisher-KPP as it
-applies to this scenerio. Note that the speed of the wave can be
-changed 
+applies to this scenerio. Note that the speed of the wave will vary
+with details of the space that individuals migrate across
+\citep[e.g. see ][ for comparisons to migration on discrete
+grids]{Slatkin-speed:76,SlatkinCharlesworth:78}, however, the velocity
+will usually be primarily determined by the product $\sigma^2$ and $s$.
 
 \paragraph{Putting it together.}
 So we can put these ingredients together for a simple model of the
@@ -652,19 +674,23 @@ but this seems less useful than an assessment of the degree of parallel adaptati
 
 Confusing convergence for local adaptation. Mention skin pigmentation?
 
+
+\paragraph{}
 Our results are predicated on the idea that adaptive variants are
 initially rare within populations, i.e. they are reasonably
 deleterious before the environment switches. In constrast, even distant populations could have
 a shared basis of adaptation if they adapt via common variation,
 e.g. previously neutral (or nearly neutral) variation, shared among populations. 
 Our ability to detect such shared convergent events is at the moment
-quite limited. 
-One way that selection pressures might be weak on alleles, is if they
-are at only one of many loci contributing to variation in a trait. However, if that
+quite limited. If many loci contributing to variation in a trait, then
+selection on any one allele may be weak allowing them to segregate
+across populations. However, if that
 case populations separated by a reasonable amount of drift may still
 adapt via different genetic routes, as the constellation of alleles
 best positioned to initially respond to positive selection, i.e. those at
-intermediate frequency, will be somewhat different.  
+intermediate frequency, will be somewhat different. Therefore, it
+seems unlikely that polygenic traits are more suspectible to a shared
+genetic basis to adaptation across populations than simple traits.   
 
 %%Mayr: [t]he steady and high genetic input caused by gene flow is the main factor responsible for genetic cohesion among the populations of a species.
 
@@ -715,7 +741,7 @@ alleles.
 % lessening the chance of convergent adaptation \citep{}.
 
 \paragraph{How then do substitutions occur?}
-It is rare for gene flow to rapidly spread selected alleles across
+If it is rare for gene flow to rapidly spread selected alleles across
 species range, how then do selected alleles ever become fixed within
 species? Repeated bouts of adaptation in particular genomic regions may act 
 push a subset of previously selected alleles to fixation across the
@@ -742,7 +768,7 @@ subject to loss due to local extinction and the mixing following the collapse of
 structure \citep{Futuyma:10,FUTUYMA:87}. In part this represented a
 response to punctuated equilibrium \citep{eldredgegould72}, arguing
 that the observation of stasis and rapid anagensis associated with
-speciation were consistent with micro-evolution . 
+speciation were consistent with micro-evolution. 
 Futuyma argued that despite rapid adaptation over short time-scales, we
 may observe morphological stasis in the
 fossil record as
@@ -758,51 +784,50 @@ reabsorption or extinction. Repeated bouts of extinction and
 speciation will send waves of alleles
 to fixation along particular lineages. 
 
+%Venditti:10, 
 This link between speciation and substitution does not imply that
 substitutions should be thought of as being clustered at splits in
 inferred phylogenies \citep[see ][for a recent exhange on
-this]{Venditti:10, Pennell:14,Venditti:14,Pennell:14B}. 
+this]{Pennell:14,Venditti:14,Pennell:14B}. 
 (Note that neutral substitutions will be to be unaffected by this process, as they
 will accumulate in a clock like manner along lineages, as dictated by
 the mutation rate, regardless of the geographic details of their
 polymorphic stage.)
-Firstly, it it likely that splits in
+First, it it likely that splits in
 phylogenies are likely only a tiny proportion of all incipient
 speciation events because extinction rates may be high
 \citep{Rosenblum:12}, such that every lineage has likely past through
 many ``speciation events'' in addition to the observed ones.
-Secondly, under this view, the origination process of alleles and their fixation process
-are uncoupled \citep[in the sense of ][ page XXX]{Gillespiebook} by the geographic structure.
-Such that spatial polymorphisms may accumulate gradually, in
+Second, under this view, spatial polymorphisms may accumulate gradually, in
 geographically restricted populations, between large-scale 
-biogeographic events. 
+biogeographic events leading to their fixation (or indeed loss). 
+Such that the origination process of alleles and their fixation process
+are reasonably uncoupled \citep[in the sense of ][]{Gillespie:94} by the geographic structure.
+
 %Thus selected alleles that eventually become a
 %substitutions may have arisen long before they reach fixation. 
  
 Nor does this view imply that adaptive evolution or speciation is driven by the
 shifting balance or genetic revolutions \citep{Wright:32,
-  Mayr-genetic-revol:1954}, whereby extreme genetic drift allows
+  Mayr-genetic-revol:1954}, whereby genetic drift allows
 populations to cross fitness valleys and substitute novel epistatic
 combinations. While geographic lineage sorting via speciation and
 extinction can be thought of as very large-scale genetic drift events,
 the initial spread of our alleles is due to selection they are only later sorted 
+into substitutions via these large scale drift events \citep[see also
+][for discussion]{Futuyma:89}. 
 
 This view suggests that the alleles that substitute along a lineage
-may not be those but rather are in part those lucky enough to have
-spread across areas not 
-
-
-contributing to 
-
+may rarely be capable, or need, to spread species-wide. This is not
+inconsistent with genome-wide evidence that a reasonable fraction of 
+substitutions are fixed by positive selection in a number of species
+\citep[most notably Drosophila][]{}. Selection has played a strong
+role in the establishment of these alleles, and their frequency may be
+high enough within populations that they do not contribute
+substantially to polymorphism.
 
 In reality the evolution of range size is not independent of
-adaptation. 
-Many DMIs are locally restricted \citep{Cutter:12}.
-
-species range evolution
-splitting of species.
-
-
+adaptation. Many DMIs are locally restricted \citep{Cutter:12}.
 
 
 
