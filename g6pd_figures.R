@@ -34,6 +34,8 @@ for(j in 1:2){
 	 	lapply(sigmas , function(x){  {substitute( sigma==myS, list(myS=x) )} }))))
  	}
 
+dev.copy2pdf(file="~/Dropbox/postdocs/Peter/standing_parallelism/G6PD_charlengths_sb.pdf")
+
 ###################################################
 ###################Char length as function of sd
 ###################################################
