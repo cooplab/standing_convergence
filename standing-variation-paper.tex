@@ -19,8 +19,10 @@
 % \newcommand{\marginnote}[1]{}
 %\newcommand{\marginnote}[1]{{\it\color{red}(#1)}}
 %\fi
-\bibliographystyle{amnat}
-%\bibliographystyle{plain}
+%% NEED amnat.bst IN REPO
+% \bibliographystyle{amnat}
+\bibliographystyle{plainnat}
+
 
 
 \title{The role of standing variation in parallel adaptation}
@@ -45,67 +47,74 @@ University of California -- Davis, Davis, CA, 95616
 
 \section{Introduction}
 
-There is increasing number of examples of different populations within species often
-adapt to shared environments via independent genetic changes. 
+There are an increasing number of examples in which
+different populations within species have
+adapted to similar environments via independent genetic changes. 
 In some cases this convergent evolution leads to differing phenotypes
 in response to shared selection pressures
 \citep{} in other cases the degree of convergence is precise down the
-same nucleutide change. Such convergent evoltuion within populations
-has been seen for many
-carefully studied phenotypes in a range of species, including drug resistance, pathogen resistance, insecticideresistance, and pigmentation. In many of these examples we 
-need to be careful about whether they changes are truely convergent or
+same nucleutide change. 
+Such convergent evoltuion within populations has been seen for many
+carefully studied phenotypes in a range of species, 
+including drug resistance, pathogen resistance, insecticide resistance, and pigmentation. 
+In many of these examples we 
+need to be careful about whether the changes are truly convergent or
 whether selection pressures differ subtly. 
-We note that we treat the phrases convergent and parallel evolution
+We note that we treat the phrases ``convergent'' and ``parallel'' evolution
 synonymously, as we are concerned with adaptation within a single
-species that can occur via a different or shared genetic routes \citep{Arendt:08}.
+species that can occur via a different or shared genetic routes \citep[see][for more discussion]{Arendt:08}.
 
 The issue of convergent adaptation within species touches on a number
-of important questions in evolutionary biology. These include the extent
-to which adaptation is shaped by pleiotropic constraints \citep{Haldane:book,Orr:05},
-whether adaptation is mutation-limited \citep{Bradshaw:91,karasov2010}, and whether
-species should be regarded to cohesive units. Convergence evolution within
-populations also effects our ability to detect adaptation from population genomic data as no one
-allele sweeps fixation over the entire area affected by a selection
-pressure \citep{softsweepsIII}.
+of important questions in evolutionary biology. 
+These include the extent to which adaptation is shaped by pleiotropic constraints \citep{Haldane:book,Orr:05},
+whether adaptation is mutation-limited \citep{Bradshaw:91,karasov2010}, 
+and to what degree should species be regarded to cohesive units. 
+Convergent evolution within populations 
+also affects our ability to detect adaptation from population genomic data,
+since no single allele sweeps to fixation over the entire area affected by the selection pressure \citep{softsweepsIII}.
 
 Convergent evolution can occur even within a well mixed population
-subject to a constant selection pressure, either through selection on
-multiple mutations present as standing variation within population
-before selection pressures switch \citep{Orr:01,softsweepsI} or due to
-multiple adaptive alleles arising after selection pressures switch \citet{softsweepsII}. 
-This previous work has shown that 
+subject to a constant selection pressure, 
+either through selection on multiple mutations present as standing variation within population
+before selection pressures switch \citep{Orr:01,softsweepsI},
+or due to multiple adaptive alleles that arise after selection pressures switch \citet{softsweepsII}. 
+The previous work has shown that 
 a primary determinant of the probability that multiple alleles contribute to adaptation
 is the population scaled mutation rate \citep[see ][ for a review]{MesserPetrov}. 
 
-Geographically limited dispersal also increases the chance of
-convergent evolution. For example when selection pressures are
-geographically patchy this can increasing the probability of
-convergent evolution as alleles are unable to spread through
-intervening populations \citep{RalphCoop:14}. In \citep{RalphCoop} we formulated a simple model of parallel adaptation in a geographic setting
+\plr{should stick to either ``parallel'' or ``convergent'' perhaps}
+
+Geographically limited dispersal also increases the chance of convergent evolution. 
+For example, 
+patchy geographically selection pressures can lead to much higher probability of parallel adaptation than uniform pressures,
+since alleles are unable to spread through intervening populations \citep{RalphCoop:14}. 
+In \citep{RalphCoop} we formulated a simple model of parallel adaptation in a geographic setting
 where the selection pressure was constant across the entire environment, 
 and that a single mutational change was sufficient to adapt populations to the novel environment. 
-We assumed that there was no standing variation for the adaptive
-allele, such that parallel mutation must be due to multiple mutations
-after the environmental shift. In that setting we found that there was
-a characteristic geographic scale, over which we would expect multiple
-instances of our adaptive allele to have arisen in parallel. This
-characteristic length could be expressed in terms of a simple compound
-parameter determined by our parameters of interest. Here we extend
-this spatial model include standing
-variation present at mutation-selection balance before selection
-pressures switch.
+We assumed that there was no standing variation for the adaptive allele, 
+so that parallel mutation must be due to multiple mutations after the environmental shift. 
+In that setting, 
+we found that there was a characteristic geographic scale over which we would expect 
+multiple instances of our adaptive allele to have arisen in parallel. 
+This characteristic length could be expressed in terms of a simple compound
+parameter determined by our parameters of interest. 
+Here we extend this spatial model to include standing variation 
+present at mutation-selection balance before the selection pressures switch.
 
 
+%%%%%%%%% %%%%%%%%%%%% %%%%%%%
 \subsection{The set-up}
 
 % selection pressure changes at $t=0$ from $1-s_d$ to $1+s_b$ -- homogeneous
 
 We assume that the species range
-is a homogenous, one- or two-dimensional region. 
+is a large, homogenous, one- or two-dimensional region. 
 There are two selective classes -- the {\em neutral} type, and the {\em mutated} type.
-We assume that different mutations are distinguishable --
+We assume that separately arising mutations are distinguishable --
 either as selectively equivalent mutations, or by linked variation.
-For a long time in the past, the mutated type has been at a selective disadvantage (long enough to be at selection-mutation equilibrium),
+We also suppose that 
+the mutated type has been at a selective disadvantage 
+for a sufficiently long enough time in the past to be at selection-mutation equilibrium,
 but at a certain time the selective regime changes, so that the mutated type has a selective advantage and quickly spreads to fixation.
 After fixation, alleles are either descended
 from families of mutants present as standing variation when the selective regime changed,
@@ -119,12 +128,12 @@ the mutant type has fitness $1+s_b$,
 where $s_b>0$ will usually be assumed to be small, and $0<s_d<1$.
 We assume that diploid fitness is additive, or at least that the
 important early dynamics are determined by the heterozygous fitness, with no reference to the fitness of the
-  homozygote for the mutant alleles.
+homozygote for the mutant alleles.
 The number of offspring has finite variance, which to keep the formulas simple we assume to be equal to one.
-(If the mutation is recessive, XXX more complicated things happen.)
+(We leave aside the case where mutations are recessive, however.)
 As for the other parameters,
 suppose that each offspring of a neutral parent is of the mutant type with probability $\mu$,
-and that the mean squared distance between parent and child is $\sigma^2$ (the {\em dispersal variance}).
+and that the mean squared distance between parent and child is $\sigma^2$.
 The species occupies an area with mean density
 $\rho$ haploid individuals (or chromosomes) per unit area.
 \marginnote{XXX or do diploid? below is haploid.}
@@ -141,7 +150,7 @@ $\rho$ haploid individuals (or chromosomes) per unit area.
 % Is greater-than-one size of clusters likely to make a difference? 
 
 \paragraph{Rates of origination of standing and new mutations}
-We make use of the commonly used approximation that neglects competition between relatives,
+We make use of the commonly used approximation that neglects competition between close relatives,
 treating the offspring of a new mutant that appears in an area not already occupied by the mutated type
 as a branching process.
 After $t=0$, the offspring of a single mutant form (approximately) a branching process with growth rate $s_b$,
@@ -149,22 +158,25 @@ so each new mutant establishes locally with probability $p_s \approx 2s_b$.
 As in \cite{ralphcoop2010}, each new offspring has a very small probability of being a mutant and establishing locally,
 so the collections of times and locations at which mutants appear and establish locally 
 is well--approximated by a Poisson process in space and time.
-This the rate of this Poisson process, 
-the rate per unit area at which new mutants appear and establish locally after $t=0$ in areas not already occupied by the mutant type
+The rate of this Poisson process,
+i.e.\ the rate per unit area at which new mutants appear and establish locally after $t=0$ in areas not already occupied by the mutant type,
 is approximately $\lambda = 2 \mu \rho s_b$.
 
-Before $t=0$, on the other hand, the mutation is deleterious, so the
-genetic descendants of each new mutation are (with high probability)
-doomed (doomed I say!) to extinction,
+\plr{the following needs better explanation, maybe a figure?}
+Before $t=0$, on the other hand, the mutation is deleterious.
+We have assumed that $s_d$ is not too small
+so that the genetic descendants of each new mutation are (with high probability) doomed to extinction,
 but may persist for some time.
-Since the times and locations of mutants before $t=0$ also well-approximated by a Poisson process with rate $\mu \rho$,
+Since the times and locations of mutants before $t=0$ also well--approximated by a Poisson process with rate $\mu \rho$,
 the locations of all mutant families extant at $t=0$ whose descendants are destined to fix locally is also,
-by the Mapping theorem, a Poisson process with rate we define to be $\lambda_0$.
+by the Poisson Mapping Theorem, a Poisson process with rate we define to be $\lambda_0$.
+% (In principle, more than one member of a mutant family may fix,
+% but we assume these are close together enough that we may treat them as beginning from a single point.)
 If we assume that the descendants of at most only a few members of any extant mutant family at $t=0$ will survive,
 and that these progenitors are near to each other in space, we can then treat each such family as a single mutant,
 equivalent to the mutants arising later.
-(The approximation will be good if the log of the size of an extant families is small relative to the establishment time,
-and the spatial distribution of the family is small relative to the spread between them.)
+(The approximation will be good if the logarithm of the size of each extant family is small relative to the establishment time,
+and the spatial distribution of each is small relative to the spread between the families.)
 To find $\lambda_0$, consider a mutation that arose at time $-T<0$, and let $Z_s$ be the number of its descendants at time $s-T$.
 At time $t=0$, there are $Z_T$ individuals present with the mutation,
 and each has probability $p_s \approx 2s_b$ of establishing, approximately independently.
@@ -181,7 +193,7 @@ resulting in the approximation
     \lambda_0 &= \mu \rho \int_0^\infty 2s_b (1-s_d)^{T} dT \\
         &= \frac{ 2 \mu \rho s_b }{ -\log(1-s_d) } .
 \end{align}
-Note that this is closely related to the standard frequency of a
+Note that this is closely related to the equilibrium frequency of a
 allele at mutation selection balance $\mu/s_d$ \citep{Haldane?}
 
 \plr{XXX More discussion on whether this is a good approximation?  
@@ -189,67 +201,60 @@ Compute typical size and radius of a standing cluster?}
 
 
 \paragraph{Geographic spread of alleles} 
-Once an allele has become local established it can begin to spatially spread. 
-We assume that the allele, having become established, quickly settles
-down to spread spatially as a traveling wave of constant speed. The behavior of
-this wave of advance of a beneficial allele was first described by 
-\citet{fisher1937wave} and \citet*{KPP1937}. Under reasonably general
-conditions the speed of advance
-of this wave will be $v = \sigma \sqrt{2s}$. See
-\citet{ralph2010parallel} for a fuller review of the Fisher-KPP as it
-applies to this scenerio. Note that the speed of the wave will vary
+Once an allele has become locally established it can begin to spread across space. 
+We assume that the allele, once established, 
+quickly settles down to spread spatially as a traveling wave of constant speed. 
+The behavior of this wave of advance of a beneficial allele was first described by 
+\citet{fisher1937wave} and \citet*{KPP1937}. 
+Under reasonably general conditions, the speed of advance of this wave is $v = \sigma \sqrt{2s}$. 
+See \citet{ralph2010parallel} for a fuller review of these travelling waves.
+Note that the speed of the wave will vary
 with details of the space that individuals migrate across
-\citep[e.g. see ][ for comparisons to migration on discrete
-grids]{Slatkin-speed:76,SlatkinCharlesworth:78}, however, the velocity
-will usually be primarily determined by the product $\sigma^2$ and $s$.
+\citep[e.g.\ see ][ for comparisons to migration on discrete grids]{Slatkin-speed:76,SlatkinCharlesworth:78}.
+% However, the velocity will usually be primarily determined by the product of $\sigma^2$ and $s$.
 
 \paragraph{Putting it together.}
-So we can put these ingredients together for a simple model of the
-geographic spread of alleles. A cartoon example of this process is
-shown in Figure \ref{fig:cartoon} Initially, when the selection
-pressures change at $t=0$, a set of standing variants can start to
-spread having escaped loss through drift. These variants are shown as
-little lightning bolts, and occur at a density $\lambda_0$ across
-space. They spread at velocity $v$ carving out cones in space-time. As these
-alleles proceed in their geographic spread other new alleles can arise
-and become established in parallel, these are shown as little
-stars. These new mutations arise and become established at rate $\lambda$.
+Now, we can put these ingredients together for a simple model of the geographic spread of alleles. 
+A cartoon example of this process is shown in Figure \ref{fig:cartoon}. 
+Initially, when the selection pressures change at $t=0$, 
+a set of standing variants can start to spread having escaped loss through drift. 
+These variants are shown as little lightning bolts, and occur at a density $\lambda_0$ across space. 
+They spread at velocity $v$, carving out cones in space-time. 
+As these alleles proceed in their geographic spread, other new alleles can arise and become established in parallel, 
+these are shown as little stars. 
+These new mutations arise and become established at rate $\lambda$.
 
 As we previously outlined in \citet{ralph2010parallel} this model of
-geographic convergent evolution, when $\lambda_0=0$, is analogous to the \citet{kolmogorov-crystallization}
-model of crystallization. In \citet{kolmogorov-crystallization} model nucleation points form at randomly at
-a constant rate in time and space 
-and initiate the radial growth of new crystals. The crystals at the
-end point of this process form a random tessellation covering space
-the properties of which have been extensively studied by \citet{moller92,moller95} and others \citep{bollobas-crystallization,gilbert-crystallization}. 
+geographic convergent evolution, when $\lambda_0=0$, is analogous to the a model of crystallization due to Kolmogorov \citet{kolmogorov-crystallization}.
+In this model, nucleation points form at random at a constant rate in time and space 
+and initiate the radial growth of new crystals. 
+Eventually, the different orientations of crystals form a random tessellation of space,
+hose properties have been extensively studied by \citet{moller92,moller95} and others \citep{bollobas-crystallization,gilbert-crystallization}. 
 The generalized version of this process, for non-constant wave speeds
-and imhomogeneous Poisson processes is termed the 
+and inhomogeneous Poisson processes is termed the 
 Kolmogorov-Johnson-Mehl-Avrami tessellation \citep[KJMA, see ][]{fanfoni-tomellini}.
 Our combined process with both standing variation and new mutation is
-a specially case of the KJMA tessellation, where the
-spatial-temporally homogeneous
-Poisson origination process of new mutations, is supplemented by a
-single pulse of origination points at time zero with spatial density $\lambda_0$.
+a special case of the KJMA tessellation, 
+where the spatial-temporally homogeneous Poisson origination process of new mutations, 
+is supplemented by a single pulse of origination points at time zero with spatial density $\lambda_0$.
+(For the purposes of analogy, we could imagine that before time $t=0$
+the temperature is high enough that nucleation sites do not persist.)
 
-If we only allow standing variation then everything about the process
-is relatively simple. All of the
-points in space closer to a particular origination point will be
-reached by that allele before any other
-allele has a chance to spread there. Formally then the spatial patterning,
-given a set of origination points, would be specified by the Voronoi
-tessellation (i.e. the cells formed by assigning points to their
-nearest origin). All of the properties of the patterning of space by alleles is
-determined by the spatial locations of the initiation points, as
-specified by the spatially homogeneous Poisson process, independent of
-the rate of spatial spread. So that the properties
-of the spatial tessellation with standing variation depends only on
-$\lambda_0$, and this
-model is commonly called the Poisson-Voronoi tesselation.
+If we only allow standing variation, then everything about the process is relatively simple. 
+All of the points in space closer to a particular origination point will be
+reached by that allele before any other allele has a chance to spread there. 
+Such a tesselation of space is known as a Poisson-Voronoi tesselation \citep{poissonvoronoi}
+(i.e.\ the cells formed by assigning points to the nearest point in a Poisson process).
+The properties of the patterning of space by alleles is
+determined by the spatial locations of the initiation points, 
+as specified by the spatially homogeneous Poisson process, 
+independent of the rate of spatial spread. 
+Therefore, the properties of the spatial tessellation with standing variation depends only on $\lambda_0$.
 
-In our previous paper \citep{ralph2010parallel} we also provided results for non-constant wave
-speeds, as can arise due to fat-tailed dispersal kernels. Here we
-restict ourselves to constant wave speeds for simplicity but similar
-calculations could be done by expansion of the results of the previous paper. 
+% In our previous paper \citep{ralph2010parallel} we also provided results for non-constant wave
+% speeds, as can arise due to fat-tailed dispersal kernels. 
+% Here we restict ourselves to constant wave speeds for simplicity but similar
+% calculations could be done by expansion of the results of the previous paper. 
 
 \begin{figure}[ht]
   \begin{center}
@@ -262,53 +267,58 @@ Cartoon of the geographic spread of standing and new mutations.
   
 \end{figure}
 
+
+%%%%%%%%% %%%%%%%%%%%
+
 \subsection{G6PD example}
-We will describe a number of properties of our process, but we first
-want to introduce a motivating example to provide some concrete
+
+Below we describe a number of properties of our process, but we will first introduce 
+a motivating example to provide some concrete
 numbers to use for illustrative purposes.
 
-Over the past ten thousand years malaria resistance alleles have arisen at a number
-of genes and spread through human populations in areas where malaria is endemic \citep{Kwiatkowski:05}. 
-A number of these alleles appear to represent convergence, with
-multiple changes in the same gene. 
-For example, there are multiple
-changes at the $\beta$-globin gene that confers malaria resistance,
-and the sickle cell allele may plausibly have arisen by up to five distinct
-changes at the same base pair within Africa
+Over the past ten thousand years, malaria resistance alleles have arisen at a number of genes 
+and spread through human populations in areas where malaria is endemic \citep{Kwiatkowski:05}. 
+A number of these alleles appear to be examples of convergent adaptation, 
+as different derived mutations in the same gene are seen in different individuals.
+For example, 
+a number of changes have been observed in the $\beta$-globin gene that confer malaria resistance;
+and the sickle cell allele may plausibly have arisen by up to five independent occurrences
+of the same base pair mutatoin at different locations within Africa
 \citep{Flint:98,ralph2010parallel}.
 Another particularly impressive case of convergent evolution in response to
-selection pressures imposed by malaria are the numerous changes throughout the
-X-linked G6PD gene, with upward of 50 polymorphic variants ($>1\%$ frequency) having so far been
-described that lower the activity of the enzyme \citep{Howes-g6pd-variants,Minucci-g6pd}. These alleles are now
-found at a combined frequency of $\sim$8 \% frequency in malaria endemic countries, rarely
-exceeding$\sim$20 \% \citep{Howes-g6pd-preval}. Three malaria
-resistance alleles at G6PD are particularly common and relatively well
-studied: the $A-$ found in
-much of sub-Saharan Africa; the Med allele found in the Mediterranean and middle
-east; and the Mahidol allele found Myanmar and Thailand.
+selection pressures imposed by malaria are the numerous changes throughout the X-linked G6PD gene, 
+with upward of 50 polymorphic variants ($>1\%$ local frequency) having so far been described 
+that lower the activity of the enzyme \citep{Howes-g6pd-variants,Minucci-g6pd}. 
+These alleles are now found at a combined frequency of around 8\% frequency in malaria endemic areas,
+rarely exceeding 20\% \citep{Howes-g6pd-preval}. 
+Three G6PD deficiency alleles that also confer resistance to malaria 
+are particularly common and relatively well studied: 
+the $A-$ allele found in much of sub-Saharan Africa; 
+the Med allele found in the Mediterranean and Middle East; 
+and the Mahidol allele found Myanmar and Thailand.
 The $A-$ and Mahidol alleles have been shown
 to be protective against {\it Plasmodium falciparum} and {\it P. vivax} in both
-hemizygote males and both heterozygote and homozygotes females \citep{Ruwende-g6pd,
-Louicharoen-g6pd}. Haplotype-based analysis of genetic diversity surrounding
-the $A-$, Med, and Mahidol suggest that they have spread in past few
-thousand years \citet{tishkoff-g6pd,Slatkin-age-est,Saunders-g6pd,Louicharoen-g6pd}, 
-consistent with the age of other malaria resistance alleles. 
-These population genetic analyses suggest that three variants each have a hemizygote/heterozygote 
-selection coefficient of $0.05-0.3$ \citep{tishkoff-g6pd,Slatkin-age-est,Saunders-g6pd,Louicharoen-g6pd}, consistent with
-the results of \citet{Ruwende-g6pd} on the basis of the present day increased resistance to malaria of the
-$A-$ allele. 
-Given such a strong pressure on these alleles they should have risen
-quickly to fixation, so their presence at intermediate frequency,
-over a broad geographic area, makes it a good candidate for a recently
-balanced polymorphism. 
+hemizygote males and both heterozygote and homozygotes females \citep{Ruwende-g6pd, Louicharoen-g6pd}. 
+Haplotype-based analysis of genetic diversity surrounding
+the $A-$, Med, and Mahidol suggest that they have spread over the past 
+few thousand years \citet{tishkoff-g6pd,Slatkin-age-est,Saunders-g6pd,Louicharoen-g6pd}, 
+consistent with the age of other known malaria resistance alleles. 
+Population genetic analyses suggest that three variants each have a hemizygote/heterozygote 
+selection coefficient of $0.05-0.3$ \citep{tishkoff-g6pd,Slatkin-age-est,Saunders-g6pd,Louicharoen-g6pd}, 
+consistent with the results of \citet{Ruwende-g6pd} on the basis of the present day increased resistance to malaria of the $A-$ allele. 
+\plr{what are Ruwende's results? feels a bit vague here}
+Given such a strong pressure on these alleles they should have risen quickly to fixation, 
+so their presence at intermediate frequency over a broad geographic area
+makes them good candidates for recently balanced polymorphisms. 
 Hemizygous males and homozygous females suffer from G6PD deficiency,
-leading to hemolytic anemia when exposed to a variety of compounds, notably
-those present in fava beans. 
+leading to hemolytic anemia when exposed to a variety of compounds, 
+notably those present in fava beans. 
 
-The wave of advance works in the case of heterozygote advantage
-\citep{aronson1975nonlinear}, with the selected allele spreading
-locally to the equilibrium frequency (rather than fixation). As such
-our framework is applicable here.
+Note that although originally the ``wave of advance'' was presented as the spread of an unconditionally favorable allele
+\citep{fisher1936,KPP},
+the same model holds in the case of heterozygote advantage \citep{aronson1975nonlinear}, 
+with the selected allele spreading locally to the equilibrium frequency (rather than fixation),
+with speed determined by the advantage of heterozygotes when rare.
 
 % G6PD frequency across world http://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.plosmedicine.org%2Farticle%2Finfo%3Adoi%2F10.1371%2Fjournal.pmed.1001339.g002%2Flargerimage&imgrefurl=http%3A%2F%2Fwww.plosmedicine.org%2Farticle%2Finfo%253Adoi%252F10.1371%252Fjournal.pmed.1001339&h=2938&w=2381&tbnid=oD_tX3ea8IbLfM%3A&zoom=1&docid=k37axqAZDS7ljM&ei=5rdOU5TVDMqj8QGntICYBg&tbm=isch&ved=0CF8QMygLMAs&iact=rc&uact=3&dur=1447&page=1&start=0&ndsp=15
 
@@ -324,35 +334,33 @@ our framework is applicable here.
 
 The geographic area of Central and Eastern Asia with malaria is on the
 order of $\sim 10$ million $km^2$. In that area there are at least $15$
-common variants \citep{Howes-g6pd-variants} (see Figure \ref{fig-G6PD-map}). So the average width of
-an area occupied by an allele is $\sqrt{10^7/15} \approx  800$km. 
-The coding region of G6pd is 515 codons long, with $\sim$140
-functional, distinct variants that cause reduced G6PD activity. Assuming a
-mutation rate of $\approx 10^{-8}$ per base-pair per generation, we assume
-$\mu \approx 1 \times 10^{-6}$ a generation. 
-The dispersal and demographic parameters of humans in the past few
-thousans years is unclear,
-particularly as we are concerned with the effective population
-density. 
-We use $\rho=2$ and $0.2$ people per $km^2$ as two choices of our effective population density.
-We use $\sigma=10,~50,$ and $100$ as our dispersal parameter. 
-We note that obviously human migration has been
-shaped both by local dispersal and larger-scale expansions \citep[see
-][for a recent discussion]{}, so these parameters are for
-illustrative purposes only.
+common variants \citep{Howes-g6pd-variants} (see Figure \ref{fig-G6PD-map}). 
+Therefore, the average width of an area occupied by an allele is $\sqrt{10^7/15} \approx  800$km. 
+The coding region of G6pd is 515 codons long, 
+and around 140 distinct deficiency alleles have been observed. 
+Assuming a mutation rate of $\approx 10^{-8}$ per base-pair per generation, 
+we can take $\mu \approx 1 \times 10^{-6}$ per generation. 
+The dispersal and demographic parameters of humans in the past few thousans years is unclear,
+particularly as we are concerned with the ``effective'' population density
+(i.e.\ population density divided by variance in offspring number).
+We therefore will use two reasonable values for the effective population density: $\rho=2$ and $0.2$ people per $km^2$,
+and three values for the dispersal distance: $\sigma=10$, $50$ and $100$.
+Note that obviously human migration has been shaped both by local dispersal and larger-scale expansions 
+\citep[see ][for a recent discussion]{}, 
+so these parameters only provide a rough view of the process.
 
 \begin{figure}[ht]
 \begin{center}
   \includegraphics[width=1.0\textwidth]{G6pd_Howes_et_al_1475-2875-12-418-4}   %{charlen-by-sd-limit}
 \caption{ 
-Map of G6pd-deficiency allele frequencies across Asia. The pie chart shows
-  the frequency of G6pd-deficiency alleles. The size of the pie chart
-  indicates the number of G6pd-deficient individuals sampled.
-. Countries with
-  endemic malaria are colored yellow. Figure taken from
-  \citet{Howes-g6pd-variants}
-  \url{http://www.malariajournal.com/content/12/1/418}. \gc{Not sure
-    whether to include this.}
+Map of G6pd-deficiency allele frequencies across Asia. 
+The pie chart shows the frequency of G6pd-deficiency alleles. 
+The size of the pie chart indicates the number of G6pd-deficient individuals sampled.
+Countries with endemic malaria are colored yellow. 
+Figure taken from \citet{Howes-g6pd-variants}
+\url{http://www.malariajournal.com/content/12/1/418}. 
+\gc{Not sure whether to include this.}
+\plr{I like it.}
 } \label{fig-G6PD-map}
 \end{center}
 \end{figure}
@@ -373,14 +381,17 @@ Map of G6pd-deficiency allele frequencies across Asia. The pie chart shows
 
 
 %Selection coefficient (s) 	A- 0.044 (0.019–0.048)  Med	0.034
-%(0.014–0.049)  ``The mean age of the A− allele in these runs was 6357 years, with a 95\% credibility interval extending from 3840 to 11,760 years. For the Med alleles, the mean age was 3330 years with a 95\% credibility interval of 1600 to 6640 years"
+%(0.014–0.049)  ``The mean age of the A- allele in these runs was 6357 years, with a 95\% credibility interval extending from 3840 to 11,760 years. For the Med alleles, the mean age was 3330 years with a 95\% credibility interval of 1600 to 6640 years"
 %\citet{tishkoff-g6pd}
 %s 0.24 and t= 40 generations \citep{Slatkin-age-est}
 %The estimated age is ~100 generations with an upper bound of <150
 %generations A- 0.1 < s < 0.2 \citep{Saunders-g6pd}
 %Mahidol487A mutation started to increase at ~1500 YBP, with a
 %selection intensity of ~0.23 \citep{Louicharoen-g6pd}
-%Show's effect in het and homozy females
+%Shows effect in het and homozy females
+
+
+%%%%%%%%%%%% %%%%%%%%%%%%%%%
 
 \subsection{Characteristic parameters}
 
@@ -402,15 +413,16 @@ The number of other mutations appearing in the circle it has covered up until th
 $\lambda_0 \pi L^2 + \lambda \pi L^3 /v$ in two dimensions
 (and $\lambda_0 2 L + \lambda \pi L^2 /v$ in one dimension).
 % $\lambda_0 \omega_d L^d + \lambda \omega_d L^{d+1} /v$ in $d$ dimensions
-Therefore, if we define $\chi$ to be the unique positive solution to
+Therefore, if we define $\chi$ for a two-dimensional model to be the unique positive solution to
 \[
     \lambda_0 \pi \chi^2 + \lambda \pi \chi^3 /v = 1,
 \]
 then $\chi$ gives the distance spread unobstructed by the descendants of a new mutant
 before it is expected that one other successful mutation would have arisen in the area covered so far.
 The explicit formula for $\chi$ is cumbersome; here we omit it.
-(This is in two dimensions; in one dimension the characteristic length is $\chi = \frac{ \sqrt{ 4 \lambda_0^2 + 2\lambda v } - 2 \lambda_0 }{ 4 \lambda v }$.)
-This can be rewritten 
+(In one dimension the characteristic length is $\chi = \frac{ \sqrt{ 4 \lambda_0^2 + 2\lambda v } - 2 \lambda_0 }{ 4 \lambda v }$.)
+Substituting expressions for $\lambda_0$, $\lambda$, and $v$ from above,
+we can rewrite this as
 \begin{equation} \label{eqn:defines_chi}
 %    \left( \frac{ - \chi \log(1-s_d) }{ 2 s_b \sigma } \right)^2 + \left( \frac{ - \chi \log(1-s_d) }{ 2 s_b \sigma } \right)^3 
 %        = \frac{ - \log(1-s_d)^3 }{ 4 s_b^2 \sigma^2 \pi \rho \mu } .
@@ -418,12 +430,12 @@ This can be rewritten
 \end{equation}
 From this we see that $\chi$ decreases with $\rho$ and $\mu$.
 Furthermore, for large $\sigma$, the characteristic length is close to the value obtained just from standing variation:
-$\chi = \sqrt( -\log(s_d) / 2 s_b \rho \mu \pi ) + O(1/\sigma)$.
+$\chi = \sqrt{ -\log(1-s_d) / 2 s_b \rho \mu \pi } + O(1/\sigma)$.
 On the other hand, if the mutant allele is highly deleterious before $t=0$,
 then the characteristic length is close to the value from \citet{ralphcoop2010}:
 $\chi = ( \sigma / \rho \mu \pi \sqrt{2 s_b} )^{1/3} + O(1/\log(1-s_d))$.
 
-XXX could do calculations as in "panmixia" here, e.g. if $f = (\chi/\sqrt{\pi \lambda_0})^2$ then
+XXX could do calculations as in "panmixia" here, e.g. if $f = (\chi \sqrt{\pi \lambda_0})^2$ then
 $f = 1-\gamma f^{3/2}$, where
 $\gamma = (4 \pi^{5/2} / \sqrt{2}) \mu^2 s_b^{3/2} \rho^2 / \sigma \log(1/(1-s_d))$.
 Then if $\gamma \ll 1$, $f \approx 1$, while if $\gamma \gg 1$, then $f \approx 0$.
@@ -434,20 +446,15 @@ Said another way, if we look in a circular region of space of radius $\chi$ over
 we expect to find one mutational origin;
 we denote the probability that this mutation is from standing variation by $\pi_0$.
 Therefore, $\pi_0$ is roughly the proportion of establishing mutations that come from standing variation,
-and it is an elementary consequence of the Poisson process that
+and it is an property of competing Poisson processes that
 \begin{align} \label{eqn:pizero}
     \pi_0 = \lambda_0 \pi \chi^2 .
 \end{align}
-\marginnote{put in value of $\chi$ computed above.}
 (In one dimension, $\pi_0 = 2 \lambda_0 \chi$.)
 
 
-In Figure \ref{Fig-G6PD-charlength} we show the range of characteristic lengths
-as a function 
-calculated for our G6pd parameters. 
-
-In Figure \ref{Fig-G6PD-charlength} we show the range of characteristic lengths
-calculated for our G6pd parameters. 
+In Figure \ref{Fig-G6PD-charlength} we show the range of characteristic lengths as a function 
+of the G6pd parameters. 
 
 \begin{figure}[ht]
 \begin{center}
@@ -479,24 +486,24 @@ We compare this to the corresponding quantity without standing variation (e.g.\ 
 % \end{center}
 % \end{figure}
 
+%%%%%%%%%%% %%%%%%%%%%%%% %%%%%%%%%
+\subsection{Time to adaptation}
 
-\subsection{Standing Variation -- Results} 
 The quantity that is perhaps easiest to compute is the mean time until adaptation.
 If fix ourselves at some geographic location, and let $\tau\ge0$ be the time at which the point is reached by the advantageous mutations.
-Then, as shown in Figure XX,
+Then, as can be seen from Figure~\ref{fig:cartoon},
 $\tau > t$ if and only if the cone with point at $(x,t)$ and slope $v$ extending back to $t=0$ is empty of successful mutations.
 Since we assume these are a Poisson process, 
 \[
     \P\{ \tau > t \} = \exp\left( - \lambda_0 \pi v^2 t^2 - \lambda \pi v^2 t^3 / 3 \right) ,
 \]
-and so we have
+and since $\E[\tau] = \int_0^\infty \P\{ \tau > t \}$,
 \begin{align}
     \E[\tau] % &= \int_0^\infty \P\{ \tau > t \} dt \\
         &= \int_0^\infty \exp\left( - \lambda_0 \pi v^2 t^2 - \lambda \pi v^2 t^3 / 3 \right) dt.
 \end{align}
 For means of evaluting this integral, see Appendix \ref{apx:integrals}.
-
-In Figure \ref{G6PD_chartimes}
+In Figure \ref{G6PD_chartimes} we show the mean time until adaptation for various values of the parameters.
 
 \begin{figure}[ht]
 \begin{center}
@@ -540,10 +547,10 @@ is
 To evaluate this integral, again see Appendix \ref{apx:integrals}.
 
 Furthermore, if we define $a_0$ to be the mean area occupied by a typical standing variant, 
-then $a_0$ is given by the proportion of the range occupied by standing variants over the mean density of unique standing variants,
+then $a_0$ is given by the proportion of the range occupied by standing variants divided by the mean density of unique standing variants,
 i.e.\ $a_0 = z_0 / \lambda_0$.
-We can compare this to the corresponding quantity $a_+$ for a new variant through the formula
-$a_0 / a_+ = z_0 / (1-z_0)$.
+We can solve for $a_+$, the corresponding mean area occupied by a given new variant, 
+using the formula $a_0 / a_+ = z_0 / (1-z_0)$.
 
 In Figure \ref{G6PD_standing_var_proportion} we show the proportion of
 alleles that spread from standing variation, and the proportion of
