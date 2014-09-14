@@ -19,9 +19,8 @@
 % \newcommand{\marginnote}[1]{}
 %\newcommand{\marginnote}[1]{{\it\color{red}(#1)}}
 %\fi
-%% NEED amnat.bst IN REPO
-% \bibliographystyle{amnat}
-\bibliographystyle{plainnat}
+
+\bibliographystyle{amnat}
 
 
 
@@ -435,7 +434,7 @@ On the other hand, if the mutant allele is highly deleterious before $t=0$,
 then the characteristic length is close to the value from \citet{ralphcoop2010}:
 $\chi = ( \sigma / \rho \mu \pi \sqrt{2 s_b} )^{1/3} + O(1/\log(1-s_d))$.
 
-XXX could do calculations as in "panmixia" here, e.g. if $f = (\chi \sqrt{\pi \lambda_0})^2$ then
+XXX could do calculations as in "panmixia" here, e.g.\ if $f = (\chi \sqrt{\pi \lambda_0})^2$ then
 $f = 1-\gamma f^{3/2}$, where
 $\gamma = (4 \pi^{5/2} / \sqrt{2}) \mu^2 s_b^{3/2} \rho^2 / \sigma \log(1/(1-s_d))$.
 Then if $\gamma \ll 1$, $f \approx 1$, while if $\gamma \gg 1$, then $f \approx 0$.
@@ -566,80 +565,82 @@ geographic space covered by standing variants.
 \end{figure}
 
 
-{\tt Simulations:} compare mean density against $s_d$ at different
-values of $\sigma$; omit variability if needed for readability. Compare to panmictic results.
+{\tt Simulations:} 
+compare mean density against $s_d$ at different values of $\sigma$; 
+omit variability if needed for readability. 
+Compare to panmictic results.
 
 
 \subsubsection{Multiple variant types}
 
 One interesting problem that we can seek to address with this work is
-the extent to which the degree of pleiotropy biases the 
+the extent to which the degree of pleiotropy biases 
 adaptation towards the repeated use of particular subset of loci
-(i.e. convergence at genetic level). 
-While many alleles may result in the benefical phenotype, many of
-these may be unlikely to contribute to adaptation due to their
-negative pleiotropic consequences. There are at least two ways that
-negative pleiotropy can contribute to high rates of
-convergence when adapting when a single change is sufficient for
-adaptation. 
-First, negative pleiotropic effects can reduce the overall beneficial
-selection coefficient of an allele in the new environment making them
-unlikely to become established and slow to spread (and in the worst
-case making them deleterious). This effect has been studied by a
-number of authors \citep{}. A second contribution of negative
-pleiotropy to shaping genetic convergence, is that alleles that have
-less negative pleiotropy are more likely to segregate before the
-environmental shift, and so get a head start in contributing to
-adaptation. This effect is seemingly less well studied, perhaps in
-part because many modeling approaches tend to use the strong-selection
-weak mutation limit and so ignore standing variation. \gc{Is this fair?}
+(i.e.\ convergence at genetic level). 
+While many alleles may confer the benefical phenotype, 
+not all will contribute to adaptation if they have negative pleiotropic consequences.
+There are at least two ways that negative pleiotropy can contribute to high rates of convergence 
+when adapting if a single change is sufficient for adaptation. 
+First, negative pleiotropic effects can reduce 
+the overall beneficial selection coefficient of an allele in the new environment,
+making them unlikely to become established and slow to spread 
+(and in the worst case making them deleterious). 
+This effect has been studied by a number of authors \citep{}. 
+A second contribution is that alleles that have
+less negative pleiotropy are more likely to be present as standing variation 
+before the environmental shift.
+This effect seems less well studied, 
+perhaps because many modeling approaches use the strong selection, weak mutation limit 
+and so ignore standing variation. \gc{Is this fair?}
+\plr{well, even in the strong-selection weak-mutation limit you'll have standing variation}
 
 Here we focus primarily on the second effect. 
-Lets imagine for the moment that all classes of beneficial allele have
-the same beneficial selection coefficient. 
+Let's imagine for the moment that all classes of beneficial allele 
+have the same beneficial selection coefficient. 
 Each class of mutations could have its own mutation rate $\mu_j$ and
-have a disadvantage $s_{d,j}$ prior to the switch. As they have the
-same selection coefficient all of the waves travel outward at a rate
-$v$. 
-The the rate of type $k$ standing variants per unit area and the rate of de
-novo variants per unit area per generation are
+have a disadvantage $s_{d,j}$ prior to the switch. 
+As they have the same beneficial selection coefficient after the switch, 
+all of the waves travel outward at a rate $v$. 
+Then the density of type $k$ standing variants per unit area 
+and the input rate of \textit{de novo} variants per unit area per generation are, respectively,
 \begin{align}
-    \lambda_{0,j} = \frac{ 2 \mu_j \rho s_b }{ -\log(1-s_{d,j}) } ; ~~      \lambda_{j} = \mu_j \rho s_b;
+  \lambda_{0,j} = \frac{ 2 \mu_j \rho s_b }{ -\log(1-s_{d,j}) } \qquad \text{and} \qquad    \lambda_{j} = \mu_j \rho s_b .
 \end{align}
 Using these rates it follows that, at the time when every location has been reached by an adaptive allele,
 the proportion of the species range covered by alleles of type $k$ is
 \begin{equation} \label{eqn-prop-space-allele-k}
-    p_k = \int_0^\infty  \big( 2 \lambda_{0,j} \pi v^2 t + \lambda_j
-    \pi v^2 t^3 \big)  \; \exp \left(\sum_k - \lambda_{0,k} \pi v^2 t^2 - \lambda_k \pi v^2 t^3 / 3 \right) dt .
+    p_k = \int_0^\infty  \left( 2 \lambda_{0,k} \pi v^2 t + \lambda_k \pi v^2 t^3 \right)  
+    \; \exp \left( - \sum_j ( \lambda_{0,j} \pi v^2 t^2 + \lambda_j \pi v^2 t^3 / 3 ) \right) dt .
 \end{equation}
 If we only allow standing variation this collapses to 
 \begin{equation}  \label{eqn-prop-space-allele-k-standing-room-only}
-    p_k = \frac{  \mu_j / \log(1-s_{d,j}) }{\sum_k  \mu_k / \log(1-s_{d,k}) }
+    p_k = \frac{  \mu_j / \log(1-s_{d,j}) }{\sum_k  \mu_k / \log(1-s_{d,k}) } ,
 \end{equation}
-while if we only allow new variation, i.e. if all variants are highly
-deleterious before the environment switches, then $p_k =\mu_j / (\sum_k  \mu_k)$
+while if we only allow new variation, 
+i.e.\ if all variants are highly deleterious before the environment switches, 
+then $p_k =\mu_j / (\sum_k  \mu_k)$.
 
-To illustrate some of the properties of this model lets imagine the
-somewhat extreme scenerio that there is a single base-pair where
-a mutation change is relatively free of negative pleiotropy (class $1$), and a
-larger mutational target where changes have more serious pleiotropic
-consequences in the ancestral environment (class $2$). We set $s_{d,1}
-\leq s_{d,2}$ and $\mu_1=1 \times 10^{-8}$, and think of the second
-class mutational target being ten, a hundred, or one thousand base
-pairs. We set  . We show the expected proportion of space covered by
-the rarer class $1$ mutations in Figure \ref{fig-pleiotropy_calc},
-assuming that both classes share a beneficial selection coefficient
-$s_b=0.05$ once the environment switches. 
-Intuitively the contribution of the rarer mutation decreases as the
+To illustrate some of the properties of this model, 
+let's imagine the somewhat extreme scenerio that there is a single base-pair 
+at which a possible mutation is relatively free of negative pleiotropy (call this class $1$), 
+and a larger mutational target where changes 
+have more serious pleiotropic consequences in the ancestral environment (class $2$). 
+We set $s_{d,1} \leq s_{d,2}$ and $\mu_1=1 \times 10^{-8}$, 
+assume that both classes share a beneficial selection coefficient of $s_b=0.05$,
+and think of the second class mutational target being ten, a hundred, or one thousand base pairs. 
+\plr{What is $s_{d,2}$ in figure 7?}
+We show the expected proportion of space covered by
+the rarer, class $1$ mutations in Figure \ref{fig-pleiotropy_calc}.
+Intuitively, the contribution of the rarer mutation decreases as the
 mutational target of the other class becomes larger, and as the
-difference in the negative pleiotropoc consequences of the two classes
-of alleles decreases. The case with standing variation only is the best
-case scenerio for the rarer mutation as we force them to have the same
-advantage in the new environment, so its rate of introduction is
-necessarily lower. However the standing variation only case does seems
-to provide a reasonable rule of thumb. Especially for parameter combinations, higher population densities and
-high dispersal distances, that increase the contribution of standing
-variation (and similarly for high $s_b$). 
+difference in the negative pleiotropic consequences of the two classes of alleles decreases. 
+The case with standing variation only is the best case scenario 
+for the rarer mutation as we force them to have the same advantage in the new environment, 
+so its rate of introduction is necessarily lower. 
+However, the standing variation only case does seem to provide a reasonable rule of thumb. 
+Especially for parameter combinations, 
+higher population densities and high dispersal distances, 
+that increase the contribution of standing variation (and similarly for high $s_b$). 
 
 \begin{figure}[ht]
 \begin{center}
@@ -657,13 +658,13 @@ variation (and similarly for high $s_b$).
 
 In the above (and in \citet{ralphcoop2010}) we have assumed that once the mutation appears,
 conditional on eventual fixation, it begins to spread spatially at speed $v$ instantly,
-effectively neglecting the time it must first spend fixing locally.
+effectively neglecting the time it must first spend escaping demographic stochasticity.
 In \citet{ralphcoop2010} we addressed this by noting that there would be no change at all in our results 
 if all mutations had to wait the same amount of time before fixing locally,
 and that this time was short relative to the time it took the wave to spread across the characteristic length;
 we then showed via simulation that this was reasonable in certain situations.
 In this section we examine this assumption in more detail, although mostly through heuristic arguments,
-and also compare our results above to those of \citet{softsweeps}.
+and also compare our results above to the results without geographic structure of \citet{softsweeps}.
 
 We are assuming that shortly after a new mutation appears, 
 it can be approximated by a branching process growing at rate $s$
@@ -675,7 +676,7 @@ should be something close to $\sigma^2 \rho$
 (i.e.\ Wright's ``local effective population size'' \citep{XXX}).
 Let $Z_t$ be a continuous-time branching process with $Z_0=1$ and $\E[Z_t] = e^{s_b t}$.
 Then we know that there exists a random variable $W$ such that $\lim_{t\to\infty} e^{-s_b t} Z_t = W$ almost surely,
-so that if $\tau$ is the time $Z_t$ reaches size $\sigma^2 \rho$, i.e.\ $\tau = \inf\{ t \ge 0: Z_t > \sigma^2 \rho$,
+so that if $\tau$ is the time $Z_t$ reaches size $\sigma^2 \rho$, % i.e.\ $\tau = \inf\{ t \ge 0: Z_t > \sigma^2 \rho\}$,
 then $\sigma^2 \rho = Z_\tau \approx e^{s_b \tau} W$.
 From this we know that $\tau \approx (1/s_b) (\log (\sigma^2 \rho) - \log W)$;
 although more detailed information is available (e.g.\ a CLT for $\tau$, \citet{XXX}),
@@ -691,7 +692,7 @@ Our model will still be a good approximation, however,
 as long as $T$ is short relative to the time a wave takes to spread between nearby mutational origins.
 This can be worked out,
 but it is simpler to note that if the converse is true, 
-that the process is largely unaffected by spatial structure,
+the process is largely unaffected by spatial structure,
 and so the panmictic model is a good approximation for the true process.
 Since both our spatial model and the panmictic model underestimate the true degree of parallel adaptation,
 it suffices to compare results from the two models to avoid applying the wrong model.
@@ -700,16 +701,19 @@ it suffices to compare results from the two models to avoid applying the wrong m
 % Roughly, if populations are larger than $C/\mu$ for some $C \approx 100$.
 % Compare to panmixia: increases degree of parallel mutation if... ?
 
-\citet{softsweepsII}, it is shown that under a panmictic model with certain assumptions on the parameters,
+\citet{softsweepsII} show that under a panmictic model with certain assumptions on the parameters,
 the number of independent origins due to both standing variation and new mutation seen in a sample of size $n$
 has approximately the Ewens distribution with parameters $n$ and $\theta = 4 N \mu$.
-As $n$ increases, the total number of types seen grows as $\log n$, 
-so the ``mean density of types'' corresponding to our $\lambda_0 + \nu_+$ in their model is infinite.
+As $n$ increases, the total number of types seen grows as $\log n$.
+In our model, we can increase total population size by increasing either the density $\rho$ or the total amount of area.
+In either case, the predicted number of distinct types grows linearly with $n$,
+much faster than under panmixia.
+\plr{note: this had the wrong conclusion here previously}
 \marginnote{Graph: sigma against mean number of origins; different curves for spatial, panmictic (flat), and simulation;
 different values of theta as different line types?  but how to do this?
 Mention Monty's empirical speeds paper.}
-We could compare the probability of parallel adaptation under the two models (see eq'n 18 in \citet{softsweepsII}),
-but this seems less useful than an assessment of the degree of parallel adaptation.
+% We could compare the probability of parallel adaptation under the two models (see eq'n 18 in \citet{softsweepsII}),
+% but this seems less useful than an assessment of the degree of parallel adaptation.
 
 
 % \section{Applications}
@@ -737,144 +741,148 @@ Confusing convergence for local adaptation. Mention skin pigmentation?
 
 \paragraph{}
 Our results are predicated on the idea that adaptive variants are
-initially rare within populations, i.e. they are reasonably
+initially rare within populations, i.e.\ they are reasonably
 deleterious before the environment switches. In constrast, even distant populations could have
 a shared basis of adaptation if they adapt via common variation,
-e.g. previously neutral (or nearly neutral) variation, shared among populations. 
-Our ability to detect such shared convergent events is at the moment
-quite limited. If many loci contributing to variation in a trait, then
-selection on any one allele may be weak allowing them to segregate
-across populations. However, if that
-case populations separated by a reasonable amount of drift may still
+e.g.\ previously neutral (or nearly neutral) variation, shared among populations. 
+Our ability to detect such shared convergent events is at the moment quite limited. 
+If many loci contribute to variation in a trait, then
+selection on any one allele may be weak, allowing adaptation to use different alleels in different populations.
+However, in that case populations separated by a reasonable amount of drift may still
 adapt via different genetic routes, as the constellation of alleles
-best positioned to initially respond to positive selection, i.e. those at
-intermediate frequency, will be somewhat different. Therefore, it
-seems unlikely that polygenic traits are more suspectible to a shared
+best positioned to initially respond to positive selection, 
+i.e.\ those at intermediate frequency, will be somewhat different. 
+\plr{Not sure I follow that.  Ones at intermediate frequency will end up affecting the population mean less
+than ones at low frequency (but above the demographic stochasticity barrier)?}
+Therefore, it seems unlikely that polygenic traits are more suspectible to a shared
 genetic basis to adaptation across populations than simple traits.   
 
 %%Mayr: [t]he steady and high genetic input caused by gene flow is the main factor responsible for genetic cohesion among the populations of a species.
 
 \paragraph{Are species held together by wide-spread selective sweeps?}
-Our results touch on an old debate on the evolutionary coherence of
-species. Mayr and many others have argued that species are coherent
-evolutionary units as they are united by shared gene flow \citep[pages
-521–522 ][]{Mayr:SpeciesEvol}. However, this argument has
-questioned by a number of authors based on relatively high levels of 
-differentiation, and low rates of dispersal, in many species \citep{EhrlichRaven:69,Levin:79}.
-\citet{Rieseberg2001,MorjanRieseberg:04} argued that while gene flow
-may not be high enough to prevent neutral differentiation, species
-should be viewed as being united as levels of gene flow were still
-high enough for selected alleles to spread across the entire species \citep{Ellstrand2014s}.
-Indeed large scale genotyping and sequencing, along with more
-sophisticated methods, are highlighting ever more signals of gene flow
-between populations and species \citep{}.
+Our results touch on an old debate on the evolutionary coherence of species. 
+Mayr and many others have argued that species are coherent
+evolutionary units because they are united by shared gene flow \citep[pages 521–522 ][]{Mayr:SpeciesEvol}. 
+However, this argument has been questioned by a number of authors 
+based on relatively high levels of differentiation, and low rates of dispersal, in many species \citep{EhrlichRaven:69,Levin:79}.
+\citet{Rieseberg2001} and \citet{MorjanRieseberg:04} argued that 
+even if gene flow is not be high enough to prevent neutral differentiation, 
+species should be viewed as being united 
+if levels of gene flow were still high enough for selected alleles to spread across the entire species \citep{Ellstrand2014s}.
+\plr{not clear which of three papers in the last sentence are being cited for what?}
+At present, large scale genotyping and sequencing projects, 
+along with more sophisticated methods, 
+are highlighting ever more signals of gene flow between populations and species \citep{}.
 However, our work on geographic convergent adaptation
-\citep[see also][]{ralph2010parallel,RalphCoop:14} brings the
-conclusion that this gene flow will lead to the rapid spread of
-selected alleles partially into
-question. Our results suggest that species should often adapt to
+\citep[see also][]{ralph2010parallel,RalphCoop:14} 
+concludes that this gene flow will lead to the rapid spread of
+selected alleles partially into question. 
+Our results suggest that species should often adapt to
 wide-spread selection pressures through convergent evolution rather
-than waiting for a single allele to migrate across the range over
-length-scales determined by our characteristic length.
+than waiting for a single allele to migrate across the range.
+% over length-scales determined by our characteristic length.
  
-In support of this idea recent selective sweeps are often
-geographically restricted \citep{}, but see XXX. This is likely in part due to the
-relatively low incidence of wide-spread selection pressures \citep{},
+In support of this idea, recent selective sweeps are often
+geographically restricted \citep{}, but see XXX. 
+This is likely in part due to the relatively low incidence of wide-spread selection pressures \citep{},
 but as noted above even when we know of wide-spread selection
-pressures (e.g. Malaria) the response is usually convergent across large enough
-spatial scales. This view is potentially contradicted by the
-introgression of adaptive alleles across species and sub-species
-boundaries, suggesting that selected alleles do sometimes spread
-despite low migration rates \citep{hedrick2013adaptive}. However, at least some of
-these cases likely reflect the introgression of haplotype complexes
-consisting of multiple tightly linked beneficial
-alleles.  
+pressures (e.g.\ malaria) the response is usually convergent, not shared, across large spatial scales. 
+On the other hand, 
+introgression of adaptive alleles across species and sub-species boundaries, 
+suggests that selected alleles do sometimes spread despite low migration rates \citep{hedrick2013adaptive}.
+However, at least some of these cases 
+are likely caused by introgression of haplotype complexes
+consisting of many, tightly linked, beneficial alleles.  
+\plr{is the following making sense?}
+The important missing piece to these puzzles seems to be an understanding
+of when phenotypes are accessible to mutation to a given species,
+and why they may be accessible to one subspecies and not another.
 
-% \gc{Needed?:} This view is potentially contradicted by the
-% introgression of adaptive alleles across species and sub-species
-% boundaries, suggesting that selected alleles do sometimes spread
-% despute low migration rates \citep{}. However, at least some of
-% these cases reflect the introgression of haplotypes of multiple tightly linked beneficial
-% alleles. Other cases of selective introgression
+% Other cases of selective introgression
 % are concurrent with populations spreading into new environments,
 % and coming in contact with preadapted populations, potentially
 % lessening the chance of convergent adaptation \citep{}.
 
 \paragraph{How then do substitutions occur?}
-If it is rare for gene flow to rapidly spread selected alleles across
-species range, how then do selected alleles ever become fixed within
-species? Repeated bouts of adaptation in particular genomic regions may act 
-push a subset of previously selected alleles to fixation across the
+If it is rare for gene flow to rapidly spread selected alleles across a species range, 
+how then do selected alleles ever become fixed within species? 
+Repeated bouts of adaptation in particular genomic regions may act 
+to push a subset of previously selected alleles to fixation across the
 species range, through the spread of the genetic backgrounds on which they arise.  
 However, it seems likely that this is a slow process compared to the
 initial rapid spread of selected alleles.
+\plr{or, by drift?}
 
 \paragraph{Speciation and extinction as phases of molecular evolution?}
 One potential resolution is that many selected alleles achieve
 fixation, not through their own species-wide spread, but rather
 through subsequent large-scale changes in geographic range size
-induced by extirpation of the species over parts of its range. Such drops in range size may fix, or radically change the
-species-wide frequency, of alleles previously restricted to small portion of a species range. 
-Also many modes of speciation are proposed to occur through a
-geographically-limited subset of populations forming the basis of new species, e.g. the splitting off
-of part of the range through a vicariance event or dispersal of a
-subset of individuals. As such specation will lead to the geographic assorting of
+induced by extirpation of the species over parts of its range. 
+\plr{a.k.a. bottlenecks}
+Such drops in range size may fix, or radically change the species-wide frequency, 
+of alleles previously restricted to small portion of a species range. 
+Furthermore, many modes of speciation are proposed to occur through a
+geographically-limited subset of populations forming the basis of new species, 
+e.g.\ the splitting off of part of the range through a vicariance event 
+or dispersal of a subset of individuals. 
+Therefore, specation will cause geographic assortment of
 polymorphic ancestral variation, again acting to fix variants within
 newly formed species that were previously polymorphic across ancestral species ranges. 
 
-Along somewhat similar lines, Futuyma has argued that much of the adaptive differentiation,
-e.g. adaptation to local conditions, within species maybe ephemeral and
-subject to loss due to local extinction and the mixing following the collapse of population
-structure \citep{Futuyma:10,FUTUYMA:87}. In part this represented a
-response to the pattern of punctuated equilibrium \citep{eldredgegould72}, arguing
-that the observation of stasis and rapid anagensis associated with
-speciation were consistent with micro-evolution \citep[see also ][]{Futuyma:1989editedbook}. 
+\plr{Seems like we should bring in the work on what happens if these locally fixed alleles cause an incompatibility. (and/or speculate about it)}
+
+Along somewhat similar lines, Futuyma has argued that much of the adaptive differentiation within species,
+e.g.\ adaptation to local conditions, 
+may be ephemeral and subject to loss due to local extinction and the mixing 
+following the collapse of population structure \citep{Futuyma:10,FUTUYMA:87}. 
+\plr{"to the pattern of"?}
+In part, this was a response to the pattern of punctuated equilibrium \citep{eldredgegould72}, 
+arguing that the observation of stasis and rapid anagensis associated with speciation 
+were consistent with micro-evolution \citep[see also ][]{Futuyma:1989editedbook}. 
 Futuyma argued that despite rapid adaptation over short time-scales, we
-may observe morphological stasis in the
-fossil record as
-much of this adaptation is lost \citep[see
-also][]{lieberman:96,Eldredge:05}. Furthermore, he suggests that speciation
+may observe morphological stasis in the fossil record as much of this adaptation is lost 
+\citep[see also][]{lieberman:96,Eldredge:05}. 
+Furthermore, he suggests that speciation
 may act as rachet to prevent the loss of differentiation, acting to
-maintain adaptive changes among populations, and prevent their loss by
-interbreeding. At face value the rate of species formation seems too low to
-contribute to this process. However, as \citep{Rosenblum:12}, and many
-others, have argued that in fact the rate of speciation may well be very high,
-but that the majority of incipient species do not persist long due to
-reabsorption or extinction. Repeated bouts of extinction and
-speciation will send waves of alleles
+maintain adaptive changes among populations, and prevent their loss by interbreeding. 
+At face value the rate of species formation seems too low to contribute to this process. 
+However, \citep{Rosenblum:12}, and many others, 
+have argued that the rate of speciation may well be quite high,
+but that the majority of incipient species do not persist long due to reabsorption or extinction. 
+Repeated bouts of extinction and speciation will send waves of alleles
 to fixation along particular lineages. 
 
-While Futuyma and others have advanced these ideas mainly in the
-setting of adaptation to local conditions \citep[particularly local
-communities ][]{} . Much of the recent adaptation that we see as population
-geneticists is likely adaptation to local conditions, but as we have
-shown even wide-spread selection pressures will likely result in
-alleles only spreading locally. The adaptive substitution
-we see along lineages are the alleles that were lucky enough to
-have spread in populations that escaped local extinction, and to have
-avoided being assorted into species that eventually went extinct. 
-Range sizes change rapidly enough that it seems likely that range size
-changes should change substantially over the soujourn time of most
-alleles that will eventually become fixed in the species, as such it
-seems as though . 
+Futuyma and others have advanced these ideas mainly in the
+setting of adaptation to local conditions 
+\citep[particularly local communities ][]{} . 
+Much of the recent adaptation seen by
+population genetics is likely adaptation to local conditions, 
+but as we have shown, even wide-spread selection pressures will likely result in 
+geographically restricted spread of alleles.
+The adaptive substitutions we see along lineages are those alleles 
+lucky enough to have spread in populations that escaped local extinction, 
+and to have avoided being assorted into species that eventually went extinct. 
+\plr{those last two things sound like the same thing}
+Ranges change sufficiently rapidly that
+range size could change substantially over the soujourn time of most alleles 
+that will eventually become fixed in the species, as such it seems as though . 
 
 %Venditti:10, 
 This link between speciation and substitution does not imply that
-substitutions should necessarily be thought of as being clustered at splits in
-inferred phylogenies \citep[see ][for a recent exhange on
-this]{Pennell:14,Venditti:14,Pennell:14B}. 
-We first note that neutral substitutions will be to be unaffected by this process, because they
-will accumulate in a clock like manner along lineages, as dictated by
-the mutation rate, regardless of the geographic details of their
-polymorphic stage. Turning to the accumulation of adaptive
-substitutions, 
-it likely that splits in
-phylogenies are likely only a tiny proportion of all incipient
+substitutions should necessarily be thought of as being clustered at splits in inferred phylogenies 
+\citep[see ][for a recent exhange on this]{Pennell:14,Venditti:14,Pennell:14B}. 
+We first note that neutral substitutions are unaffected by this process, 
+because they accumulate in a clocklike manner along lineages, 
+as dictated by the mutation rate, 
+regardless of the geographic details of their polymorphic stage. 
+Turning to the accumulation of adaptive substitutions, 
+it likely that splits in phylogenies are likely only a tiny proportion of all incipient
 speciation events because extinction rates may be high
-\citep{Rosenblum:12}, such that every lineage has likely past through
+\citep{Rosenblum:12}, such that every lineage has likely passed through
 many ``speciation events'' in addition to the observed ones.
-Futhermore, under this view, spatial polymorphisms may accumulate gradually, in
-geographically restricted populations, between large-scale 
+Futhermore, under this view, 
+spatial polymorphisms may accumulate gradually in geographically restricted populations
+between large-scale 
 biogeographic events leading to their fixation (or indeed loss). 
 Such that the origination process of alleles and their fixation process
 are reasonably uncoupled \citep[in the sense of ][]{Gillespie:94} by the geographic structure.
@@ -883,8 +891,9 @@ are reasonably uncoupled \citep[in the sense of ][]{Gillespie:94} by the geograp
 %substitutions may have arisen long before they reach fixation. 
  
 Nor does this view imply that adaptive evolution or speciation is driven by the
-shifting balance or genetic revolutions \citep{Wright:32,
-  Mayr-genetic-revol:1954}, whereby genetic drift allows
+shifting balance or genetic revolutions 
+\citep{Wright:32, Mayr-genetic-revol:1954}, 
+whereby genetic drift allows
 populations to cross fitness valleys and substitute novel epistatic
 combinations. While geographic lineage sorting via speciation and
 extinction can be thought of as very large-scale genetic drift events,
