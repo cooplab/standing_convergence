@@ -331,9 +331,9 @@ with speed determined by the advantage of heterozygotes when rare.
 %IDEA: could we look at all freq. reports of g6pd and see if male and
 %female freq. diffs support model of sexual-conflict?
 
-The geographic area of Central and Eastern Asia with malaria is on the
-order of $\sim 10$ million $km^2$. In that area there are at least $15$
-common variants \citep{Howes-g6pd-variants} (see Figure \ref{fig-G6PD-map}). 
+The geographic area of Central and Eastern Asia with malaria is 
+on the order of ten million square kilomters.
+In that area there are at least $15$ common variants \citep{Howes-g6pd-variants} (see Figure \ref{fig-G6PD-map}). 
 Therefore, the average width of an area occupied by an allele is $\sqrt{10^7/15} \approx  800$km. 
 The coding region of G6pd is 515 codons long, 
 and around 140 distinct deficiency alleles have been observed. 
@@ -591,8 +591,9 @@ less negative pleiotropy are more likely to be present as standing variation
 before the environmental shift.
 This effect seems less well studied, 
 perhaps because many modeling approaches use the strong selection, weak mutation limit 
-and so ignore standing variation. \gc{Is this fair?}
-\plr{well, even in the strong-selection weak-mutation limit you'll have standing variation}
+and so ignore standing variation. 
+\gc{Is this fair?}
+\plr{Not sure what papers you are thinking of.}
 
 Here we focus primarily on the second effect. 
 Let's imagine for the moment that all classes of beneficial allele 
@@ -621,7 +622,7 @@ i.e.\ if all variants are highly deleterious before the environment switches,
 then $p_k =\mu_j / (\sum_k  \mu_k)$.
 
 To illustrate some of the properties of this model, 
-let's imagine the somewhat extreme scenerio that there is a single base-pair 
+let's imagine the somewhat extreme scenario that there is a single base-pair 
 at which a possible mutation is relatively free of negative pleiotropy (call this class $1$), 
 and a larger mutational target where changes 
 have more serious pleiotropic consequences in the ancestral environment (class $2$). 
@@ -759,10 +760,10 @@ genetic basis to adaptation across populations than simple traits.
 
 %%Mayr: [t]he steady and high genetic input caused by gene flow is the main factor responsible for genetic cohesion among the populations of a species.
 
-\paragraph{Are species held together by wide-spread selective sweeps?}
+\paragraph{Are species held together by widespread selective sweeps?}
 Our results touch on an old debate on the evolutionary coherence of species. 
 Mayr and many others have argued that species are coherent
-evolutionary units because they are united by shared gene flow \citep[pages 521–522 ][]{Mayr:SpeciesEvol}. 
+evolutionary units because they are united by shared gene flow \citep[pages 521--522 ][]{Mayr:SpeciesEvol}. 
 However, this argument has been questioned by a number of authors 
 based on relatively high levels of differentiation, and low rates of dispersal, in many species \citep{EhrlichRaven:69,Levin:79}.
 \citet{Rieseberg2001} and \citet{MorjanRieseberg:04} argued that 
@@ -802,6 +803,38 @@ and why they may be accessible to one subspecies and not another.
 % are concurrent with populations spreading into new environments,
 % and coming in contact with preadapted populations, potentially
 % lessening the chance of convergent adaptation \citep{}.
+
+\plr{added:}
+Even if selective sweeps only bring alleles to fixation locally,
+they are still potentially a stronger homogenizing force
+than neutral mixing through migration.
+We can see this by comparing mean coalescent times.
+Under neutral mixing, the mean number of generations back to the most recent common ancestor
+is on order of the total population size.
+This quantity has not been worked out for a model with simultaneous local sweeps,
+but is close to the ``spatial $\Lambda$-Fleming--Viot'' models of \citet{barton2013modelling},
+in which local sweeps occur independently across the range.
+In these models, the mean number of generations back to the most recent common ancestor for distant samples
+scales with XXX,
+which can be substantially shorter.
+\plr{Maybe I'm forgetting something in their papers -- did they do this? --
+but I think it would be a little bit of work to figure out what parameters to put into their models.}
+Intuitively, we can obtain this as follows:
+suppose that coalescence only occurs during local sweeps,
+which occur at rate $\lambda$
+on a spatial scale such that there are on average $M$ independent origins of the sweep during each bout of adaptation.
+The motion of lineages backwards is not dissimilar to a stepping-stone model with $M$ sites
+that coalesce when they are in the same deme
+with probability dependent on the recombination distance to the sweeping, selected site.
+The mean hitting time of two independent random walks on a graph with $M$ nodes is of order $M$;
+to get the mean number of generations until coalescence, 
+we must divide this by the probability of remaining linked to the selected site as it sweeps
+and by the frequency of selected sites.
+Since $M$ scales proportionally to population density $\rho$,
+coalescent times do as well,
+but possibly with a much smaller coefficient
+(due effectively to an increase in reproductive variance).
+
 
 \paragraph{How then do substitutions occur?}
 If it is rare for gene flow to rapidly spread selected alleles across a species range, 
@@ -882,8 +915,7 @@ speciation events because extinction rates may be high
 many ``speciation events'' in addition to the observed ones.
 Futhermore, under this view, 
 spatial polymorphisms may accumulate gradually in geographically restricted populations
-between large-scale 
-biogeographic events leading to their fixation (or indeed loss). 
+between large-scale biogeographic events leading to their fixation (or indeed loss). 
 Such that the origination process of alleles and their fixation process
 are reasonably uncoupled \citep[in the sense of ][]{Gillespie:94} by the geographic structure.
 
