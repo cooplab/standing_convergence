@@ -81,13 +81,14 @@ clean :
 
 
 # make pdfs locally
-$(DISPLAYDIR)/%.pdf : %.tex %.bbl
+$(DISPLAYDIR)/%.pdf : %.tex $(DISPLAYDIR)/%.bbl
 	while ( pdflatex -output-directory $(DISPLAYDIR) $<;  grep -q "Rerun to get cross" $(DISPLAYDIR)/$*.log ) do true ; done
 
-%.bbl : %.tex
-	pdflatex $<
-	-bibtex $*.aux
+%.bbl : %.aux
+	-bibtex $<
 
+$(DISPLAYDIR)/%.aux : %.tex
+	pdflatex -output-directory $(DISPLAYDIR) $<
 
 ###
 # latexml stuff
