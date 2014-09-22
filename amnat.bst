@@ -1,14 +1,9 @@
 %%
-<<<<<<< HEAD
 %% This is file `amnat.bst',
-=======
-%% This is file `amnatnat.bst',
->>>>>>> FETCH_HEAD
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-<<<<<<< HEAD
 %% merlin.mbs  (with options: `head,ay,nat,vonx,nm-rev,jnrlst,aunm-semi,nmfted,keyxyr,dt-beg,yr-per,yrp-col,note-yr,jttl-rm,num-xser,jnm-x,btit-rm,bt-rm,edpar,edby-parc,in-x,xedn,amper,and-xcom,nfss,,{}')
 %% ../biojour.mbs  (with options: `ay,nat,vonx,nm-rev,jnrlst,aunm-semi,nmfted,keyxyr,dt-beg,yr-per,yrp-col,note-yr,jttl-rm,num-xser,jnm-x,btit-rm,bt-rm,edpar,edby-parc,in-x,xedn,amper,and-xcom,nfss,,{}')
 %% merlin.mbs  (with options: `tail,ay,nat,vonx,nm-rev,jnrlst,aunm-semi,nmfted,keyxyr,dt-beg,yr-per,yrp-col,note-yr,jttl-rm,num-xser,jnm-x,btit-rm,bt-rm,edpar,edby-parc,in-x,xedn,amper,and-xcom,nfss,,{}')
@@ -16,13 +11,6 @@
 %% *** This is PhD style ***
 %% 
 %% Copyright 1994-2004 Patrick W Daly
-=======
-%% merlin.mbs  (with options: `ay,nat,nm-rev1,jnrlst,nmdash,nmd-3,xlab-it,keyxyr,dt-beg,yr-per,note-yr,jttl-rm,thtit-a,vnum-x,num-xser,jnm-x,btit-rm,bt-rm,pre-edn,in-it,ed,abr,ednx,ord,and-com,etal-xc,nfss,')
-%% ----------------------------------------
-%% *** Style file for _American Naturalist_. ***
-%% 
-%% Copyright 1994-2007 Patrick W Daly
->>>>>>> FETCH_HEAD
  % ===============================================================
  % IMPORTANT NOTICE:
  % This bibliographic style (bst) file has been generated from one or
@@ -34,11 +22,7 @@
  % version 1 of the License, or any later version.
  % ===============================================================
  % Name and version information of the main mbs file:
-<<<<<<< HEAD
  % \ProvidesFile{merlin.mbs}[2004/02/09 4.13 (PWD, AO, DPC)]
-=======
- % \ProvidesFile{merlin.mbs}[2007/04/24 4.20 (PWD, AO, DPC)]
->>>>>>> FETCH_HEAD
  %   For use with BibTeX version 0.99a or later
  %-------------------------------------------------------------------
  % This bibliography style file is intended for texts in ENGLISH
@@ -165,12 +149,8 @@ FUNCTION {add.blank}
 
 FUNCTION {date.block}
 {
-<<<<<<< HEAD
   ":" *
   add.blank
-=======
-  new.block
->>>>>>> FETCH_HEAD
 }
 
 FUNCTION {not}
@@ -231,43 +211,25 @@ FUNCTION {bbl.etal}
 { "et~al." }
 
 FUNCTION {bbl.editors}
-<<<<<<< HEAD
 { "editors" }
 
 FUNCTION {bbl.editor}
 { "editor" }
-=======
-{ "eds." }
-
-FUNCTION {bbl.editor}
-{ "ed." }
->>>>>>> FETCH_HEAD
 
 FUNCTION {bbl.edby}
 { "edited by" }
 
 FUNCTION {bbl.edition}
-<<<<<<< HEAD
 { "edition" }
 
 FUNCTION {bbl.volume}
 { "volume" }
-=======
-{ "ed." }
-
-FUNCTION {bbl.volume}
-{ "vol." }
->>>>>>> FETCH_HEAD
 
 FUNCTION {bbl.of}
 { "of" }
 
 FUNCTION {bbl.number}
-<<<<<<< HEAD
 { "number" }
-=======
-{ "no." }
->>>>>>> FETCH_HEAD
 
 FUNCTION {bbl.nr}
 { "no." }
@@ -282,7 +244,6 @@ FUNCTION {bbl.page}
 { "page" }
 
 FUNCTION {bbl.chapter}
-<<<<<<< HEAD
 { "chapter" }
 
 FUNCTION {bbl.techrep}
@@ -290,20 +251,10 @@ FUNCTION {bbl.techrep}
 
 FUNCTION {bbl.mthesis}
 { "Master's thesis" }
-=======
-{ "chap." }
-
-FUNCTION {bbl.techrep}
-{ "Tech. Rep." }
-
-FUNCTION {bbl.mthesis}
-{ "M.S. thesis" }
->>>>>>> FETCH_HEAD
 
 FUNCTION {bbl.phdthesis}
 { "Ph.D. thesis" }
 
-<<<<<<< HEAD
 MACRO {jan} {"January"}
 
 MACRO {feb} {"February"}
@@ -6606,80 +6557,6 @@ MACRO {ProcRoyalSocEdinburgh} {"Proceedings of the Royal Society of Edinburgh"}
 MACRO {newKey} {"full name"}
 MACRO {newKey2} {"full name"}
 %% Copyright 1994-2004 Patrick W Daly
-=======
-FUNCTION {bbl.first}
-{ "1st" }
-
-FUNCTION {bbl.second}
-{ "2nd" }
-
-FUNCTION {bbl.third}
-{ "3rd" }
-
-FUNCTION {bbl.fourth}
-{ "4th" }
-
-FUNCTION {bbl.fifth}
-{ "5th" }
-
-FUNCTION {bbl.st}
-{ "st" }
-
-FUNCTION {bbl.nd}
-{ "nd" }
-
-FUNCTION {bbl.rd}
-{ "rd" }
-
-FUNCTION {bbl.th}
-{ "th" }
-
-MACRO {jan} {"Jan."}
-
-MACRO {feb} {"Feb."}
-
-MACRO {mar} {"Mar."}
-
-MACRO {apr} {"Apr."}
-
-MACRO {may} {"May"}
-
-MACRO {jun} {"Jun."}
-
-MACRO {jul} {"Jul."}
-
-MACRO {aug} {"Aug."}
-
-MACRO {sep} {"Sep."}
-
-MACRO {oct} {"Oct."}
-
-MACRO {nov} {"Nov."}
-
-MACRO {dec} {"Dec."}
-
-FUNCTION {eng.ord}
-{ duplicate$ "1" swap$ *
-  #-2 #1 substring$ "1" =
-     { bbl.th * }
-     { duplicate$ #-1 #1 substring$
-       duplicate$ "1" =
-         { pop$ bbl.st * }
-         { duplicate$ "2" =
-             { pop$ bbl.nd * }
-             { "3" =
-                 { bbl.rd * }
-                 { bbl.th * }
-               if$
-             }
-           if$
-          }
-       if$
-     }
-   if$
-}
-
->>>>>>> FETCH_HEAD
 MACRO {acmcs} {"ACM Computing Surveys"}
 
 MACRO {acta} {"Acta Informatica"}
@@ -6756,17 +6633,9 @@ FUNCTION {bibinfo.warn}
     }
   if$
 }
-<<<<<<< HEAD
 STRINGS  { bibinfo}
 INTEGERS { nameptr namesleft numnames }
 
-=======
-INTEGERS { nameptr namesleft numnames }
-
-
-STRINGS  { bibinfo}
-
->>>>>>> FETCH_HEAD
 FUNCTION {format.names}
 { 'bibinfo :=
   duplicate$ empty$ 'skip$ {
@@ -6777,44 +6646,25 @@ FUNCTION {format.names}
   numnames 'namesleft :=
     { namesleft #0 > }
     { s nameptr
-<<<<<<< HEAD
       "{vv~}{ll}{, f.}{, jj}"
-=======
-      duplicate$ #1 >
-        { "{f.~}{vv~}{ll}{, jj}" }
-        { "{vv~}{ll}{, f.}{, jj}" }
-      if$
->>>>>>> FETCH_HEAD
       format.name$
       bibinfo bibinfo.check
       't :=
       nameptr #1 >
         {
           namesleft #1 >
-<<<<<<< HEAD
             { "; " * t * }
-=======
-            { ", " * t * }
->>>>>>> FETCH_HEAD
             {
               s nameptr "{ll}" format.name$ duplicate$ "others" =
                 { 't := }
                 { pop$ }
               if$
-<<<<<<< HEAD
-=======
-              "," *
->>>>>>> FETCH_HEAD
               t "others" =
                 {
                   " " * bbl.etal *
                 }
                 {
-<<<<<<< HEAD
                   "\&"
-=======
-                  bbl.and
->>>>>>> FETCH_HEAD
                   space.word * t *
                 }
               if$
@@ -6847,35 +6697,19 @@ FUNCTION {format.names.ed}
       nameptr #1 >
         {
           namesleft #1 >
-<<<<<<< HEAD
             { "; " * t * }
-=======
-            { ", " * t * }
->>>>>>> FETCH_HEAD
             {
               s nameptr "{ll}" format.name$ duplicate$ "others" =
                 { 't := }
                 { pop$ }
               if$
-<<<<<<< HEAD
-=======
-              numnames #2 >
-              t "others" = not and
-                { "," * }
-                'skip$
-              if$
->>>>>>> FETCH_HEAD
               t "others" =
                 {
 
                   " " * bbl.etal *
                 }
                 {
-<<<<<<< HEAD
                   "\&"
-=======
-                  bbl.and
->>>>>>> FETCH_HEAD
                   space.word * t *
                 }
               if$
@@ -6906,15 +6740,9 @@ FUNCTION {get.bbl.editor}
 FUNCTION {format.editors}
 { editor "editor" format.names duplicate$ empty$ 'skip$
     {
-<<<<<<< HEAD
       " " *
       get.bbl.editor
    "(" swap$ * ")" *
-=======
-      "," *
-      " " *
-      get.bbl.editor
->>>>>>> FETCH_HEAD
       *
     }
   if$
@@ -6969,15 +6797,7 @@ FUNCTION {format.full.names}
                   " " * bbl.etal *
                 }
                 {
-<<<<<<< HEAD
                   "\&"
-=======
-                  numnames #2 >
-                    { "," * }
-                    'skip$
-                  if$
-                  bbl.and
->>>>>>> FETCH_HEAD
                   space.word * t *
                 }
               if$
@@ -7084,20 +6904,8 @@ FUNCTION {n.dashify}
   while$
 }
 
-<<<<<<< HEAD
 FUNCTION {word.in}
 { "" }
-=======
-FUNCTION {capword.in}
-{ bbl.in capitalize
-  emphasize
-  " " * }
-
-FUNCTION {word.in}
-{ bbl.in 
-  emphasize
-  " " * }
->>>>>>> FETCH_HEAD
 
 FUNCTION {format.date}
 { year "year" bibinfo.check duplicate$ empty$
@@ -7159,69 +6967,10 @@ FUNCTION {format.number.series}
     { "" }
   if$
 }
-<<<<<<< HEAD
-=======
-FUNCTION {is.num}
-{ chr.to.int$
-  duplicate$ "0" chr.to.int$ < not
-  swap$ "9" chr.to.int$ > not and
-}
-
-FUNCTION {extract.num}
-{ duplicate$ 't :=
-  "" 's :=
-  { t empty$ not }
-  { t #1 #1 substring$
-    t #2 global.max$ substring$ 't :=
-    duplicate$ is.num
-      { s swap$ * 's := }
-      { pop$ "" 't := }
-    if$
-  }
-  while$
-  s empty$
-    'skip$
-    { pop$ s }
-  if$
-}
-
-FUNCTION {convert.edition}
-{ extract.num "l" change.case$ 's :=
-  s "first" = s "1" = or
-    { bbl.first 't := }
-    { s "second" = s "2" = or
-        { bbl.second 't := }
-        { s "third" = s "3" = or
-            { bbl.third 't := }
-            { s "fourth" = s "4" = or
-                { bbl.fourth 't := }
-                { s "fifth" = s "5" = or
-                    { bbl.fifth 't := }
-                    { s #1 #1 substring$ is.num
-                        { s eng.ord 't := }
-                        { edition 't := }
-                      if$
-                    }
-                  if$
-                }
-              if$
-            }
-          if$
-        }
-      if$
-    }
-  if$
-  t
-}
->>>>>>> FETCH_HEAD
 
 FUNCTION {format.edition}
 { edition duplicate$ empty$ 'skip$
     {
-<<<<<<< HEAD
-=======
-      convert.edition
->>>>>>> FETCH_HEAD
       output.state mid.sentence =
         { "l" }
         { "t" }
@@ -7251,26 +7000,6 @@ FUNCTION {multi.page.check}
   while$
   multiresult
 }
-<<<<<<< HEAD
-=======
-FUNCTION {format.cappages}
-{ pages duplicate$ empty$ 'skip$
-    { duplicate$ multi.page.check
-        {
-          bbl.pages capitalize swap$
-          n.dashify
-        }
-        {
-          bbl.page capitalize swap$
-        }
-      if$
-      tie.or.space.prefix
-      "pages" bibinfo.check
-      * *
-    }
-  if$
-}
->>>>>>> FETCH_HEAD
 FUNCTION {format.pages}
 { pages duplicate$ empty$ 'skip$
     { duplicate$ multi.page.check
@@ -7322,7 +7051,6 @@ FUNCTION {format.vol.num.pages}
       "volume" bibinfo.check
     }
   if$
-<<<<<<< HEAD
   number "number" bibinfo.check duplicate$ empty$ 'skip$
     {
       swap$ duplicate$ empty$
@@ -7333,8 +7061,6 @@ FUNCTION {format.vol.num.pages}
       "(" swap$ * ")" *
     }
   if$ *
-=======
->>>>>>> FETCH_HEAD
   eid empty$
     { format.journal.pages }
     { format.journal.eid }
@@ -7361,72 +7087,21 @@ FUNCTION {format.chapter.pages}
   if$
 }
 
-<<<<<<< HEAD
-=======
-FUNCTION {format.capchapter.pages}
-{ chapter empty$
-    'format.cappages
-    { type empty$
-        { bbl.chapter capitalize }
-        { type "l" change.case$ capitalize
-          "type" bibinfo.check
-        }
-      if$
-      chapter tie.or.space.prefix
-      "chapter" bibinfo.check
-      * *
-      pages empty$
-        'skip$
-        { ", " * format.pages * }
-      if$
-    }
-  if$
-}
-
->>>>>>> FETCH_HEAD
 FUNCTION {format.booktitle}
 {
   booktitle "booktitle" bibinfo.check
 }
-<<<<<<< HEAD
-=======
-FUNCTION {format.capin.ed.booktitle}
-{ format.booktitle duplicate$ empty$ 'skip$
-    {
-      editor "editor" format.names.ed duplicate$ empty$ 'pop$
-        {
-          "," *
-          " " *
-          get.bbl.editor
-          ", " *
-          * swap$
-          * }
-      if$
-      capword.in swap$ *
-    }
-  if$
-}
->>>>>>> FETCH_HEAD
 FUNCTION {format.in.ed.booktitle}
 { format.booktitle duplicate$ empty$ 'skip$
     {
       editor "editor" format.names.ed duplicate$ empty$ 'pop$
         {
-<<<<<<< HEAD
           bbl.edby
           " " * swap$ *
           "(" swap$ * ")" *
           swap$
           "," *
           " " * swap$
-=======
-          "," *
-          " " *
-          get.bbl.editor
-          %", " *
-          " " *
-          * swap$
->>>>>>> FETCH_HEAD
           * }
       if$
       word.in swap$ *
@@ -7455,21 +7130,13 @@ FUNCTION {format.tr.number}
 }
 FUNCTION {format.article.crossref}
 {
-<<<<<<< HEAD
   word.in
-=======
-  capword.in
->>>>>>> FETCH_HEAD
   " \cite{" * crossref * "}" *
 }
 FUNCTION {format.book.crossref}
 { volume duplicate$ empty$
     { "empty volume in " cite$ * "'s crossref of " * crossref * warning$
-<<<<<<< HEAD
       pop$ word.in
-=======
-      pop$ capword.in
->>>>>>> FETCH_HEAD
     }
     { bbl.volume
       capitalize
@@ -7480,11 +7147,7 @@ FUNCTION {format.book.crossref}
 }
 FUNCTION {format.incoll.inproc.crossref}
 {
-<<<<<<< HEAD
   word.in
-=======
-  capword.in
->>>>>>> FETCH_HEAD
   " \cite{" * crossref * "}" *
 }
 FUNCTION {format.org.or.pub}
@@ -7514,31 +7177,10 @@ FUNCTION {format.organization.address}
 { organization "organization" bibinfo.check format.org.or.pub
 }
 
-<<<<<<< HEAD
-=======
-STRINGS {oldname}
-
-FUNCTION {name.or.dash}
-{ 's :=
-   oldname empty$
-     { s 'oldname := s }
-     { s oldname =
-         { "---{}---{}---" }
-         { s 'oldname := s }
-       if$
-     }
-   if$
-}
-
->>>>>>> FETCH_HEAD
 FUNCTION {article}
 { output.bibitem
   format.authors "author" output.check
   author format.key output
-<<<<<<< HEAD
-=======
-  name.or.dash
->>>>>>> FETCH_HEAD
   format.date "year" output.check
   date.block
   format.title "title" output.check
@@ -7564,15 +7206,8 @@ FUNCTION {book}
   author empty$
     { format.editors "author and editor" output.check
       editor format.key output
-<<<<<<< HEAD
     }
     { format.authors output.nonnull
-=======
-      name.or.dash
-    }
-    { format.authors output.nonnull
-      name.or.dash
->>>>>>> FETCH_HEAD
       crossref missing$
         { "author and editor" editor either.or.check }
         'skip$
@@ -7586,10 +7221,6 @@ FUNCTION {book}
     { format.bvolume output
       new.block
       format.number.series output
-<<<<<<< HEAD
-=======
-      format.edition output
->>>>>>> FETCH_HEAD
       new.sentence
       format.publisher.address output
     }
@@ -7598,10 +7229,7 @@ FUNCTION {book}
       format.book.crossref output.nonnull
     }
   if$
-<<<<<<< HEAD
   format.edition output
-=======
->>>>>>> FETCH_HEAD
   new.block
   format.note output
   fin.entry
@@ -7610,10 +7238,6 @@ FUNCTION {booklet}
 { output.bibitem
   format.authors output
   author format.key output
-<<<<<<< HEAD
-=======
-  name.or.dash
->>>>>>> FETCH_HEAD
   format.date "year" output.check
   date.block
   format.title "title" output.check
@@ -7630,15 +7254,8 @@ FUNCTION {inbook}
   author empty$
     { format.editors "author and editor" output.check
       editor format.key output
-<<<<<<< HEAD
     }
     { format.authors output.nonnull
-=======
-      name.or.dash
-    }
-    { format.authors output.nonnull
-      name.or.dash
->>>>>>> FETCH_HEAD
       crossref missing$
         { "author and editor" editor either.or.check }
         'skip$
@@ -7654,10 +7271,6 @@ FUNCTION {inbook}
       format.chapter.pages "chapter and pages" output.check
       new.block
       format.number.series output
-<<<<<<< HEAD
-=======
-      format.edition output
->>>>>>> FETCH_HEAD
       new.sentence
       format.publisher.address output
     }
@@ -7667,10 +7280,7 @@ FUNCTION {inbook}
       format.book.crossref output.nonnull
     }
   if$
-<<<<<<< HEAD
   format.edition output
-=======
->>>>>>> FETCH_HEAD
   new.block
   format.note output
   fin.entry
@@ -7680,16 +7290,11 @@ FUNCTION {incollection}
 { output.bibitem
   format.authors "author" output.check
   author format.key output
-<<<<<<< HEAD
-=======
-  name.or.dash
->>>>>>> FETCH_HEAD
   format.date "year" output.check
   date.block
   format.title "title" output.check
   new.block
   crossref missing$
-<<<<<<< HEAD
     { format.in.ed.booktitle "booktitle" output.check
       format.bvolume output
       format.number.series output
@@ -7697,18 +7302,6 @@ FUNCTION {incollection}
       new.sentence
       format.publisher.address output
       format.edition output
-=======
-    { pages empty$
-      { format.capin.ed.booktitle "booktitle" output.check }
-      { format.capchapter.pages output add.blank
-        format.in.ed.booktitle "booktitle" output.check }
-      if$
-      format.bvolume output
-      format.number.series output
-      format.edition output
-      new.sentence
-      format.publisher.address output
->>>>>>> FETCH_HEAD
     }
     { format.incoll.inproc.crossref output.nonnull
       format.chapter.pages output
@@ -7722,30 +7315,15 @@ FUNCTION {inproceedings}
 { output.bibitem
   format.authors "author" output.check
   author format.key output
-<<<<<<< HEAD
-=======
-  name.or.dash
->>>>>>> FETCH_HEAD
   format.date "year" output.check
   date.block
   format.title "title" output.check
   new.block
   crossref missing$
-<<<<<<< HEAD
     { format.in.ed.booktitle "booktitle" output.check
       format.bvolume output
       format.number.series output
       format.pages output
-=======
-    { pages empty$ 
-      { format.capin.ed.booktitle "booktitle" output.check }
-      { format.cappages output add.blank
-        format.in.ed.booktitle "booktitle" output.check }
-      if$
-      new.block
-      format.bvolume capitalize output
-      format.number.series output
->>>>>>> FETCH_HEAD
       new.sentence
       publisher empty$
         { format.organization.address output }
@@ -7767,10 +7345,6 @@ FUNCTION {manual}
 { output.bibitem
   format.authors output
   author format.key output
-<<<<<<< HEAD
-=======
-  name.or.dash
->>>>>>> FETCH_HEAD
   format.date "year" output.check
   date.block
   format.btitle "title" output.check
@@ -7787,23 +7361,12 @@ FUNCTION {mastersthesis}
 { output.bibitem
   format.authors "author" output.check
   author format.key output
-<<<<<<< HEAD
   format.date "year" output.check
   date.block
   format.btitle
   "title" output.check
   new.block
   bbl.mthesis format.thesis.type output.nonnull
-=======
-  name.or.dash
-  format.date "year" output.check
-  date.block
-  format.title
-  "title" output.check
-  new.block
-  bbl.mthesis format.thesis.type output.nonnull
-  new.block
->>>>>>> FETCH_HEAD
   school "school" bibinfo.warn output
   address "address" bibinfo.check output
   new.block
@@ -7815,10 +7378,6 @@ FUNCTION {misc}
 { output.bibitem
   format.authors output
   author format.key output
-<<<<<<< HEAD
-=======
-  name.or.dash
->>>>>>> FETCH_HEAD
   format.date "year" output.check
   date.block
   format.title output
@@ -7832,23 +7391,12 @@ FUNCTION {phdthesis}
 { output.bibitem
   format.authors "author" output.check
   author format.key output
-<<<<<<< HEAD
   format.date "year" output.check
   date.block
   format.btitle
   "title" output.check
   new.block
   bbl.phdthesis format.thesis.type output.nonnull
-=======
-  name.or.dash
-  format.date "year" output.check
-  date.block
-  format.title
-  "title" output.check
-  new.block
-  bbl.phdthesis format.thesis.type output.nonnull
-  new.block
->>>>>>> FETCH_HEAD
   school "school" bibinfo.warn output
   address "address" bibinfo.check output
   new.block
@@ -7860,10 +7408,6 @@ FUNCTION {proceedings}
 { output.bibitem
   format.editors output
   editor format.key output
-<<<<<<< HEAD
-=======
-  name.or.dash
->>>>>>> FETCH_HEAD
   format.date "year" output.check
   date.block
   format.btitle "title" output.check
@@ -7885,10 +7429,6 @@ FUNCTION {techreport}
 { output.bibitem
   format.authors "author" output.check
   author format.key output
-<<<<<<< HEAD
-=======
-  name.or.dash
->>>>>>> FETCH_HEAD
   format.date "year" output.check
   date.block
   format.title
@@ -7906,10 +7446,6 @@ FUNCTION {unpublished}
 { output.bibitem
   format.authors "author" output.check
   author format.key output
-<<<<<<< HEAD
-=======
-  name.or.dash
->>>>>>> FETCH_HEAD
   format.date "year" output.check
   date.block
   format.title "title" output.check
@@ -7948,11 +7484,7 @@ FUNCTION {format.lab.names}
             {
               " " * bbl.etal *
             }
-<<<<<<< HEAD
             { " \& " * s #2 "{vv~}{ll}" format.name$
-=======
-            { bbl.and space.word * s #2 "{vv~}{ll}" format.name$
->>>>>>> FETCH_HEAD
               * }
           if$
         }
@@ -8034,11 +7566,7 @@ FUNCTION {sort.format.names}
   numnames 'namesleft :=
     { namesleft #0 > }
     { s nameptr
-<<<<<<< HEAD
       "{ll{ }}{  f{ }}{  jj{ }}"
-=======
-      "{vv{ } }{ll{ }}{  f{ }}{  jj{ }}"
->>>>>>> FETCH_HEAD
       format.name$ 't :=
       nameptr #1 >
         {
@@ -8163,10 +7691,6 @@ FUNCTION {reverse.pass}
   if$
   extra.label 'next.extra :=
   extra.label
-<<<<<<< HEAD
-=======
-  emphasize
->>>>>>> FETCH_HEAD
   duplicate$ empty$
     'skip$
     { "{\natexlab{" swap$ * "}}" * }
@@ -8213,8 +7737,4 @@ FUNCTION {end.bib}
 EXECUTE {end.bib}
 %% End of customized bst file
 %%
-<<<<<<< HEAD
 %% End of file `amnat.bst'.
-=======
-%% End of file `amnatnat.bst'.
->>>>>>> FETCH_HEAD

@@ -7,7 +7,7 @@ my.col<-wes.palette(5, "Darjeeling")  #wes.palette(2, "Royal1")
 
 
 ###################################################
-###################Char length as function of sd
+###################Char length as function of sb
 ###################################################
 
  mu=1e-6; rhos=c(0.2,2); sd=0.05; sbvals=seq(0.001,0.3,length=800); 
@@ -65,9 +65,9 @@ for(j in 1:2){
  	}
  	
 dev.copy2pdf(file="~/Dropbox/postdocs/Peter/standing_parallelism/G6PD_charlengths.pdf")
- 
+
 ###############################################################
-####Mean time standing
+####Mean time standing as func. of sd
 ###############################################################
  layout(t(1:2))
 par(mar=c(4,4.1,2,0.3))
@@ -95,6 +95,54 @@ for(j in 1:2){
  	}
  	
 dev.copy2pdf(file="~/Dropbox/postdocs/Peter/standing_parallelism/G6PD_chartimes.pdf")
+
+
+###############################################################
+####Mean time standing as func. of sd & sb
+###############################################################
+ layout(t(1:2))
+par(mar=c(4,4.1,2,0.3))
+ mu=1e-6; rhos=c(0.2,2); sd=0.05; sbvals=seq(0.001,0.3,length=800); 
+
+for(j in 1:2){
+	rho=rhos[j]
+	if(j == 1) {	plot(sdvals,sdvals,type="n",ylim=c(0,250),lwd=2,col=my.col[1],xlab=expression(s[d]),ylab="Generations",cex.lab=1.5,cex.axis=1.5,main=expression(rho==0.2))
+		}
+	if(j == 2){ plot(sdvals,sdvals,type="n",ylim=c(0,250),lwd=2,col=my.col[1],xlab=expression(s[b]),ylab="",cex.lab=1.5,cex.axis=1.5,main=expression(rho==0.2))
+}	
+
+	for(i in 1:3){
+		if(j == 1){ 
+			sigma=sigmas[i]; 
+			charlength.sd<-sapply(sdvals, function (sd) {  meanTime(mu, rho, sb, sd, sigma)$value } )
+			 lines(sdvals,charlength.sd,lwd=2,col=my.col[i])
+		 	abline(h= meanTime(mu, rho, sb, sd=1, sigma)$value,col=my.col[i],lwd=2,lty=2)  ##new mut. only
+ 		 	charlength.sd<-sapply(sdvals, function (sd) {  meanTime(mu, rho, sb, sd, sigma,include.new=FALSE)$value } )
+	 		lines(sdvals,charlength.sd,lwd=2,lty=3,col=my.col[i])
+		}
+
+		if(j == 2){ 
+			sigma=sigmas[i]; 
+			charlength.sb<-sapply(sbvals, function (sb) {  meanTime(mu, rho, sb, sd=sd, sigma)$value } )
+			 lines(sbvals,charlength.sb,lwd=2,col=my.col[i])
+
+			charlength.sb<-sapply(sbvals, function (sb) {  meanTime(mu, rho, sb, sd=1, sigma)$value } )
+			lines(sbvals,charlength.sb,col=my.col[i],lwd=2,lty=2)  ##new mut. only
+
+ 		 	charlength.sb<-sapply(sbvals, function (sb) {  meanTime(mu, rho, sb, sd, sigma,include.new=FALSE)$value } )
+	 		lines(sbvals,charlength.sb,lwd=2,lty=3,col=my.col[i])
+		}
+	
+	}
+	
+
+#	 charlength.standing.only<-sapply(sdvals, function (sd) {  oldCharLength(mu, rho, sb, sd, sigma)$value})
+#	 lines(sdvals,charlength.standing.only ,lwd=2,col="black",lty=3)
+	  if(j == 2) legend("topright",col=c("grey","grey","grey",my.col[1:3]),lty=c(2,3,1,rep(NA,3)),pch=c(NA,NA,NA,rep(19,3)),legend= as.expression( c("No Standing var.","No new mut.","Both",
+	 	lapply(sigmas , function(x){  {substitute( sigma==myS, list(myS=x) )} }))))
+ 	}
+ 	
+dev.copy2pdf(file="~/Dropbox/postdocs/Peter/standing_parallelism/G6PD_chartimes_sd_sb.pdf")
 
  
 ###############################################################
