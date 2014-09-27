@@ -10,27 +10,27 @@ my.col<-wes.palette(5, "Darjeeling")  #wes.palette(2, "Royal1")
 ###################Char length as function of sb
 ###################################################
 
- mu=1e-6; rhos=c(0.2,2); sd=0.05; sbvals=seq(0.001,0.3,length=800); 
+ mu=1e-6; rhos=c(0.2,2); sd=0.05; sbvals=seq(0.00001,0.3,length=1600); 
 
 sigmas=c(100,50,10)
 
 layout(t(1:2))
-par(mar=c(4,4.1,2,0.3))
+par(mar=c(4,4.1,2,0.5))
 for(j in 1:2){
 	rho=rhos[j]
 	if(j == 1) plot(sbvals,sbvals,type="n",ylim=c(100,1500),lwd=2,col=my.col[1],xlab=expression(s[b]),ylab=expression(chi),cex.lab=1.5,cex.axis=1.4,main=expression(rho==0.2))
 	if(j == 2) plot(sbvals,sbvals,type="n",ylim=c(100,800),lwd=2,col=my.col[1],xlab=expression(s[b]),ylab="",cex.lab=1.5,cex.axis=1.4,main=expression(rho==2))
 	for(i in 1:3){
 	sigma=sigmas[i]; charlength.sb<-sapply(sbvals, function (sb) { charLength(mu,rho,sb,sd=sd,sigma)$value } )
-	 lines(sdvals,charlength.sb,lwd=2,col=my.col[i]); 
+	 lines(sbvals,charlength.sb,lwd=2,col=my.col[i]); 
 	 
 	 charlength.new.only<-sapply(sbvals, function (sb) {  newCharLength(mu, rho, sb, sd=NA, sigma)$value})
-	 lines(sdvals,charlength.new.only,col=my.col[i],lwd=2,lty=2)  ##new mut. only
+	 lines(sbvals,charlength.new.only,col=my.col[i],lwd=2,lty=2)  ##new mut. only
 	}
 	 ##contribution of standing var only, i.e. old variation
 	 charlength.standing.only<-sapply(sbvals, function (sb) {  oldCharLength(mu, rho, sb, sd=sd, sigma)$value})
-	 lines(sdvals,charlength.standing.only ,lwd=2,col="black",lty=3)
-	  if(j == 2) legend("topright",col=c("grey","grey","black",my.col[1:3]),lty=c(2,3,1,rep(NA,3)),pch=c(NA,NA,NA,rep(19,3)),legend= as.expression( c("No Standing var.","No new mut.","Both",
+	 lines(sbvals,charlength.standing.only ,lwd=2,col="black",lty=3)
+	  if(j == 2) legend("topright",col=c("grey","grey","black",my.col[1:3]),lwd=2,lty=c(2,3,1,rep(NA,3)),pch=c(NA,NA,NA,rep(19,3)),legend= as.expression( c("No Standing var.","No new mut.","Both",
 	 	lapply(sigmas , function(x){  {substitute( sigma==myS, list(myS=x) )} }))))
  	}
 
@@ -44,7 +44,8 @@ dev.copy2pdf(file="~/Dropbox/postdocs/Peter/standing_parallelism/G6PD_charlength
 sigmas=c(100,50,10)
 
 layout(t(1:2))
-par(mar=c(4,4.1,2,0.3))
+par(mar=c(4,4.1,2,0.5))
+
 for(j in 1:2){
 	rho=rhos[j]
 	if(j == 1) plot(sdvals,sdvals,type="n",ylim=c(100,800),lwd=2,col=my.col[1],xlab=expression(s[d]),ylab=expression(chi),cex.lab=1.5,cex.axis=1.5,main=expression(rho==0.2))
@@ -60,7 +61,7 @@ for(j in 1:2){
 	 ##contribution of standing var only, i.e. old variation
 	 charlength.standing.only<-sapply(sdvals, function (sd) {  oldCharLength(mu, rho, sb, sd, sigma)$value})
 	 lines(sdvals,charlength.standing.only ,lwd=2,col="black",lty=3)
-	  if(j == 2) legend("topright",col=c("grey","grey","black",my.col[1:3]),lty=c(2,3,1,rep(NA,3)),pch=c(NA,NA,NA,rep(19,3)),legend= as.expression( c("No Standing var.","No new mut.","Both",
+	  if(j == 2) legend("topright",col=c("grey","grey","black",my.col[1:3]),lwd=2,lty=c(2,3,1,rep(NA,3)),pch=c(NA,NA,NA,rep(19,3)),legend= as.expression( c("No Standing var.","No new mut.","Both",
 	 	lapply(sigmas , function(x){  {substitute( sigma==myS, list(myS=x) )} }))))
  	}
  	
@@ -90,7 +91,7 @@ for(j in 1:2){
 
 #	 charlength.standing.only<-sapply(sdvals, function (sd) {  oldCharLength(mu, rho, sb, sd, sigma)$value})
 #	 lines(sdvals,charlength.standing.only ,lwd=2,col="black",lty=3)
-	  if(j == 2) legend("topright",col=c("grey","grey","grey",my.col[1:3]),lty=c(2,3,1,rep(NA,3)),pch=c(NA,NA,NA,rep(19,3)),legend= as.expression( c("No Standing var.","No new mut.","Both",
+	  if(j == 2) legend("topright",col=c("grey","grey","grey",my.col[1:3]),lwd=2,lty=c(2,3,1,rep(NA,3)),pch=c(NA,NA,NA,rep(19,3)),legend= as.expression( c("No Standing var.","No new mut.","Both",
 	 	lapply(sigmas , function(x){  {substitute( sigma==myS, list(myS=x) )} }))))
  	}
  	
@@ -101,7 +102,7 @@ dev.copy2pdf(file="~/Dropbox/postdocs/Peter/standing_parallelism/G6PD_chartimes.
 ####Mean time standing as func. of sd & sb
 ###############################################################
  layout(t(1:2))
-par(mar=c(4,4.1,2,0.3))
+par(mar=c(4,4.1,2,0.5))
  mu=1e-6; rhos=c(0.2,2); sd=0.05; sbvals=seq(0.001,0.3,length=800); 
 
 for(j in 1:2){
@@ -138,7 +139,7 @@ for(j in 1:2){
 
 #	 charlength.standing.only<-sapply(sdvals, function (sd) {  oldCharLength(mu, rho, sb, sd, sigma)$value})
 #	 lines(sdvals,charlength.standing.only ,lwd=2,col="black",lty=3)
-	  if(j == 2) legend("topright",col=c("grey","grey","grey",my.col[1:3]),lty=c(2,3,1,rep(NA,3)),pch=c(NA,NA,NA,rep(19,3)),legend= as.expression( c("No Standing var.","No new mut.","Both",
+	  if(j == 2) legend("topright",col=c("grey","grey","grey",my.col[1:3]),lwd=2,lty=c(2,3,1,rep(NA,3)),pch=c(NA,NA,NA,rep(19,3)),legend= as.expression( c("No Standing var.","No new mut.","Both",
 	 	lapply(sigmas , function(x){  {substitute( sigma==myS, list(myS=x) )} }))))
  	}
  	
@@ -150,7 +151,7 @@ dev.copy2pdf(file="~/Dropbox/postdocs/Peter/standing_parallelism/G6PD_chartimes_
 ###############################################################
 
 layout(t(1:2))
-par(mar=c(4,4.1,2,0.3))
+par(mar=c(4,4.1,2,0.5))
 for(j in 1:2){
 		rho=rhos[j]
 		plot(sdvals,charlength.sd,type="n",ylim=c(0,1),lwd=2,col=my.col[1],xlab=expression(s[d]),ylab="",cex.lab=1.5,cex.axis=1.5)
@@ -158,7 +159,7 @@ for(j in 1:2){
 		if(j==1){ mtext(side=3,expression(rho==0.2),cex=1.5);mtext(side=2,line=3,"Proportion",cex=1.5)}
 		if(j==2){ mtext(side=3,expression(rho==2),cex=1.5)}
 		
-			  if(j == 1) legend("topright",col=c(NA,"grey","grey",my.col[1:3]),lty=c(NA,1,2,rep(NA,3)),pch=c(NA,NA,NA,rep(19,3)),legend= as.expression( c("Contribution of Standing Variation as:","Proportion of Area,","Proportion of Alleles.",
+			  if(j == 1) legend("topright",col=c(NA,"grey","grey",my.col[1:3]),lwd=2,lty=c(NA,1,2,rep(NA,3)),pch=c(NA,NA,NA,rep(19,3)),legend= as.expression( c("Contribution of Standing Variation as:","Proportion of Area,","Proportion of Alleles.",
 	 	lapply(sigmas , function(x){  {substitute( sigma==myS, list(myS=x) )} }))))
 		
 	for(i in 1:3){
@@ -181,17 +182,17 @@ dev.copy2pdf(file="~/Dropbox/postdocs/Peter/standing_parallelism/G6PD_standing_v
  
  for(i in 1:length(mu.2s)){
   	prob<-sapply(sd.1,function(x){MultipleTypes(mu=c(1e-8,mu.2s[i]), rho=2, sb=c(0.05,0.05), sd=c(x,0.05), sigma=10)$value})
- 	lines(sd.1,prob,col=more.cols[i],lty=1)
+ 	lines(sd.1,prob,col=more.cols[i],lty=1,lwd=2)
   	prob<-sapply(sd.1,function(x){MultipleTypes(mu=c(1e-8,mu.2s[i]), rho=2, sb=c(0.05,0.05), sd=c(x,0.05), sigma=100)$value})
- 	lines(sd.1,prob,col=more.cols[i],lty=2)
+ 	lines(sd.1,prob,col=more.cols[i],lty=2,lwd=2)
 
   	prob<-sapply(sd.1,function(x){MultipleTypes(mu=c(1e-8,mu.2s[i]), rho=0.2, sb=c(0.05,0.05), sd=c(x,0.05), sigma=10)$value})
- 	lines(sd.1,prob,col=more.cols[i],lty=3)
+ 	lines(sd.1,prob,col=more.cols[i],lty=3,lwd=2)
   	prob<-sapply(sd.1,function(x){MultipleTypes(mu=c(1e-8,mu.2s[i]), rho=0.2, sb=c(0.05,0.05), sd=c(x,0.05), sigma=100)$value})
- 	lines(sd.1,prob,col=more.cols[i],lty=4)
+ 	lines(sd.1,prob,col=more.cols[i],lty=4,lwd=2)
  
 	prob<-sapply(sd.1,function(x){MultipleTypes(mu=c(1e-8,mu.2s[i]), rho=2, sb=c(0.05,0.05), sd=c(x,0.05), 	sigma=20,standing.var.calc=TRUE)$value})
- 	lines(sd.1,prob,lty=3,col=more.cols[i],type="b") 
+ 	lines(sd.1,prob,lty=3,col=more.cols[i],type="b",lwd=2) 
  }
 # legend(x="topright",legend=rep("blah",4),lty=1:4)
 
@@ -199,7 +200,7 @@ other.params<-as.expression( apply(cbind(c(2,2,0.2,0.2),c(10,100,10,100) ),1, fu
 mut.rates<-as.expression( lapply(c(-7,-6,-5) , function(x) {substitute( mu[2]== 10^mymu, list(mymu=x))}))
 my.exp<- as.expression(c(other.params,"Standing Var. Only",mut.rates))
  
- legend("topright",col=c(rep("grey",5),more.cols[1:3]),lty=c(1:4,rep(NA,4)),pch=c(rep(NA,4),1,rep(19,3)),legend=my.exp )
+ legend("topright",col=c(rep("grey",5),more.cols[1:3]),lwd=2,lty=c(1:4,rep(NA,4)),pch=c(rep(NA,4),1,rep(19,3)),legend=my.exp )
  dev.copy2pdf(file="~/Dropbox/postdocs/Peter/standing_parallelism/pleiotropy_calc.pdf")
 
 
