@@ -47,31 +47,46 @@ $^2$ Center for Population Biology \& Department of Evolution and Ecology \\
 University of California -- Davis, Davis, CA, 95616\\
 \end{center}
 
+% standing deleterious variation
+% higher mutation rate => more importance of standing
+% G6PD a combination of new and standing
+% interpolates betw panmixia and 2010
+% pleiotropy pre-shift biases adaptation
+% establishment phase
+% selective sweeps and species coherence, gene flow
+
+
 \section*{Abstract}
-The extent to which shared selection pressures led to a share genetic
-response among populations touches on many questions in evolutionary
-biology. For a number of well studied traits and species it appears
-that convergent evolution within species is common. Here we explore
-the role of standing genetic variation in the evolution of convergent
-genetic responses in a geographically spread population. The
-relatively slow geographic spread of selected alleles allows multiple
-alleles to spread from standing and new mutation before any one comes
-to dominate the population. When these alleles meet, their progress is
-substantially slowed--if the alleles are selectively equivalent, and their initial patterning of the range can be
-thought of as a random tessellation.
-We extend our previous work on this topic 
-by incorporating standing variation, and we show that various properties of a simple
-model of geographic adaptation can be well understood by analogy to a Poisson
-process models of crystallization. 
-In this framework we derive the geographic scale over which a typical allele is expected
-to dominate, and the time it takes the species to adapt as a whole. We
-also study the proportion of adaptive alleles that arise from standing variation. Finally we explore how the negative
-pleiotropic effects of alleles before an environment change can bias
-the subset of alleles that get to contribute to a species adaptive response. 
-Our results suggest that much of adaptation may be geographically
-local even when selection pressures are wide-spread. We discuss the
-implications of these results for arguments of species coherence and
-the nature of divergence between species. 
+The extent to which populations experiencing shared selective pressures
+adapt through a shared genetic response
+is relevant to many questions in evolutionary biology. 
+In a number of well studied traits and species, 
+it appears that convergent evolution within species is common. 
+In this paper, 
+we explore how standing, deleterious genetic variation contributes to
+convergent genetic responses in a geographically spread population,
+extending our previous work on the topic.
+Geographically limited dispersal slows the spread of each selected allele,
+hence allowing other alleles 
+-- newly arisen mutants or present as standing variation -- 
+to spread before any one comes to dominate the population. 
+When such alleles meet, their progress is substantially slowed 
+-- if the alleles are selectively equivalent, 
+they mix slowly, dividing the species range into a random tessellation,
+which can be well understood by analogy to a Poisson process model of crystallization. 
+In this framework, 
+we derive the geographic scale over which a typical allele is expected to dominate, 
+the time it takes the species to adapt as a whole,
+and the proportion of adaptive alleles that arise from standing variation.
+Finally, we explore how negative pleiotropic effects of alleles before an environment change 
+can bias the subset of alleles that get to contribute to a species adaptive response. 
+We apply the results to the many geographically localized G6PD deficiency alleles thought to confer resistance to malaria,
+whose large mutational target size and deleterious effects make them likely candidates to have been present as deleterious standing variation.
+We find the numbers and geographic spread of these alleles matches our predictions reasonably well,
+which suggest that these arose both from standing variation and new mutations since the advent of malaria.
+Our results suggest that much of adaptation may be geographically local 
+even when selection pressures are wide-spread. 
+We close by discussing the implications of these results for arguments of species coherence and the nature of divergence between species. 
 
 
 %%%%%%%% %%%%%%%%%%%%
@@ -300,8 +315,8 @@ but the introduction of new mutations cause these to curve.
     \includegraphics{spreading_alleles_trimmed}
   \end{center}
   \caption{
-{\bf Cartoon space-time diagram of the geographic spread of standing and new mutations}. Time
-runs down the page, and a single spatial dimension runs across the
+{\bf Cartoon space-time diagram of the geographic spread of standing and new mutations}. 
+Time runs down the page, and a single spatial dimension runs across the
 page. The environment switches at $t=0$, and following that adaptive
 alleles that are successful, at escaping loss by drift, spread from
 standing variants (lightning bolts) and new mutations (stars). 
@@ -573,6 +588,7 @@ The other parameters are chosen to match those of G6PD,
 $\mu = 10^{-5}$ and $s_b = 0.05$. As the characteristic length with
 only standing variation is independent of dispersal distance it is
 plotted as a single black dotted line. 
+\plr{$y$ axis label: kilometers}
 } \label{Fig-G6PD-charlength}
 \end{center}
 \end{figure}
@@ -586,6 +602,7 @@ holding the prior disadvantage of the allele fixed at $s_d=0.05$ and the mutatio
 We compare this to the corresponding quantity without standing
 variation (equation \eqref{eqn:chi_new}) 
 and to the quantity only considering standing variants (equation \eqref{eqn:chi_standing}).
+\plr{$y$ axis label: kilometers}
 } \label{Fig-G6PD-charlength-sb}
 \end{center}
 \end{figure}
@@ -648,6 +665,8 @@ and , compared to the corresponding quantity without standing variation, and to 
 } \label{G6PD_chartimes}
 \end{center}
 \end{figure}
+
+
 
 % proportion of haplotypes (and of space) that are from standing variation 
 
