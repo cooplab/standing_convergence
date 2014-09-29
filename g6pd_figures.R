@@ -18,7 +18,7 @@ layout(t(1:2))
 par(mar=c(4,4.1,2,0.5))
 for(j in 1:2){
 	rho=rhos[j]
-	if(j == 1) plot(sbvals,sbvals,type="n",ylim=c(100,1500),lwd=2,col=my.col[1],xlab=expression(s[b]),ylab=expression(chi),cex.lab=1.5,cex.axis=1.4,main=expression(rho==0.2))
+	if(j == 1) plot(sbvals,sbvals,type="n",ylim=c(100,1500),lwd=2,col=my.col[1],xlab=expression(s[b]),ylab=expression(chi, km),cex.lab=1.5,cex.axis=1.4,main=expression(rho==0.2))
 	if(j == 2) plot(sbvals,sbvals,type="n",ylim=c(100,800),lwd=2,col=my.col[1],xlab=expression(s[b]),ylab="",cex.lab=1.5,cex.axis=1.4,main=expression(rho==2))
 	for(i in 1:3){
 	sigma=sigmas[i]; charlength.sb<-sapply(sbvals, function (sb) { charLength(mu,rho,sb,sd=sd,sigma)$value } )
@@ -196,7 +196,7 @@ dev.copy2pdf(file="~/Dropbox/postdocs/Peter/standing_parallelism/G6PD_standing_v
  }
 # legend(x="topright",legend=rep("blah",4),lty=1:4)
 
-other.params<-as.expression( apply(cbind(c(2,2,0.2,0.2),c(10,100,10,100) ),1, function(x) {substitute( rho== myrho~ sigma==mysigma, list(myrho=x[1],mysigma=x[2]))})) 
+other.params<-as.expression( apply(cbind(c(2,2,0.2,0.2),c(10,100,10,100) ),1, function(x) {substitute(list( rho== myrho, sigma==mysigma), list(myrho=x[1],mysigma=x[2]))})) 
 mut.rates<-as.expression( lapply(c(-7,-6,-5) , function(x) {substitute( mu[2]== 10^mymu, list(mymu=x))}))
 my.exp<- as.expression(c(other.params,"Standing Var. Only",mut.rates))
  
