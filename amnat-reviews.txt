@@ -1,0 +1,201 @@
+<<Hi Graham -- I think you;ll get this through the Am Nat system, but I;m not quite sure how it is working. In any case, I think there would be a delay through that system through the holiday weekend, so here's the comments.  There's no rush on getting this back.  I hope you'll find them useful.
+
+Happy Thanksgiving,
+
+Mike>>
+
+Dear Graham and Peter-
+
+Thanks for your nice paper on the geographic patterns of convergent evolution. I really like the ideas in this paper, and it is going to be a nice match to the special issue.
+
+I have two reviews that also both like the paper (see below). Also I have read it carefully myself, and I’ll add my comments below. I think the general consensus is that the paper covers very interesting and novel territory, but perhaps it could be easier to read with some revision.
+
+Please use the comments to make the paper better in the ways that you see best. I think that you will be able to use some of these comments in ways that you will agree are improvements. I look forward to the revision. This already is a nice paper.
+
+Thanks for contributing to this issue. I think it is going to turn out to be pretty nice.
+
+
+All my best,
+Mike
+
+Mike’s comments:
+
+I’ll add my comments in order that they appear in the presentation of the paper, rather than trying to rank them by importance.
+
+64 –ish: Be clear about whether you are assuming that this variation is allelic
+
+68: Especially as this is in an issue about local adaption, you probably want to be very clear there that the alleles have the same fitness everywhere.
+
+77: “below”?
+
+77: “we assume to be equal to one” – re-write please, it isn't clear at first reading what you are assuming to be one.
+
+After 90: “somewhat larger probability of local establishment” -- it is not at all clear to me what local establishment means in the case of a deleterious allele. Can you unpack this please?
+
+Equation 2: If the mutation selection balance is mu/s_d, then the number of copies of the allele on average per unit area is rho mu/ s_d. The probability that this leads to a successfully establishment is 2 s_b per copy approximately, which gives 2 s_b mu rho / s_d for lambda_0. This seems like an easier derivation to me. (For large s_d, this diverges from your result -- which is more correct?)
+
+P3, somewhere. It would be worth explicitly giving the formula for lambda somewhere.
+
+Figure 1: The grey cone for (x,t) is too faint to see easily. I didn't notice it until trying to find what the caption was referring to. And in the caption, it would be worth explaining why you are looking at this cone before describing it. 
+
+192: You need to be more specific about where these two formulas for the means come from. It is not clear at all.
+
+210: It may be confusing to refer to standing variation as mutational input. If they already exist they are not mutations anymore, but alleles.
+
+225-229 – Cool!
+
+231-232 – I thought the first person here “ourselves” was a little jarring.
+
+246: Can you use something other than nu? It looks too much like the v that you have already used for something else.
+
+
+Figure 5: The caption was missing words or symbols in my copy. Also remove the last comma.
+
+250: Perhaps this would be better as “the mean proportion of adapted patches”
+
+251: Please give a reference for the Palm measure.
+
+Figure 6, and many other places, especially in the discussion. You assume a quite large mutation rate here. This may be appropriate for a loss of function mutation ( is this the case for this example?), but it is very high for many types of mutations per locus. Many of your conclusions would be very different with lower mutation rates. It would be nice to know ( at least qualitatively ) what would happen if the mutation rates were lower. You say that convergent evolution may be quite high (e.g. start of discussion), but this is not true if the mutation rate were an order of magnitude or two lower than you assume here, I think. 
+
+
+284 plus a couple of lines: The sentence fragment beginning with “Or,…” is a sentence fragment.
+
+Discussion, somewhere: Can you say anything about the pattern of differentiation of these convergent selected genes relative to neutral differentiation? 
+
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Reviewer #1: Extending their previous work on the topic, Ralph & Coop investigate the role of standing variation in geographic convergent adaptation, or, in other words, how already existing mutations contribute to convergent adaptation (the independent evolution and coexistence of multiple beneficial alleles) in a geographically spread population subjected to a switch in selection pressures. The authors identify a characteristic length \chi, which gives the spatial scale at which different adapted mutants will establish. If the scale of the environment is larger than \chi, we can expect geographic convergent evolution to occur or have occurred. Importantly, and particularly relevant for the themed issue, the authors warn that the resulting pattern of geographic convergent adaptation can be mistaken for a pattern local adaptation.
+
+The manuscript is well written, interesting, insightful, and dense (in a good way!). It is also sometimes a bit hard to read. The main issue is that it is rather likely that the average AmNat reader will not have read Ralph & Coop 2010, or, even if they have, they will not remember some specific details. I had to read Ralph & Coop 2010 (hereafter RC10) to better understand this manuscript, so I will try to highlight the points that could be clarified, in the hope that this will help make the manuscript more accessible to less mathematically-inclined readers.
+
+== Comments on the model and the analysis (clarifications needed) ==
+
+- The introduction is written as if it were obvious that there is a switch in selection pressures (e.g. line 41), while other scenarios are conceivable (e.g. a species encountering a novel habitat type while expanding its range; or, other types of temporal variation (not just a switch)). Maybe clarify near the beginning of the introduction the type of environmental variation you are considering.
+
+- line 64: it is mainly about vocabulary here: the word "class" is used to refer to the "types", while in section 1.6 "class" is used to refer to the diversity of mutations (i.e., within type variability).
+
+- line 65: add "neutral" before "variation" (if appropriate)
+
+- somewhere in the model description, it would be good to mention that time is measured in generations (and clarify whether it is continuous/discrete).
+
+- line 76-77: this sentence was opaque to me until I read RC10 and the formula 2s/xsi^2.
+
+- line 86: the way mutation works is not clear yet. If I understand correctly, a neutral type's offspring is mutated with probability \mu, but there are no further mutations among the mutated types (i.e. there cannot be a new cone growing within a cone). So "each new offspring" is the offspring of neutral type individuals, right? It could be also useful to recap somewhere the main assumptions of the analysis, e.g. the decomposition of time scales between local establishment and then spatial spread (which is discussed in 1.7), or why there are not further mutants emerging within mutant cones.
+
+- line 88: It would be great to add a few lines to explain what it is a Poisson process in space and time (the explanation in RC10, p651, is very clear).
+
+- [unnumbered line that would otherwise be 94] "*Since* the times and locations…" has it been proven?
+
+- [unnumbered line that would otherwise be 96] "Poisson Mapping Theorem" maybe add reference?
+
+- [unnumbered line that would otherwise be 103] Using the letter $s$ to refer to a time is a bit confusing!!
+(same line 334, where $s$ is now a rate)
+
+- [unnumbered line that would otherwise be 106] Do you actually need to use \zeta? Could not the equation that follows simply be written with E[(1-p_s)^{Z_T}]? Also, isn't \zeta(u,T) the generating function of Z_T?
+
+- equation (2), since this will be used later on, maybe add a line \lambda_0 = \lambda / (-log(1-s_d)).
+
+- Figure 1: I think that it would really help the reader if the figure were in 3D (space x space x time) instead of 2D (space x time), especially to visualize the "cones" carved out in space-time. Also, the lightening bolts give the false impression that the mutants appear right at t=0.
+
+- line 208: higher population densities (adjective missing)
+
+- equation (9) I do not understand where it comes from! (i.e. how using the proportionality between \lambda_0 and \lambda give this result). Do we actually need (9) anyway to obtain expression (10)?
+
+- line 251: I do not know what is the "Palm measure", so a reference would be welcome here (or consider removing?)
+
+- line 343: I do not understand why there is a factor 4 here (and not 2).
+
+- equation (16) I am not sure about the exponents: I find that the exponent for \beta is -(1+c)/(d+1) and that the exponent for u (outside of exp) is (c-d)/(d+1), but I may be wrong?
+
+== Minor remarks ==
+
+- line 58: "the genetics of adaptation may often be geographically local" the meaning of this phrases was not obvious at first.
+
+- line 61: A more natural order seems to be first history, then implications.
+
+- line 80-81: If there are more than 1 chromosome per haploid individual, this is not exactly the same?
+
+- line 91: that's probably personal, but I usually prefer when the terms are grouped depending on where they come from, and so I would find it clearer to write 2 s_b \mu \rho.
+
+[- bottom of page 4, the lines are unnumbered, but you can avoid this bug of the lineno package by leaving an empty space before \begin{equation}]
+
+- line 126: I do not understand which the sides curve, but this is probably not a crucial point!
+
+- line 200 "close to the value obtained just from standing variation" obtained by whom/how?
+
+- line 202: "close to the value from" RC10: how different are the values and why?
+
+- line 216: add "locally" in front of "established", if appropriate.
+
+- line 219: add "of order" or an equivalent in front of s_b^1/2, if appropriate.
+
+- Figure 2: Not sure why "Both" is in black in the legend with the two other line types are in gre/ay.
+
+- line 258: the expression for the "sliver" is actually not used in (11), but will be useful in (13).
+
+- the paragraph lines 304--323 seems to rather belong to the Discussion section.
+
+- line 336: "size" could refer to population size or the area of a patch, maybe add "population" to clarify?
+
+- line 354: "total amount of area" isn't the environment effectively infinite? Or should one rather understand "sampled area"?
+
+- line 419--420: I am not sure I understand here; do you mean that the distant populations could share the same allele? But with the work you have done, including standing variance, shouldn't we expect them to be of independent origin, even if they are neutral?
+
+- line 459: distance between the lineages is in time^{-1}, but the displacement is in distance?
+
+- line 467: another answer is that it is unlikely that all the alleles will strictly have the same beneficial effect s_b!
+
+== Typos that will probably be anyway corrected when the article is typeset ==
+
+- wide-spread or widespread (lines 57, 59)
+
+- line 225: that (thar)
+
+- line 495: \citet instead of \citep
+
+- the abstract on the title page contains a few typos.
+
+
+[signed, since we said we would review each other's manuscripts]
+Flo Débarre
+
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Reviewer #2: Reviewed by Sam Yeaman
+
+The authors have presented an intriguing approach to the problem of convergent genetic evolution, showing the relative importance of standing variation vs. new mutations and how spatial structure interacts with this. Generally, the manuscript is clearly written and covers a lot of new and interesting ground using very nice analytical models. I very much appreciate the presentation and discussion of the results and the big-picture issues covered at the end on speciation and extinction. As I am not primarily a mathematician, there are certain places where I struggled, and I have identified a few spots that could be clarified to make it easier to understand for a general audience. The derivations appear to be correct and to have made reasonable assumptions, but I did not re-derive them exhaustively.
+
+I have a few comments about the discussion and the general implications of this paper, that might be worth considering. I would like to see more discussion of when this kind of evolution will matter, and if/when we can "safely ignore" it. The examples used in the paper are human-focused, but many species have much smaller total population sizes and ranges, and might never experience this kind of evolution. Is there some way we can get a general prediction about when this might matter?
+
+Consider the following interpretation of Eq. 4: if we want to know whether convergent genetic evolution will occur at all in a given species, then the scale we are interested in is the entire species range, and rho = N. If convergent genetic evolution is unimportant, then the characteristic length has to be larger than the total species range size, and we can find out where this happens by setting chi = 1 and asking what parameters result in chi < 1. This simplifies things quite a bit, as simplifies the chi^2 and chi^3 terms, so that we can rearrange the equation to solve for rho (which is now N):
+
+Ncrit == (sigma * log[1-s]) / (sqrt[2] * mu * pi * (sqrt[s]*log[1-s] - sqrt[2]*sigma) )
+
+(see attached mathematica file for a more clear version). If N is less than this value, then the characteristic length would be greater than 1, and convergent genetic evolution would not be expected. I'm sure there are some nicer ways that this could be expressed to show various features of importance when certain parameters are small (for example, when sigma is small, it drops out of the denominator, and then Ncrit is a simple function of sigma in the numerator). The scale of sigma is now expressed as a proportion of the total species range, so sigma can realistically be quite small for some species. Of course, this doesn't help us know how fast the characteristic length decreases once N > Ncrit, but Eq. 4 does that. I'm not sure if I've made an obvious blunder in here somewhere, but perhaps this is a useful approach? In any case, it seems worth acknowledging in the discussion that some species are quite unlikely to have convergent genetic evolution, due to their small range size, total population size, or high dispersal distance. The discussion currently says that convergent genetic evolution may be quite common (and line 466 even suggests it may be rare for gene flow to spread a selected allele across the range of a species). Delineating when this is important is especially interesting because the signal of convergent evolution can resemble local adaptation (e.g., line 400-408). If this approach makes sense, it could be discussed along with the section from lines 225-229, which presents a very important conclusion arising from this work.
+
+Another general consideration is that the trait needs to be non-genetically-redundant for the kind of genetic convergent evolution discussed here, in that there needs to be few genes that could evolve to give the phenotype of interest (ideally, just one, given the model formulation). In both skin pigmentation and malaria resistance, there is only one (or a few) gene(s) that can be mutated to give the phenotype, but many quantitative traits are much more genetically redundant. In a highly genetically redundant case, a very different but interesting prediction can be made: if the characteristic length is small, then we might expect different genetic solutions to the same evolutionary problem in populations separated by distance > chi (i.e., genetically non-convergent, but phenotypically convergent evolution). This is an interesting corollary of the work that could be explored in the future. Then, the ratio of {mutational target size within a single gene} vs. {mutation target size in all other genes that affect the trait with similar s} becomes important for whether evolution is genetically convergent or not. While redundant mutations in quantitative traits would likely have small s, they would also have a higher total target mutation rate across many genes, so species with relatively smaller total size might have small chi and high probability of evolving different genetic solutions for the same phenotype. The section on lines 418-426 touches on this a bit. This suggests that the model could be generalized by considering three classes of mutation with the same (redundant) value of s: 1) same nucleotide, 2) same gene, 3) all other genes. The characteristic length just gives the likelihood of there being multiple independent evolutionary lineages that arise and fix locally, making a tessellation (I think?), and the probability of the alleles being from class 1, 2, or 3 is then just determined by their relative mutational target sizes/rates. The type of convergence/parallelism is then defined by whether it is at the level of QTN (class 1), QTL (class 2), or phenotypic with a different genetic basis (class 3). If the approach I suggested above is sound, then this type of evolution would be common for most quantitative traits in most species (because the high mutation rate at the whole-trait level would compensate for the smaller total population size).
+
+Perhaps I am carrying this too far, but it suggests part of the reason why we might sometimes see so many outliers when we use approaches like Bayenv to look at putatively locally adapted quantitative traits. If different populations are evolving in response to a spatially homogenous temporal change in selection pressure (e.g., climate change) via highly redundant traits, then as long as the characteristic length is small, they would evolve different alleles at different loci in different populations. Because climatic variables are correlated with space, it is natural that they would often match up with the tesselations, resulting in associations between snps and local environment. As long as the environment changes faster than the period required for drift to homogenize these responses and wipe out the structure, this signature would be prevalent, but spurious. With suitably rapid changes in environment, alleles could have quite different values of s without enough time to homogenize them across the range of the species (e.g., as discussed around line 316). Obviously, I like how the paper discusses how this kind of evolution would generate signatures resembling local adaptation! I guess I'm arguing that this problem could be much more general, and extend to non-genetically convergent evolution.
+
+Some more specific comments:
+
+- It might be helpful to discuss convergence in terms of "identical by descent" versus "identical in state", at least for the case where the same nucleotide is mutating. The phrase "different or shared genetic routes" (line 31) is a bit ambiguous in this regard, because it's not clear whether "genetic routes" is referring to the evolutionary lineage history of the gene or the actual genetic changes being compared. This becomes clear when you read it a few times. There is a similar problem with evolution producing "different phenotypes" (line 25) because this seems contrary to the definition of convergent evolution (evolution produces similar phenotypes, independently).
+
+- I couldn't reproduce the exact values for the lines in figures 3 & 4. I've attached the approach I used in the same mathematica file as above; the main text says mu = 10^-6, while the legend says mu=10^-5, which seems to match better, but Eq. 5 still doesn't seem to match that way. I assume I did something wrong there but I wanted to mention it just in case.
+
+- line 124-126: I don't understand why introducing new mutations results in curvature of the tesellations. Wouldn't it just result in a bunch of smaller-sized cells being intermingled with the larger cells that arose from standing variation, without changing the tesselation shape? I guess I can't intuitively see why a wave front arising from new mutation would behave differently than a wave front arising from standing variation, but maybe I missed the point here?
+
+- Conte et al. (2012); Proceedings of the Royal Society B) reviewed cases of gene reuse and parallel and convergent evolution, and found a high probability of gene reuse, further suggesting the importance of this kind of evolution.
+
+- line 46: patchy geographically -> geographically patchy
+- bracket at the bottom of page 4, "this approximation will…": this statement seemed unsubstantiated. Why the log of family size? Perhaps add more justification or move it to somewhere where it fits better?
+- line 168: I'm not clear why sd = 0.05, just because sb >= 0.05? Perhaps more description here of why this is the case.
+- line 190-196: the alternation between the one-dimensional and two-dimensional equations here is a little confusing and could be explained more clearly. When you say you omit the explicit formula, it takes some looking back and forth to figure out that the explicit formula for 2D is still there in Eq. 4, it's just not rearranged so that there is a single chi term on the left hand side.
+- line 201: could add "and standing variation is unimportant" after "is highly deleterious" to clarify.
+- line 316: have an -> have a
+- Figure 5: legend is missing a word ("benefit"?)
+- line 333-335: If it's "feeling" spatial structure, doesn't that mean that it's interfering with neighbours? Doesn't it grow deterministically until it "feels" structure?
