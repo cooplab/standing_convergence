@@ -1,0 +1,1 @@
+Simulation on a grid of $101 \times 101$ populations with 100 individuals in each, showing spread of a beneficial allele with advantage $s=0.1$.  Times are in numbers of generations, with probability of mutation per generation 0.3.
