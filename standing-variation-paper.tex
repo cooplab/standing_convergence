@@ -8,12 +8,17 @@
 %\usepackage{latexml} % for \iflatexml
 \usepackage{color}
 \newcommand{\gc}[1]{{\it\color{green}(#1)} }
-\newcommand{\plr}[1]{{\it\color{blue}(#1)}}
+\newcommand{\gc2}[1]{{\it\color{purple}(#1)} }
 
+\newcommand{\plr}[1]{{\it\color{blue}(#1)}}
+\usepackage{lineno}  %%%% FOR AMNAT
 \newcommand{\var}{\mathop{\mbox{Var}}}
 \renewcommand{\P}{\mathbb{P}}
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\R}{\mathbb{R}}
+
+%\usepackage{setspace}
+%\doublespacing
 
 %\iflatexml  % no margin notes in latexml
 % \newcommand{\marginnote}[1]{}
@@ -55,6 +60,8 @@ University of California -- Davis, Davis, CA, 95616\\
 % establishment phase
 % selective sweeps and species coherence, gene flow
 
+\linenumbers
+\modulolinenumbers[2]
 
 \section*{Abstract}
 The extent to which populations experiencing shared selective pressures
@@ -80,12 +87,17 @@ the time it takes the species to adapt as a whole,
 and the proportion of adaptive alleles that arise from standing variation.
 Finally, we explore how negative pleiotropic effects of alleles before an environment change 
 can bias the subset of alleles that get to contribute to a species adaptive response. 
-We apply the results to the many geographically localized G6PD deficiency alleles thought to confer resistance to malaria,
-whose large mutational target size and deleterious effects make them likely candidates to have been present as deleterious standing variation.
+We apply the results to the many geographically localized G6PD
+deficiency alleles thought to confer resistance to malaria, \gc2{where the large
+mutational target size of G6PD makes likely candidate for adaptation
+from standing variation, despite the selective cost of G6PD
+deficiency.}
 We find the numbers and geographic spread of these alleles matches our predictions reasonably well,
-which suggest that these arose both from standing variation and new mutations since the advent of malaria.
+\gc2{consistent with the view that they arose from a combination of} from standing variation and new mutations since the advent of malaria.
 Our results suggest that much of adaptation may be geographically local 
-even when selection pressures are wide-spread. 
+even when selection pressures are widespread. \gc2{Therefore, we argue
+that caution must be exercised when arguing that strongly
+geographically restricted alleles are necessarily the outcome of local adaptation.}
 We close by discussing the implications of these results for arguments of species coherence and the nature of divergence between species. 
 
 
@@ -95,10 +107,11 @@ We close by discussing the implications of these results for arguments of specie
 There are an increasing number of examples where
 different populations within a species have
 adapted to similar environments by means of independent genetic changes. 
-In some cases this convergent evolution has produced different phenotypes
-despite shared selection pressures; 
+In some cases this convergent evolution \gc2{is the result of quite
+distinct genetic changes, involving very different genes and pathways} despite shared selection pressures; 
 in other cases independent adaptations are identical down the same
-nucleotide change  \citep{Jeong20141,stern2013genetic,MartinOrgogozo:13}. 
+nucleotide change
+\citep{Jeong20141,stern2013genetic,MartinOrgogozo:13, Conte2012}. 
 Such convergent evolution within populations has been seen for many
 carefully studied phenotypes across a range of species, 
 including drug resistance in pathogens,
@@ -113,7 +126,7 @@ The issue of convergent adaptation within species touches on a number
 of important questions in evolutionary biology. 
 These include the extent to which adaptation is shaped by pleiotropic constraints \citep{Haldane:book,Orr:05},
 whether adaptation is mutation-limited \citep{Bradshaw:91,karasov2010}, 
-and to what degree should species be regarded to cohesive units. 
+and to \gc2{what degree species should be regarded} as cohesive units. 
 Convergent evolution also affects our ability to detect adaptation from population genomic data,
 since no single allele sweeps to fixation over the entire area affected by the selection pressure \citep{softsweepsIII}.
 
@@ -131,31 +144,57 @@ Spatial population structure,
 as caused for example by geographically limited dispersal, 
 also increases the chance of convergent evolution. 
 For example, 
-patchy geographically selection pressures can lead to much higher probability of parallel adaptation than uniform pressures,
-since alleles are unable to spread through intervening populations \citep{RalphCoop:14}. 
-In \citet{ralphcoop2010} we formulated a simple model of parallel adaptation in a geographic setting
-where the selection pressure was constant across the entire environment, 
-and a single mutational change was sufficient to adapt after the change in environment.
-We assumed that there was no standing variation for the adaptive allele, 
-so that parallel mutation must be due to multiple new mutations occurring after the environmental shift. 
-In that setting, 
-we found the characteristic geographic scale over which 
+\gc{geographically patchy} selection pressures can lead to much higher probability of parallel adaptation than uniform pressures,
+since alleles are unable to spread through intervening populations
+\citep{RalphCoop:14}. 
+In \citet{ralphcoop2010} we formulated a simple model of \gc{convergent adaptation in 
+ a spatially spread population, where dispersal is local,
+that is exposed to some novel, spatially homogeneous selection pressure.
+We assumed that a single mutational change was sufficient to adapt
+the population after the change in environment. Under this assumption,
+selected alleles arise and spread locally. However, if the geographic
+area is large enough multiple selected alleles can
+arise independently and spread before any one has spread across all of
+space ( Figure \ref{fig:sim-spread}).  one allele's rapid spatial spread can be
+halted by running into convergent allele. See Figure
+\ref{fig:sim-spread}. A somewhat analogous situation also arises in spatial models of clonal
+inference in asexuals \citep{martens_interfering_2011}.}
+
+
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=\textwidth]{sims/Peter_sims.png}
+  \end{center}
+  \caption{
+{\bf Simulation of the geographic spread of new mutations}. Simulation on a grid of $101 \times 101$ populations with 100 individuals in each, showing spread of a beneficial allele with advantage $s=0.1$.  Times are in numbers of generations, with probability of mutation per generation 0.3. 
+}
+  \label{fig:sim-spread}
+\end{figure}
+
+
+\gc{Under this model we previously derived} the characteristic geographic scale over which 
 multiple instances of the adaptive allele are expected to arise in parallel. 
 This characteristic length could be expressed in terms of a simple compound
-parameter determined by our parameters of interest. 
+parameter \gc2{comprised of} our parameters of interest. \gc{In
+\citet{ralphcoop2010} we assumed that there was no standing variation for the adaptive
+allele (e.g. because the allele was very strongly deleterious before
+the environmental change)}, 
+so that parallel mutation must be due to multiple new mutations occurring after the environmental shift. 
+
 In this paper, we extend this spatial model to include standing variation 
 present at mutation-selection balance before the selection pressures switch.
-
 Below,
-we show that convergent adaptation within a wide-spread species is likely to be
-common, as has already been seen for a number of traits. 
-On the basis of this we argue 
-that the genetics of adaptation may often be geographically local, 
+we show that convergent adaptation within a widespread species is likely to be
+common \gc{when ranges, population sizes, or mutational targets are large}, as has already been seen for a number of traits. 
+On this basis owe argue 
+that the genetics of adaptation may often be geographically local \gc{even
+when selection pressures are geographically broad}, 
 % and that we should expect to see relatively few wide-spread sweeps even when selection pressures are wide-spread. 
-and that most widespread selective sweeps should occur
+and that widespread selective sweeps \gc2{should tend to} occur
 when adaptation is highly constrained (e.g.\ by small mutation rate or
 the need for a linked combination of alleles).
-We discuss some implications, and history, of this view for the evolutionary
+We discuss the \gc{history, and implications,} of this view for the evolutionary
 coherence of species and molecular evolution.
 
 %%%%%%%%% %%%%%%%%%%%% %%%%%%%
@@ -165,9 +204,20 @@ coherence of species and molecular evolution.
 
 We assume that the species range
 is a large, homogeneous, one-- or two--dimensional region. 
-There are two selective classes -- the {\em neutral} type, and the {\em mutated} type.
+There are two selective classes -- the \gc{ {\em ancestral} } type,
+and the {\em mutated} type \gc{(which will offer a fitness benefit after the
+environmental switch)}.
 We assume that separately arising mutations are distinguishable --
-either as selectively equivalent mutations, or by linked variation.
+either as selectively equivalent mutations, or by linked \gc{neutral} variation.
+\gc{We assume that all alleles of the mutated type are selectively
+  equivalent (both in terms how deleterious they were before, and how
+  advantagous they are after, the
+  environmental shift). Note that these mutations do not have to arise at the same locus,
+  just that all of the mutated type of selective equivalent. As such,
+  these could be mutations arising at the same base pair or knockout
+  mutations of any one of a number of genes in a pathway as long as carrying at least one of these alleles
+  is sufficient to adapt an individual to the new environment.}
+
 We also suppose that 
 the mutated type has been at a selective disadvantage 
 for a sufficiently long enough time in the past to be at selection-mutation equilibrium,
@@ -184,16 +234,22 @@ the mutant type has fitness $1+s_b$,
 where $s_b>0$ will usually be assumed to be small, and $0<s_d<1$.
 We assume that diploid fitness is additive, or at least that the
 important early dynamics are determined by the heterozygous fitness, with no reference to the fitness of the
-homozygote for the mutant alleles.
-The number of offspring has finite variance, 
-which would divide the probability of establishment of advantageous alleles below,
-but to keep the formulas simpler we assume to be equal to one.
-(We leave aside the case where mutations are recessive, however.)
+homozygote for the mutant alleles. \gc2{Note that this means that we
+  are ignoring the case of totally recessive alleles.}
+\gc{We assume that the variance in offspring number is one, see
+  \cite{ralphcoop2010} for how this assumption can be relaxed.}
+%The number of offspring has finite variance, 
+%which would divide the probability of establishment of advantageous alleles below,
+%but to keep the formulas simpler we assume to be equal to one.
 As for the other parameters,
 suppose that each offspring of a neutral parent is of the mutant type with probability $\mu$,
-and that the mean squared geographic distance between parent and child is $\sigma^2$.
+and that the mean squared geographic distance between parent and child
+is $\sigma^2$. \gc2{Note that we assume that the dispersal kernel is
+  not heavy tailed, e.g. Gaussian, see \citet{ralphcoop2010} for
+  discussion of heavy tailed kernels and \citet{hallatschek_acceleration_2014} for recent progress
+  on rapid spreading due to very long distance dispersal.}
 The species occupies an area with mean density
-$\rho$ of haploid individuals (or chromosomes) per unit area.
+$\rho$ of haploid individuals \gc{(twice the number of diploids)} per unit area.
 
 %We assume that dispersal occurs by local movement of
 %individuals. Specifically we will assume that individuals dispersal a
@@ -215,29 +271,46 @@ so each new mutant establishes locally with probability $p_s \approx 2s_b$.
 As in \cite{ralphcoop2010}, each new offspring has a very small probability of being a mutant and establishing locally,
 so the collections of times and locations at which mutants appear and establish locally 
 is well--approximated by a Poisson process in space and time.
+\gc{By this we mean that there is a constant rate across space and
+  time at which new
+  mutations arise, and the occurance of new mutations in any region of
+  space-time is independent of that in non-overlapping intervals.}
 The rate of this Poisson process,
 i.e.\ the mean number of new mutants per unit area and per generation that
 appear and establish locally after $t=0$ in areas not already occupied by the mutant type,
-is approximately $\lambda = 2 \mu \rho s_b$.
+is approximately 
+\begin{equation}
+\lambda = 2 s_b \mu \rho 
+\end{equation}
+\gc{In geographic areas already
+ occupied by the mutant type (i.e. in regions it has spread to already), new mutations are selectively excluded
+ (i.e. are effectively neutral), and so unlikely to establish over the
+ short-time scales considered here.  }
 
 Before $t=0$, on the other hand, the allele is deleterious.
 The genetic descendants of each new mutation are (with high probability) doomed to extinction,
-but may persist for some time (note that we have assumed that $s_d$ is not too small).
-Since the times and locations of mutants before $t=0$ also
+but may persist for \gc2{a short} time (note that we have assumed that $s_d$ is not too small).
+\gc{The} times and locations of mutants before $t=0$ also \gc{will} be 
 well--approximated by a 
-Poisson process with rate $\mu \rho$,
+Poisson process with rate $\mu \rho$ \gc{(if $\mu \rho \ll 1$) as
+mutations are rare events. Therefore,} 
 the locations of all mutant families extant at $t=0$ whose descendants are destined to fix locally is also,
-by the Poisson Mapping Theorem, a Poisson process with rate we define to be $\lambda_0$.
+by the Poisson Mapping Theorem, a Poisson process with rate we define
+to be $\lambda_0$ \gc{(i.e. we can simply modify/thin the original rate)}.
+\gc2{Our $\lambda_0$ is the mean density
+of standing variants that are present and escape loss when the
+environment shifts.}
 % (In principle, more than one member of a mutant family may fix,
 % but we assume these are close together enough that we may treat them as beginning from a single point.)
 If we assume that the descendants of at most only a few members of any extant mutant family at $t=0$ will survive,
 and that these progenitors are near to each other in space, 
 we can then treat each such family as equivalent to a single new mutation,
-but with somewhat larger probability of local establishment.
+but with somewhat larger probability of local establishment,
+\gc{following the environmental shift}.
 (This approximation will be good 
 if the logarithm of the size of each extant family is small relative to the establishment time,
 and the spatial distribution of each is small relative to the spread between the families.)
-To find $\lambda_0$, consider a mutation that arose at time $-T<0$, and let $Z_s$ be the number of its descendants at time $s-T$.
+To find $\lambda_0$, consider a mutation that arose at time $-T<0$, and let \gc{$Z_T$ be the number of its descendants at time $0$}.
 At time $t=0$, when the environment shifts, there are $Z_T$ individuals present with the mutation,
 and each has probability $p_s$ of establishing, approximately independently.
 Therefore, the probability that at least one descendant of this mutation establish and fix locally is $1-(1-p_s)^{Z_T}$,
@@ -251,10 +324,12 @@ we know that $\zeta(1-2s_b,T) \approx 1-2s_b \E[Z_T] = 1-2s_b (1-s_d)^T$,
 resulting in the approximation
 \begin{align}
     \lambda_0 &= \mu \rho \int_0^\infty 2s_b (1-s_d)^{T} dT \\
-        &= \frac{ 2 \mu \rho s_b }{ -\log(1-s_d) } .
+        &= \frac{ 2 \mu \rho s_b }{ -\log(1-s_d) } .\\
+        & =  \frac{\lambda }{ (-log(1-s_d)) }.\\
 \end{align}
 Note that this is closely related to the equilibrium frequency of an
-allele at mutation selection balance $\mu/s_d$ \citep{Haldane:27,Haldane:37}.
+allele at mutation selection balance $\mu/s_d$
+\citep{Haldane:27,Haldane:37, Orr:01}.
 
 \paragraph{Geographic spread of alleles} 
 Once an allele has become locally established it can begin to spread across space. 
@@ -279,7 +354,7 @@ As these alleles proceed in their geographic spread, other new alleles can arise
 whose origins are indicated by stars.
 These new mutations arise and become established at rate $\lambda$.
 
-As we outlined in \citet{ralphcoop2010} this model of
+As we outlined in \citet{ralphcoop2010}, this model of
 geographic convergent evolution, when $\lambda_0=0$, is analogous to a model of crystallization due to \citet{kolmogorov-crystallization}.
 In this model, nucleation sites form at random at a constant rate in time and space 
 and initiate the radial growth of new crystals. 
@@ -307,29 +382,35 @@ independent of the rate of spatial spread.
 Introducing new mutations cause some qualitative changes
 beyond dependence on new parameters:
 the cells formed by a Voronoi tessellation have straight sides,
-but the introduction of new mutations cause these to curve.
+but the introduction of new mutations cause these to curve \citep[see
+Figure 1 of ][ for a graphical depiction of this point]{ralphcoop2010}.
 
 
 \begin{figure}[ht]
   \begin{center}
-    \includegraphics[width=\textwidth]{spreading_alleles_trimmed}
+    \includegraphics[width=\textwidth]{spreading_alleles_trimmed_2}
   \end{center}
   \caption{
 {\bf Cartoon space-time diagram of the geographic spread of standing and new mutations}. 
 Time runs down the page, and a single spatial dimension runs across the page. 
 The environment switches at $t=0$, 
 following which adaptive alleles that successfully escape loss by drift
-spread locally from both standing variants (lightning bolts) and new mutations (stars). 
+spread locally from both standing variants (lightning bolts) and new
+mutations (stars). \gc{(Note that the standing variants arose at times
+prior to $t=0$.)}
 The mean spatial density of successful standing variants at $t=0$ is $\lambda_0$,
 and the mean density in space $\times$ time of successful new mutations is $\lambda$.
 These successful alleles spread spatially outwards at speed $v$, 
-so the space-time profile of their spread forms a cone.
+so the space-time profile of their spread forms a cone. Any mutation
+that arises in an area already within a cone to will not have a selective advantage.
 When these adaptive alleles meet, 
 their rapid advance is halted because they no longer have an advantage,
 so their boundaries form straight lines on short time-scales 
 (over longer time-scales, they will mix into each other). 
-The grey dashed line shows a cone radiating backward in space-time,
-originating from a point $(x,t)$, with slope $v$, its radius at $t=0$ is $v t$. 
+\gc{One of the ways we derive various results in the text is by taking a
+space-time point $(x,t)$ and asking the probability that no successful
+alleles have spread there yet.} The grey dashed line shows a cone radiating backward in space-time,
+originating $(x,t)$, with slope $v$, its radius at $t=0$ is $v t$. 
 Point $x$ at time $t$ is not yet adapted because no successful alleles appear within this grey cone.
 }
   \label{fig:cartoon}
@@ -345,7 +426,7 @@ a motivating example to provide some concrete
 numbers to use for illustrative purposes.
 
 Over roughly the past ten thousand years, alleles conferring resistance to malaria have arisen in a number of genes 
-and spread through human populations in areas where malaria is endemic \citep{Kwiatkowski:05}. 
+and spread through human populations in areas where malaria \gc2{has been} endemic \citep{Kwiatkowski:05}. 
 A number of these alleles appear to be examples of convergent adaptation, 
 as different derived mutations in the same gene are seen in different individuals.
 For example, 
@@ -353,8 +434,7 @@ a number of changes that confer malaria resistance have been observed in the $\b
 and the sickle cell allele may plausibly have arisen by up to five independent occurrences
 of the same base pair mutation at different locations within Africa
 \citep{Flint:98,ralphcoop2010}.
-Another particularly impressive case of convergent evolution in response to
-selection pressures imposed by malaria are the numerous changes throughout the X-linked G6PD gene, 
+Another particularly impressive case of convergent evolution \gc2{is} the numerous changes throughout the X-linked G6PD gene, 
 with upward of 50 polymorphic variants (above $1\%$ local frequency) having so far been described 
 that lower the activity of the enzyme \citep{Howes-g6pd-variants,Minucci-g6pd}. 
 These alleles are now found at a combined frequency of around 8\% frequency in malaria endemic areas,
@@ -366,9 +446,13 @@ Three G6PD deficiency alleles are particularly common and relatively well studie
 the $A-$ allele found in much of sub-Saharan Africa; 
 the Med allele found in the Mediterranean and Middle East; 
 and the Mahidol allele found Myanmar and Thailand.
-The $A-$ and Mahidol alleles have been shown
-to be protective against {\it Plasmodium falciparum} and {\it P.\ vivax} in both
-hemizygote males and both heterozygote and homozygotes females \citep{Ruwende-g6pd, Louicharoen-g6pd}. 
+\gc2{ 
+The protective effects of these G6PD alleles are complicated, and are likely heterogeneous
+across study populations and the form of malaria considered
+\citep[see ][ for recent discussion]{manjurano_2015, malaria_network_2014}.  
+The $A-$ and Mahidol alleles are thought to offer some protective effects against {\it Plasmodium falciparum} and {\it P.\ vivax} in both
+heterozygote females and/or hemizygote males \citep{Ruwende-g6pd,
+  Louicharoen-g6pd, manjurano_2015}. }
 Haplotype-based analysis of genetic diversity surrounding
 $A-$, Med, and Mahidol suggest that they have spread over the past 
 few thousand years \citep{tishkoff-g6pd,Slatkin-age-est,Saunders-g6pd,Louicharoen-g6pd}, 
@@ -380,16 +464,20 @@ This is in reasonable agreement with the selection coefficients calculated by
 \citet{Ruwende-g6pd} on the basis of the present day levels of
 resistance to malaria due to the $A-$ allele. \\
 
-Given such a strong pressure on these alleles they should have risen
+%although it is unclear if this selective pressure alone suffices to maintain the polymorphism 
+%in the face of the considerable malaria resistance advantage)
+
+%leading to hemolytic anemia when exposed to a variety of compounds, notably those present in fava beans 
+
+
+Given \gc2{such strong selection the alleles} should have risen
 quickly to fixation, so their presence at intermediate frequency,
 over a broad geographic area, makes it a good candidate for a recently
 balanced polymorphism due to heterozygote advantage \citep[note that
 the conditions for a balanced polymorphism are
 complicated by the hemizygosity of males, see][]{hedrick2011population, Pamillo:1979}. 
 Indeed, hemizygous males and homozygous females suffer from G6PD deficiency,
-leading to hemolytic anemia when exposed to a variety of compounds, notably those present in fava beans 
-(although it is unclear if this selective pressure alone suffices to maintain the polymorphism 
-in the face of the considerable malaria resistance advantage). 
+and homozygote females may also not be protected against malaria \citep{manjurano_2015, malaria_network_2014}. 
 The theory we use regarding the ``wave of advance'' \citep{fisher1937wave}
 applies as well in the case of heterozygote advantage
 \citep{aronson1975nonlinear}, with the selected allele spreading
@@ -401,7 +489,8 @@ Assuming that the underlying causes and strength of this drop in fitness have no
 we estimate that $s_d$ has to have been upward of $\sim 0.05$ (if $sb
 \geq 0.05$),
 in order to have resulted in the equilibrium frequency seen today in
-areas with endemic malaria \citep[see also][]{Ruwende-g6pd}. 
+areas with endemic malaria \citep[based on heterozygote advantage
+calculations for the X chromosome, results not shown, see also][]{Ruwende-g6pd}. 
 
 %Hedrick sex-specific review http://www.eeslmu.de/eeswiki/images/Hedrick_Review.pdf
 % Fry: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3654548/
@@ -489,36 +578,43 @@ by the speed at which the mutants spread.
 We first define a similar characteristic length for this new model. %,
 %as well as a similar compound parameter describing the relative importance of standing variation to the process of adaptation.
 %(Note that a similar approach, summarizing with a {\em characteristic length} was taken by \citep{slatkin1973geneflow} for a different problem.)
-
+\gc{CHECK FACTOR of $1/3$ in cone volume.}
 Suppose we fix our attention on a particular new mutation that happens to be the first to occur in some region.
 If it does not encounter other locally fixed, beneficial mutants,
-it will cover a distance $L$ in time $L/v$.
-The number of other mutations appearing in the circle it has covered up until this time is Poisson with mean
+it will cover a distance $L$ in time $L/v$. \gc{In doing so (in two-dimensions) it will have
+started from a point in space and spread out to cover an geographic
+circular area of size $\pi
+L^2$ and carved out a cone in space-time with this as a base and
+height $L/v$ (with a volume of $\pi L^2 \times (L/v)/3$)
+Therefore, the number of other successfully established mutations that
+would have appeared} in the circle it has covered up until this time is Poisson with mean
 $\lambda_0 \pi L^2 + \lambda \pi L^3 /v$ in two dimensions
 (and $2 \lambda_0 L + 2 \lambda \pi L^2 /v$ in one dimension).
 % $\lambda_0 \omega_d L^d + \lambda \omega_d L^{d+1} /v$ in $d$ dimensions
 Therefore, if we define $\chi$ for a two-dimensional model to be the unique positive solution to
-\begin{equation}
+\begin{equation} \label{eqn:chi_def_1}
     \lambda_0 \pi \chi^2 + \lambda \pi \chi^3 /v = 1,
 \end{equation}
 then $\chi$ gives the distance spread unobstructed by the descendants of a new mutant
 before it is expected that one other successful mutation would have arisen in the area covered so far.
-The explicit formula for $\chi$ in two dimensions is cumbersome; here we omit it.
-(In one dimension the characteristic length is $\chi = ( \sqrt{\lambda_0^2 + 2 \lambda/v} - \lambda_0 )/( 2 \lambda / v )$.)
+The explicit formula for $\chi$ in two dimensions \gc{can be found by
+rearranging eqn. \eqref{eqn:chi_def_1} but is cumbersome;} here we omit
+it. \gc{In one dimension things are a little prettier} and the characteristic length is $\chi = ( \sqrt{\lambda_0^2 + 2 \lambda/v} - \lambda_0 )/( 2 \lambda / v )$.
 Substituting expressions for $\lambda_0$, $\lambda$, and $v$ from above,
-we can rewrite this as
+\gc{in two-dimensions} we can rewrite eqn. \eqref{eqn:chi_def_1} as
 \begin{equation} \label{eqn:defines_chi}
 %    \left( \frac{ - \chi \log(1-s_d) }{ 2 s_b \sigma } \right)^2 + \left( \frac{ - \chi \log(1-s_d) }{ 2 s_b \sigma } \right)^3 
 %        = \frac{ - \log(1-s_d)^3 }{ 4 s_b^2 \sigma^2 \pi \rho \mu } .
    \frac{\sqrt{2s_b} }{-\log(1-s_d) } \chi^2 + \frac{1}{\sigma} \chi^3 = \frac{1}{\sqrt{2s_b} \rho\mu\pi}
 \end{equation}
 From this we see that $\chi$ decreases with $\rho$ and $\mu$.
-Furthermore, for large $\sigma$, the characteristic length is close to the value obtained just from standing variation:
+Furthermore, for large $\sigma$, the characteristic length \gc{approaches}
+the value we would just from standing variation:
 \begin{equation} \label{eqn:chi_standing}
 \chi = \sqrt{ -\log(1-s_d) / 2 s_b \rho \mu \pi } + O(1/\sigma).
 \end{equation}
 On the other hand, if the mutant allele is highly deleterious before $t=0$,
-then the characteristic length is close to the value from \citet{ralphcoop2010}:
+\gc{then standing variation is} unimportant the characteristic length is \gc{approaches} the value from \citet{ralphcoop2010}:
 \begin{equation} \label{eqn:chi_new}
 \chi = ( \sigma / \rho \mu \pi \sqrt{2 s_b} )^{1/3} + O(1/\log(1-s_d)).
 \end{equation}
@@ -549,34 +645,36 @@ By the above calculation, we know that the relevant mutations occur about distan
 % (In one dimension, $\pi_0 = 2 \lambda_0 \chi$.)
 
 
-In Figures \ref{Fig-G6PD-charlength} and \ref{Fig-G6PD-charlength-sb} we show the range of characteristic lengths as a function 
+In Figures \ref{Fig-G6PD-charlength} and \ref{Fig-G6PD-charlength-sb}, we show the range of characteristic lengths as a function 
 of various parameters chosen to match the evolution of malaria
 resistance at G6PD. 
-These curves match our intuition that population densities result in
+These curves match our intuition that \gc{higher} population densities result in
 smaller characteristic lengths (as would higher mutation rates). 
-Allowing standing variation increases the mutational
-input and so decreases the characteristic length below that predicted
+Allowing standing variation increases \gc{the 
+input of new alleles} and so decreases the characteristic length below that predicted
 by only new mutations (i.e.\ equation \eqref{eqn:chi_new}, \citet{ralphcoop2010}).
 In turn, increasing the prior deleterious effect of the allele ($s_d$)
 acts to increase the
 characteristic length until it reaches that predicted by new mutation alone. 
 Higher dispersal distances lead to larger characteristic lengths, 
-since more rapid geographic spread blocks others from arising. 
+since more rapid geographic spread block other mutations from establishing. 
 A larger selective advantage ($s_b$) acts in two conflicting
 ways: aiding the rapid geographic spread of established alleles, and also helping more independent copies
-escape drift and become established. 
-The effect of helping establish alleles wins out, since increasing the selective benefit $s_b$ decreases the characteristic length. 
+\gc2{to} escape drift and become established. 
+The effect of helping\gc{locally} establish alleles wins out, since increasing the selective benefit $s_b$ decreases the characteristic length. 
  (This can be shown in general by differentiating \eqref{eqn:defines_chi} with respect to $z=\sqrt{s_b}$,
 showing that $\partial_{z} \chi = - ( C_1 z \chi + C_2 \chi^2 )/(C_3 z^2 + C_4 z \chi ) \le 0$ for appropriate nonnegative constants $C_{1-4}$.) 
 This effect is strongest when only standing variation contributes ($s_b^{-1/2}$, equation \eqref{eqn:chi_standing}), 
-as in that case the speed of spread does not matter. 
-The dependence of the characteristic length on $s_b$ when only new mutations contribute is much weaker ($s_b^{-1/6}$, equation \eqref{eqn:chi_new})
+as in that case the speed of spread does not matter \gc2{only the
+  initial density of established alleles after the environmental shift}. 
+The dependence of the characteristic length on $s_b$ when only new
+mutations contribute is much weaker (\gc{of order} $s_b^{-1/6}$, equation \eqref{eqn:chi_new})
 Overall, the range of characteristic lengths observed are reasonably
 consistent with the average diameter of a G6PD variant in Eurasia of
 800km, especially for the lower population density, as long as the
-fitness cost of G6PD-deficiency alleles before malaria ($s_d$) was not too low. 
+fitness cost of G6PD-deficiency alleles before malaria ($s_d$) was \gc2{high}. 
 
-Note that the conflicting roles of $\rho$ and $\sigma$ mean thar even in
+Note that the conflicting roles of $\rho$ and $\sigma$ mean that even in
 species where levels of neutral differentiation are low, geographic
 convergent adaptation may be common. This is because low levels of
 neutral genetic differentiation can be due to high population
@@ -626,7 +724,8 @@ and to the quantity only considering standing variants (equation \eqref{eqn:chi_
 \subsection{Time to adaptation}
 
 It is also straightforward to compute the mean time until adaptation.
-Imagine ourselves at some geographic location, and let $\tau \ge 0$ be the time at which we are first reached by some advantageous mutation.
+\gc{Imagine a geographic location, and let $\tau \ge 0$ be the time at
+which this location} is first reached by some advantageous mutation.
 Then, as can be seen from the
 perspective of the grey dot in Figure~\ref{fig:cartoon}, 
 $\tau > t$ if and only if the cone with point at $(x,t)$ and slope $v$
@@ -665,8 +764,8 @@ this time scale seems quite plausible, except perhaps for the lowest dispersal d
 \begin{center}
   \includegraphics[width=1.0\textwidth]{G6PD_chartimes_sd_sb.pdf}   %{charlen-by-sd-limit}
 \caption{ %
-{\bf Mean adaptation times}, as a function of selective disadvantage
-and , compared to the corresponding quantity without standing variation, and to the quantity only considering standing variants.
+{\bf Mean adaptation times} as a function of \gc{selective advantage and disadvantage 
+as well as the population density.} We compare these to the corresponding quantities without standing variation and only considering standing variants.
 } \label{G6PD_chartimes}
 \end{center}
 \end{figure}
@@ -691,34 +790,37 @@ Using that $\lambda_0 = \lambda / \log(1/(1-s_d))$, this gives us that
 \begin{equation}
     \nu_+ = (\mbox{mean density of new patches}) = \frac{1}{1-\log(1-s_d) \E[\tau]} .
 \end{equation}
-Therefore, the mean proportion of patches that come from standing variation
+Therefore, the mean proportion of \gc{adapted} patches that come from standing variation
 is 
 \begin{equation} \label{prop_patches_standing}
 \lambda_0 / (\lambda_0 + \nu_+) .
 \end{equation}
 % this gives us the exact quantity we approximated by $\pi_0$ in \eqref{eqn:pizero}.
 There are $\lambda_0 + \nu_+$ patches per unit area, so
-the typical patch (i.e.\ with distribution given by the Palm measure) occupies area $1/(\lambda_0 + \nu_+)$.
+the typical patch (i.e.\ with distribution given by the Palm measure)
+occupies area $1/(\lambda_0 + \nu_+)$. \gc{NEED REF FOR PALM}
 
 We can also find the mean proportion of space covered by standing
 variants (we will restrict ourselves to two dimensions).
 At time $t$ a geographic location has not yet been reached by the
 mutation with probability given by equation \eqref{eqn-no-mut-t}.
-The probability, given that it has not been reached by $t$, that it will be reached by time $t+dt$ 
+\gc2{Given that it has not been reached by $t$, the probability} that it will be reached by time $t+dt$ 
 by a standing variant is approximately $2 \lambda_0 \pi v^2 t dt$,
 which is $\lambda_0$ multiplied by the thin slice of extra area in our
 expanded circle at $t=0$, which has gone from a radius $vt$ to
-$v(t+dt)$. The corresponding probability the point is reached by a new
+$v(t+dt)$. The corresponding probability that the point is reached by a new
 variant is 
 $\lambda \pi v^2 t^2 dt$, which is $\lambda$ multiplied by the
 sliver of  extra volume in our space-time cone at time $t+dt$ compared to that at time $t$.
-Therefore, as is standard for competing exponentials,
-the probability a given location is reached first by a standing variant,
-and therefore the mean proportion of space covered  by standing variants,
+Therefore, the mean proportion of space covered by standing variants,
 is
 \begin{equation} \label{prop_space_standing}
-    z_0 = \int_0^\infty {2 \lambda_0 \pi v^2 t} \; \exp \left( - \lambda_0 \pi v^2 t^2 - \lambda \pi v^2 t^3 / 3 \right) dt .
+    z_0 = \int_0^\infty {2 \lambda_0 \pi v^2 t} \; \exp \left( -
+      \lambda_0 \pi v^2 t^2 - \lambda \pi v^2 t^3 / 3 \right) dt,
 \end{equation}
+\gc2{this is the probability a given location is reached first by a
+standing variant (which follows from competing our two exponential
+waiting times).}
 To evaluate this integral, again see Appendix \ref{apx:integrals}.
 %\marginnote{put in this value in terms of Gaussian CDF?}
 
@@ -732,9 +834,10 @@ In Figure \ref{G6PD_standing_var_proportion} we show the proportion of
 alleles that spread from standing variation, and the proportion of
 geographic space covered by standing variants for parameters chosen to match our G6PD example.
 Even for relatively large deleterious costs prior to the environmental switch, 
-standing variants still makes up quite large proportion of the adaptive alleles, 
+standing variants still makes up quite a large proportion of the adaptive alleles, 
 and an even larger proportion of the range 
-(they get to occupy a larger area than new mutations, since they start earlier).
+(they \gc2{occupy a larger area than new mutations, since they get a
+headstart}).
 
 \begin{figure}[ht]
 \begin{center}
@@ -758,7 +861,7 @@ We set $\mu=10^{-5}$ and $s_b=0.05$ to match our G6PD example.} \label{G6PD_stan
 
 
 \subsection{Multiple variant types}
-Another problem that we can seek to address with this work is
+Another problem that we can address with this work is
 the extent to which pleiotropy biases 
 adaptation towards the repeated use of particular subset of loci
 (i.e.\ convergence at genetic level). 
@@ -771,7 +874,7 @@ the overall beneficial selection coefficient of an allele in the new environment
 making them unlikely to become established and slow to spread 
 (and in the worst case making them deleterious). 
 This first effect has been well studied by a number of authors
-\citep{Orr:00,Otto:04,WelchWaxman:03,Chevin:10} and its role in precise genetic
+\citep{Orr:00,Otto:04,WelchWaxman:03,Chevin:10} and its role in genetic
 convergence examined \citep{Orr:05,Chevin:10,Unckless:09}. 
 A second contribution is that alleles that have
 less negative pleiotropy are more likely to be present as standing variation 
@@ -780,8 +883,7 @@ immediately.
 
 Here we focus primarily on the second effect. 
 Let's imagine for the moment that all classes of beneficial allele 
-have the same beneficial selection coefficient. 
-Or, at least that beneficial selection coefficients are similar enough that our selective exclusion
+have the same beneficial selection coefficient, \gc{or} at least that beneficial selection coefficients are similar enough that our selective exclusion
 approximation holds over the time scale on which we examine the process.
 Each class of mutations $j$ has its own mutation rate $\mu_j$ and selective disadvantage $s_{d,j}$ prior to the environmental switch. 
 As they have the same beneficial selection coefficient after the switch, 
@@ -810,7 +912,7 @@ i.e.\ if all variants are highly deleterious before the environment switches,
  $p_j =\mu_j / (\sum_k  \mu_k)$.
 
 To illustrate some of the properties of this model, 
-let's imagine the somewhat extreme scenario that there is a single base pair 
+let's imagine the somewhat extreme scenario in which there is a single base pair 
 at which a possible mutation is relatively free of negative pleiotropy (call this class $1$);
 and a larger mutational target where changes 
 have more serious pleiotropic consequences in the ancestral environment (class $2$). 
@@ -819,7 +921,7 @@ assume that both classes share a beneficial selection coefficient of $s_b=0.05$,
 and think of the second class of alleles as arising at one of ten, a hundred, or one thousand base pairs. 
 We show the expected proportion of space covered by
 the rarer, class $1$ mutations in Figure \ref{fig:pleiotropy_calc}.
-Intuitively, the contribution of the rarer mutation decreases as the
+\gc2{As expected intuitively,} the contribution of the rarer mutation decreases as the
 mutational target of the second class becomes larger, and as the
 difference in the negative pleiotropic consequences of the two classes of alleles decreases. 
 The case with standing variation only is the best case scenario 
@@ -846,7 +948,7 @@ Given enough time, the most advantageous type (type 1, in this case) would sprea
 and so substituting multiple values for $s_b$ in equation \eqref{eqn-prop-space-allele-j}
 would only provide a short-term approximation to a longer term dynamic. 
 Even if the initial tessellation has formed with purely class 2 alleles, 
-the first allele would have an selective advantage $\delta s =s_{b,1}-s_{b,2}$,
+the first allele would have a selective advantage $\delta s =s_{b,1}-s_{b,2}$,
 and so would arise at rate $2\rho \mu_1 \delta s $ and would spread at speed $\sigma \sqrt{\delta s}$. 
 An extension of our Poisson process model could incorporate these effects, 
 by thinning the Poisson process of establishing mutations by correctly,
@@ -887,7 +989,7 @@ could ensue if there are epistatic interactions between the alleles.
 
 \subsection{Local establishment and comparison to panmixia}
 
-In the above (and in \citet{ralphcoop2010}) we have assumed that once the mutation appears,
+In the above (and in \citet{ralphcoop2010}), we have assumed that once the mutation appears,
 conditional on eventual fixation, it begins to spread spatially at speed $v$ instantly,
 effectively neglecting the time it must first spend escaping demographic stochasticity.
 In \citet{ralphcoop2010} we addressed this by noting that there would be no change at all in our results 
@@ -898,11 +1000,11 @@ In this section we examine this assumption in more detail, although mostly throu
 and also compare the results above to the results without geographic structure of \citet{softsweepsII}.
 
 We are assuming that shortly after a new mutation appears, 
-it can be approximated by a branching process growing at rate $s$
+it can be approximated by a branching process growing at rate \gc{$s_b$}
 until the point that it grows large enough to ``feel'' spatial structure,
 at which point it begins to spread as a more--or--less deterministic wave.
 Although we are not aware of good analysis of this transition, 
-the relevant size when spatial structure becomes important
+the relevant size \gc{of the branching process} when spatial structure becomes important
 should be something close to $\sigma^2 \rho$ 
 (i.e.\ Wright's ``local effective population size'', \citet{Wright:43}).
 Let $Z_t$ be a continuous-time branching process with $Z_0=1$ and $\E[Z_t] = e^{s_b t}$.
@@ -915,16 +1017,17 @@ we will stick to the loose interpretation.
 
 So, roughly speaking, we need to evaluate the importance of a delay of about $T = (1/s_b) \log (\sigma^2 \rho)$.
 New mutations will appear and become established during this time if
-$4 \rho \sigma^2 \mu s_b \ge 1/T$,
-i.e.\ if $4 \rho \sigma^2 \mu \ge 1/\log (\sigma^2 \rho)$.
+$2 \rho \sigma^2 \mu s_b \ge 1/T$,
+i.e.\ if $2 \rho \sigma^2 \mu \ge 1/\log (\sigma^2 \rho)$.
 Our model will still be a good approximation, however, 
 as long as $T$ is short relative to the time a wave takes to spread between nearby mutational origins.
 This can be worked out,
-but it is simpler to note that if the converse is true, 
+but it is simpler to note that if the converse is true \gc2{(i.e. that
+reach local fixation is slow compared to the spread of the wave)}, 
 the process is largely unaffected by spatial structure,
 and so the panmictic model is a good approximation for the true process.
-Since both our spatial model and the panmictic model underestimate the true degree of parallel adaptation,
-it suffices to compare results from the two models to avoid applying the wrong model.
+%Since both our spatial model and the panmictic model underestimate the true degree of parallel adaptation,
+%it suffices to compare results from the two models to avoid applying the wrong model.
 
 % When would we expect more mutations in this time?
 % Roughly, if populations are larger than $C/\mu$ for some $C \approx 100$.
@@ -939,7 +1042,7 @@ In either case, the predicted number of distinct types grows linearly with $n$,
 much faster than under panmixia.
 
 The results of \citet{softsweepsI} and \citet{softsweepsII} suggest that in a
-panmictic population the number of independent alleles (and their frequencies), in a sample,
+panmictic population the number of independent alleles (and their frequencies) in a sample
 is nearly independent of $s_b$ and $s_d$  \citep[although this
 breaks down with fluctuating population size,
 ][]{Wilson-softsweep}. In the panmictic model the
@@ -947,21 +1050,21 @@ lack of dependence on $s_b$ comes about because while increasing $s_b$
 increases the rate at which independent mutations become established,
 it also accelerates the frequency gain of established alleles, 
 hence decreasing the time period in which new alleles can arise and hope to be at significant frequency in the population. 
-These two effects cancel each other out leading to no strong effect of $s_b$ on the number of independent alleles. 
+These two effects \gc2{approximately} cancel each other out leading to no strong effect of $s_b$ on the number of independent alleles. 
 Decreasing $s_d$ increases the number of standing variants within a population, 
 increasing the number of alleles that manage to establish and spread from standing variation \citep{softsweepsI,Orr:01}. 
 However, having more established standing alleles
 acts to exclude the spread of new alleles that arise once the environment switches. 
-These two opposing effects again cancel out leading to little overall
+These two opposing effects again cancel out, leading to little overall
 effect of $s_d$ on the number of independent alleles.
 In contrast, our results show that the characteristic length 
 (closely related to the density of independent alleles) 
 depends on both $s_b$ and $s_d$ in a geographical spread population. 
-Like the panmictic model, in our model alleles also act to exclude each other; 
+Like the panmictic model, in our model, alleles also act to exclude each other; 
 however, the geographic spread of an allele is slow compared to the initial exponential growth of an allele in a panmictic population. 
 That means that the role of selection in helping
 alleles become established can dominate, leading to more independent origins, both by
-being  weaker before, and stronger after, the environmental switch. 
+being  weaker before and stronger after the environmental switch. 
 
 % We could compare the probability of parallel adaptation under the two models (see eq'n 18 in \citet{softsweepsII}),
 % but this seems less useful than an assessment of the degree of parallel adaptation.
@@ -969,18 +1072,20 @@ being  weaker before, and stronger after, the environmental switch.
 
 \section{Discussion}
 
-Our results further suggest that convergent evolution among populations may be quite common, 
-especially when standing variation is not so deleterious that it is present before environmental shifts. 
 When the geographical area where a species experiences a 
 selection pressure is greater than our characteristic
 length we should expect multiple independent alleles to arise and
-spread in that area. Allowing standing variation in our model  
-decreases the characteristic length, i.e. it increases the extent of
-convergence among populations.
+spread in that area. Our results suggest that convergent evolution
+among populations may be quite common, \gc{at least when population
+  densities and mutational target sizes are large, and dispersal is
+  limited across the range.  Including standing variation is present
+before environmental shifts can greatly increase the probability of convergence. }
 While at face value this increase seems unsurprising,
-this relationship differs markedly from the case of multiple competing alleles in a panmictic population \citep{softsweepsI,softsweepsII}. 
+this relationship differs markedly from the case of multiple competing
+alleles in a panmictic population \citep[see discussion above and in ][]{softsweepsI,softsweepsII}. 
 Importantly, allowing standing variation may greatly lower the time until the species becomes adapted 
-across the geographic range of the selection pressure. Adaptation through standing variation also biases the type of variation towards those alleles 
+across the geographic range of the selection pressure. We have also
+shown that adaptation through standing variation biases the type of variation towards those alleles 
 with fewer pleiotropic effects, since these are more common as standing variation before the environmental shift. 
 This bias can in some cases easily overcome quite significant differences in mutational target sizes
 among loci allowing the same locus to be repeatedly the source of
@@ -1004,8 +1109,8 @@ Such convergence may considerably complicate the
 exploration of phenotypes and adaptation among populations using variants mapped in a
 limited set of populations \citep{Berg:14}.
 
-More generally, if geographic convergence is common we should often expect to see
-selected alleles which are strongly geographically restricted as they
+More generally, if geographic convergence is common, we should often expect to see
+selected alleles that are strongly geographically restricted as they
 have simply not had time for neutral mixing to spread them across the landscape.
 This pattern may be very hard to distinguish from local adaptation using population genomic approaches
 alone. This is especially problematic as boundaries between convergent alleles may often
@@ -1030,7 +1135,7 @@ adaptation, we should expect the population to be partitioned into a
 set of geographically restricted long haplotypes. 
 Given sufficient time these haplotypes will mix together through
 migration and drift, 
-potentially leading to a signal of a sweep from multiple independent
+potentially leading to a \gc2{within population} signal of a sweep from multiple independent
 mutations if our selected allele occurs at the same locus \citep{softsweepsIII}, 
 or to multiple partial sweeps if the loci are scattered across the
 genome \citep{CoopRalph:12}.
@@ -1038,16 +1143,15 @@ genome \citep{CoopRalph:12}.
 
 Our results are predicated on the idea that adaptive variants are
 initially rare within populations, i.e.\ they are reasonably
-deleterious before the environment switches. In contrast, even distant populations could have
-a shared basis of adaptation if they adapt via common variation,
-e.g.\ previously neutral (or nearly neutral) variation, shared among populations. 
-Our ability to detect such shared convergent events is at the moment quite limited. 
+deleterious before the environment switches. \gc2{ In contrast, if they adapt via common variation even distant populations could have
+a shared basis of adaptation, e.g.\ previously neutral (or nearly neutral) variation, shared among populations. 
 If many loci contribute to variation in a trait, then
 selection on any one allele may be weak, 
 which might lead adaptation to use the same alleles in different populations.
 However, sufficiently differentiated populations may still
 adapt via different genetic routes, as the constellation of alleles
-best able to respond to selection will be somewhat different \citep{Barton:89}.
+that respond to selection quickest will be somewhat different due to
+drift among populations} \citep{Barton:89}.
 % best positioned to initially respond to positive selection, 
 % i.e.\ those at intermediate frequency, will be somewhat different. 
 Therefore, it may be the case that polygenic traits are even less susceptible to a shared
@@ -1077,22 +1181,22 @@ are highlighting ever more signals of gene flow between populations and species 
 However, our work on geographic convergent adaptation
 \citep[see also][]{ralphcoop2010,RalphCoop:14} 
 suggests that species should often adapt to
-wide-spread selection pressures through convergent evolution rather
+widespread selection pressures through convergent evolution rather
 than waiting for a single allele to migrate across the range. 
 
 % over length-scales determined by our characteristic length.
  
 In support of this idea, putative recent selective sweeps seem to often be geographically restricted \citep{Pickrell:09,Coop:09,Granka:14},
 rather than species-wide \citep[but see][ for a potential example]{Clark:07,Long:13}. 
-This is likely in part due to the relatively low incidence of wide-spread selection pressures,
-but as noted above even when we know of wide-spread selection
+This is likely in part due to the relatively low incidence of widespread selection pressures,
+but as noted above even when we know of widespread selection
 pressures (e.g.\ malaria) the response is usually convergent, not shared, across large spatial scales. 
 On the other hand, 
 introgression of adaptive alleles across species and sub-species boundaries, 
 suggests that selected alleles do sometimes spread despite low
 migration rates \citep[see ][ for a recent review]{hedrick2013adaptive}.
 However, at least some of these cases 
-are likely caused by introgression of haplotype complexes
+may be caused by introgression of haplotype complexes
 consisting of many, tightly linked, beneficial alleles (that perhaps
 are inaccessible by mutation over reasonable time-scales for a population in a new
 environment).  
@@ -1168,9 +1272,13 @@ If it is rare for gene flow to rapidly spread selected alleles across a species 
 how then do selected alleles ever become fixed within species? 
 Drift alone will act only slowly to sort variants within species into
 divergence among species. 
+\gc{Slight selective differences in the pleiotropic effects (or linked
+  background) among convergent alleles could allow one allele to
+  press into areas occupied by other alleles.}
 Furthermore, repeated bouts of adaptation in particular genomic regions may act 
 to push a subset of previously selected alleles to fixation across the
-species range, through the spread of the genetic backgrounds on which they arise.  
+species range, through the spread of the genetic backgrounds on which
+they arise.  
 However, it seems likely that this is a slow process compared to the
 initial rapid spread of selected alleles.
 \
@@ -1210,7 +1318,7 @@ Furthermore, he suggests that speciation
 may act as ratchet to prevent the loss of differentiation, acting to
 maintain adaptive changes among populations, and prevent their loss by interbreeding. 
 At face value the rate of species formation seems too low to contribute to this process. 
-However, \citep{Rosenblum:12}, and many others, 
+However, \citet{Rosenblum:12}, and many others, 
 have argued that the rate of speciation may well be quite high,
 but that the majority of incipient species do not persist long due to
 reabsorption or extinction. 
