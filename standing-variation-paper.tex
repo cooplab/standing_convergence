@@ -334,11 +334,15 @@ resulting in the approximation
 \begin{align}
     \lambda_0 &= \mu \rho \int_0^\infty 2s_b (1-s_d)^{T} dT \\
         &= \frac{ 2 \mu \rho s_b }{ -\log(1-s_d) } .\\
-        & =  \frac{\lambda }{ (-log(1-s_d)) }.\\
+        & =  \frac{\lambda }{ (-log(1-s_d)) }.
 \end{align}
-Note that this is closely related to the equilibrium frequency of an
-allele at mutation selection balance $\mu/s_d$
-\citep{Haldane:27,Haldane:37, Orr:01}.
+Note that for small $s_d$ this can also be found by taking the expected frequency under mutation-selection
+balance $\mu/s_d $ \citep{Haldane:27,Haldane:37} multiplying it by the
+population density to obtain the expected number of chromosomes per unit
+carrying the deleterious allele, with each of these having a
+probability $2s_b$ of escaping loss \citep[an analogous approach to
+that taken by ][]{Orr:01}
+. 
 
 \paragraph{Geographic spread of alleles} 
 Once an allele has become locally established it can begin to spread across space. 
@@ -795,19 +799,20 @@ is lucky enough to be born in a location not already occupied by mutants
 is $\P\{ \tau > t \}$,
 we can see  $\nu_+ = \int_0^\infty \lambda \P\{\tau>t\} dt$, and hence
 $\nu_+ = \lambda \E[\tau] $.
-Using that $\lambda_0 = \lambda / \log(1/(1-s_d))$, this gives us that
-\begin{equation}
-    \nu_+ = (\mbox{mean density of new patches}) = \frac{1}{1-\log(1-s_d) \E[\tau]} .
-\end{equation}
+%Using that $\lambda_0 = \lambda / \log(1/(1-s_d))$, this gives us that
+%\begin{equation}
+ %   \nu_+ = (\mbox{mean density of new patches}) = \frac{1}{1-\log(1-s_d) \E[\tau]} .
+%\end{equation}
 Therefore, the mean proportion of \gc{adapted} patches that come from standing variation
 is 
 \begin{equation} \label{prop_patches_standing}
-\lambda_0 / (\lambda_0 + \nu_+) .
+\lambda_0 / (\lambda_0 + \nu_+)  = \frac{1}{1-\log(1/(1-s_d)) \E[\tau]} .
 \end{equation}
 % this gives us the exact quantity we approximated by $\pi_0$ in \eqref{eqn:pizero}.
 There are $\lambda_0 + \nu_+$ patches per unit area, so
-the typical patch (i.e.\ with distribution given by the Palm measure)
-occupies area $1/(\lambda_0 + \nu_+)$. \gc{NEED REF FOR PALM}
+the typical patch (informally, the patch around a randomly chosen
+successful mutation; formally, with the Palm measure
+\citep{cox1980point}) occupies area $1/(\lambda_0 + \nu_+)$. 
 
 We can also find the mean proportion of space covered by standing
 variants (we will restrict ourselves to two dimensions).
@@ -1411,7 +1416,12 @@ Therefore, it seems possible that populations within species may often be tendin
 and that as outlined here that this may drive some proportion of molecular divergence.
 
 \subsubsection*{Acknowledgements}
-We thank Michael Turelli, Jon Seger, and the Coop lab for helpful conversations.  
+We thank Michael Turelli, Jon Seger, and the Coop lab for helpful
+conversations. We thank Florence D\'ebarre, Douglas Futuyma, Michael   %Débarre
+Whitlock, Molly Przeworski, and  Sam Yeaman for helpful comments on an
+earlier version of the paper. All figures and calculations were
+performed in \citet{R_stats}. The color paletes were generated using
+Karthik Ram's Wes Anderson R color palette \url{https://github.com/karthik/wesanderson}.
 
 \bibliography{standing_patches_refs}
 

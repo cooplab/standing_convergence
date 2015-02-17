@@ -1,5 +1,4 @@
-
-source('~/Dropbox/postdocs/Peter/Spatial_adaptation/Spatial_adaptation/standing-variation-fns.R')
+source("~/Dropbox/postdocs/Peter/standing_parallelism/standing-variation-fns.R")
 #install.packages("wesanderson")
 library("wesanderson")
 
@@ -31,7 +30,7 @@ for(j in 1:2){
 	 ##contribution of standing var only, i.e. old variation
 	 charlength.standing.only<-sapply(sbvals, function (sb) {  oldCharLength(mu, rho, sb, sd=sd, sigma)$value})
 	 lines(sbvals,charlength.standing.only ,lwd=2,col="black",lty=3)
-	  if(j == 2) legend("topright",col=c("grey","grey","black",my.col[1:3]),lwd=2,lty=c(2,3,1,rep(NA,3)),pch=c(NA,NA,NA,rep(19,3)),legend= as.expression( c("No Standing var.","No new mut.","Both",
+	  if(j == 2) legend("topright",col=c("grey","grey","grey",my.col[1:3]),lwd=2,lty=c(2,3,1,rep(NA,3)),pch=c(NA,NA,NA,rep(19,3)),legend= as.expression( c("No Standing var.","No new mut.","Both",
 	 	lapply(sigmas , function(x){  {substitute( sigma==myS, list(myS=x) )} }))))
  	}
 
@@ -63,7 +62,7 @@ for(j in 1:2){
 	 ##contribution of standing var only, i.e. old variation
 	 charlength.standing.only<-sapply(sdvals, function (sd) {  oldCharLength(mu, rho, sb, sd, sigma)$value})
 	 lines(sdvals,charlength.standing.only ,lwd=2,col="black",lty=3)
-	  if(j == 2) legend("topright",col=c("grey","grey","black",my.col[1:3]),lwd=2,lty=c(2,3,1,rep(NA,3)),pch=c(NA,NA,NA,rep(19,3)),legend= as.expression( c("No Standing var.","No new mut.","Both",
+	  if(j == 2) legend("topright",col=c("grey","grey","grey",my.col[1:3]),lwd=2,lty=c(2,3,1,rep(NA,3)),pch=c(NA,NA,NA,rep(19,3)),legend= as.expression( c("No Standing var.","No new mut.","Both",
 	 	lapply(sigmas , function(x){  {substitute( sigma==myS, list(myS=x) )} }))))
  	}
  	
@@ -134,7 +133,7 @@ for(j in 1:2){
 		if(j==1){ mtext(side=3,expression(rho==0.2),cex=1.5);mtext(side=2,line=3,"Proportion",cex=1.5)}
 		if(j==2){ mtext(side=3,expression(rho==2),cex=1.5)}
 		
-			  if(j == 1) legend("topright",col=c(NA,"grey","grey",my.col[1:3]),lwd=2,lty=c(NA,1,2,rep(NA,3)),pch=c(NA,NA,NA,rep(19,3)),legend= as.expression( c("Contribution of Standing Variation as:","Proportion of Area,","Proportion of Alleles.",
+			  if(j == 1) legend("topright",col=c(NA,"grey","grey",my.col[1:3]),lwd=2,lty=c(NA,1,2,rep(NA,3)),pch=c(NA,NA,NA,rep(19,3)),legend= as.expression( c("Contribution of Standing Var. as:","Proportion of Area,","Proportion of Alleles.",
 	 	lapply(sigmas , function(x){  {substitute( sigma==myS, list(myS=x) )} }))))
 		
 	for(i in 1:3){
