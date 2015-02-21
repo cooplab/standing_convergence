@@ -258,7 +258,7 @@ is $\sigma^2$. \mfp{Note that we assume that the dispersal kernel is
   discussion of heavy tailed kernels and \citet{hallatschek_acceleration_2014} for recent progress
   on rapid spreading due to very long distance dispersal.}
 The species occupies an area with mean density
-$\rho$ of haploid individuals \gc{(twice the number of diploids)} per unit area.
+$\rho$ of haploid individuals \gc{(twice the number of diploid individuals)} per unit area.
 
 %We assume that dispersal occurs by local movement of
 %individuals. Specifically we will assume that individuals dispersal a
@@ -274,7 +274,8 @@ $\rho$ of haploid individuals \gc{(twice the number of diploids)} per unit area.
 \paragraph{Rates of origination of standing and new mutations}
 We make use of the commonly used approximation that neglects competition between close relatives,
 treating the offspring of a new mutant that appears in an area not already occupied by the mutated type
-as a branching process.
+as a branching process \gc{in continuous time, measured in generations
+(average inter-birth intervals)}. 
 After $t=0$, the offspring of each individual mutant thus forms (approximately) a branching process with growth rate $s_b$,
 so each new mutant establishes locally with probability $p_s \approx 2s_b$.
 As in \cite{ralphcoop2010}, each new offspring has a very small probability of being a mutant and establishing locally,
@@ -526,7 +527,7 @@ Therefore, the average width of an area occupied by an allele is $\sqrt{10^7/15}
 The coding region of G6PD is 515 codons long, 
 and around 140 distinct deficiency alleles have been observed. 
 Assuming a mutation rate of $\approx 10^{-8}$ per base pair per generation, 
-we can take as an order-of-magnitude estimate $\mu \approx 1 \times 10^{-6}$ per generation. 
+we can take as an order-of-magnitude estimate $\mu \approx 10^{-6}$ per generation. 
 The dispersal and demographic parameters of humans in the past few thousand years is unclear,
 particularly as we are concerned with the ``effective'' population density
 (i.e.\ population density divided by variance in offspring number).
@@ -590,15 +591,18 @@ Furthermore, the time scale over which adaptation occurred could be found by div
 by the speed at which the mutants spread.
 We first define a similar characteristic length for this new model. %,
 %as well as a similar compound parameter describing the relative importance of standing variation to the process of adaptation.
-%(Note that a similar approach, summarizing with a {\em characteristic length} was taken by \citep{slatkin1973geneflow} for a different problem.)
-\gc{CHECK FACTOR of $1/3$ in cone volume.}
+%(Note that a similar approach, summarizing with a {\em characteristic
+%length} was taken by \citep{slatkin1973geneflow} for a different
+%problem.)
+
+
 Suppose we fix our attention on a particular new mutation that happens to be the first to occur in some region.
 If it does not encounter other locally fixed, beneficial mutants,
 it will cover a distance $L$ in time $L/v$. \gc{In doing so (in two-dimensions) it will have
 started from a point in space and spread out to cover an geographic
 circular area of size $\pi
-L^2$ and carved out a cone in space-time with this as a base and
-height $L/v$ (with a volume of $\pi L^2 \times (L/v)/3$)
+L^2$ and carved out a cylinder in space-time with this circle as a base and
+height $L/v$ (the volume of this cylinder is $\pi L^2 \times (L/v)$)
 Therefore, the number of other successfully established mutations that
 would have appeared} in the circle it has covered up until this time is Poisson with mean
 $\lambda_0 \pi L^2 + \lambda \pi L^3 /v$ in two dimensions
@@ -621,8 +625,8 @@ Substituting expressions for $\lambda_0$, $\lambda$, and $v$ from above,
    \frac{\sqrt{2s_b} }{-\log(1-s_d) } \chi^2 + \frac{1}{\sigma} \chi^3 = \frac{1}{\sqrt{2s_b} \rho\mu\pi}
 \end{equation}
 From this we see that $\chi$ decreases with $\rho$ and $\mu$.
-Furthermore, for large $\sigma$, the characteristic length \gc{approaches}
-the value we would just from standing variation:
+Furthermore, for large $\sigma$, the characteristic length \gc{approaches
+the value we would obtain just} from standing variation:
 \begin{equation} \label{eqn:chi_standing}
 \chi = \sqrt{ -\log(1-s_d) / 2 s_b \rho \mu \pi } + O(1/\sigma).
 \end{equation}
@@ -703,7 +707,7 @@ evolution may be common even in species with little neutral population structure
 compared to the corresponding quantity without standing variation (equation \eqref{eqn:chi_new}) 
 and to the quantity only considering standing variants (equation \eqref{eqn:chi_standing}).
 The other parameters are chosen to match those of G6PD,
-$\mu = 10^{-5}$ and $s_b = 0.05$. As the characteristic length with
+\gc{$\mu = 10^{-6}$} and $s_b = 0.05$. As the characteristic length with
 only standing variation is independent of dispersal distance it is
 plotted as a single black dotted line. 
 } \label{Fig-G6PD-charlength}
@@ -715,7 +719,7 @@ plotted as a single black dotted line.
   \includegraphics[width=1.0\textwidth]{G6PD_charlengths_sb}   %{charlen-by-sd-limit}
 \caption{ %
 {\bf Characteristic length, in kilometers, as a function of selective advantage},
-holding the prior disadvantage of the allele fixed at $s_d=0.05$ and the mutation rate fixed at $\mu=10^{-5}$.  
+holding the prior disadvantage of the allele fixed at $s_d=0.05$ and the mutation rate fixed at \gc{$\mu=10^{-6}$}.  
 We compare this to the corresponding quantity without standing
 variation (equation \eqref{eqn:chi_new}) 
 and to the quantity only considering standing variants (equation \eqref{eqn:chi_standing}).
@@ -742,8 +746,8 @@ which this location} is first reached by some advantageous mutation.
 Then, as can be seen from the
 perspective of the grey dot in Figure~\ref{fig:cartoon}, 
 $\tau > t$ if and only if the cone with point at $(x,t)$ and slope $v$
-extending back to $t=0$ (light grey dashed lines) is empty of successful mutations.
-Since we assume these are a Poisson process, 
+extending back to $t=0$ (light grey dashed lines) is empty of
+successful mutations. Since we assume that \mfp{our successful alleles} arise as a Poisson process, 
 in two dimensions
 \begin{equation} \label{eqn-no-mut-t}
     \P\{ \tau > t \} = \exp\left( - \lambda_0 \pi v^2 t^2 - \lambda \pi v^2 t^3 / 3 \right) ,
@@ -792,13 +796,13 @@ We can use our framework to address what proportion of new adaptive variants ari
 We have defined $\lambda_0$ to be the mean density
 of standing variants that are present and escape loss when the
 environment shifts.
-We will define $\nu_+$ to be the mean density of newly arising alleles
+We will define $\gamma$ to be the mean density of newly arising alleles
 that spread having arisen in an area free of other adaptive alleles.
 Since the probability that a mutant arising at location $x$ and time $t$ 
 is lucky enough to be born in a location not already occupied by mutants
 is $\P\{ \tau > t \}$,
-we can see  $\nu_+ = \int_0^\infty \lambda \P\{\tau>t\} dt$, and hence
-$\nu_+ = \lambda \E[\tau] $.
+\gc{we can see  $\gamma = \int_0^\infty \lambda \P\{\tau>t\} dt$, and hence
+$\gamma = \lambda \E[\tau] $.}
 %Using that $\lambda_0 = \lambda / \log(1/(1-s_d))$, this gives us that
 %\begin{equation}
  %   \nu_+ = (\mbox{mean density of new patches}) = \frac{1}{1-\log(1-s_d) \E[\tau]} .
@@ -806,13 +810,14 @@ $\nu_+ = \lambda \E[\tau] $.
 Therefore, the mean proportion of \gc{adapted} patches that come from standing variation
 is 
 \begin{equation} \label{prop_patches_standing}
-\lambda_0 / (\lambda_0 + \nu_+)  = \frac{1}{1-\log(1/(1-s_d)) \E[\tau]} .
+\lambda_0 / (\lambda_0 + \gamma)  = \frac{1}{1-\log(1/(1-s_d)) \E[\tau]} ,
 \end{equation}
+using the fact that $\lambda_0 = \lambda / \log(1/(1-s_d))$.
 % this gives us the exact quantity we approximated by $\pi_0$ in \eqref{eqn:pizero}.
-There are $\lambda_0 + \nu_+$ patches per unit area, so
+There are $\lambda_0 + \gamma$ patches per unit area, so
 the typical patch (informally, the patch around a randomly chosen
 successful mutation; formally, with the Palm measure
-\citep{cox1980point}) occupies area $1/(\lambda_0 + \nu_+)$. 
+\citep{cox1980point}) occupies area $1/(\lambda_0 + \gamma)$. 
 
 We can also find the mean proportion of space covered by standing
 variants (we will restrict ourselves to two dimensions).
@@ -1092,9 +1097,18 @@ selection pressure is greater than our characteristic
 length we should expect multiple independent alleles to arise and
 spread in that area. Our results suggest that convergent evolution
 among populations may be quite common, \gc{at least when population
-  densities and mutational target sizes are large, and dispersal is
-  limited across the range.  Including standing variation is present
-before environmental shifts can greatly increase the probability of convergence. }
+  densities and mutational target sizes are not too small, and dispersal is
+  limited across the range.  While considering smaller mutational
+target sizes (e.g. less than the 100bp in our example) or lower population densities would lower the probability of convergence
+within a given geographical area, it would also act to considerably lengthen
+the time to adaptation. In such cases adaptation may simply fail to
+occur at all or populations may adapt via some other means (i.e. by using a
+broader mutational target). 
+}
+
+\gc{Our inclusion of standing variation 
+before environmental change greatly increase the probability of
+convergence with a species. }
 While at face value this increase seems unsurprising,
 this relationship differs markedly from the case of multiple competing
 alleles in a panmictic population \citep[see discussion above and in ][]{softsweepsI,softsweepsII}. 
@@ -1126,7 +1140,10 @@ limited set of populations \citep{Berg:14}.
 
 More generally, if geographic convergence is common, we should often expect to see
 selected alleles that are strongly geographically restricted as they
-have simply not had time for neutral mixing to spread them across the landscape.
+have simply not had time for neutral mixing to spread them across the
+landscape. \gc{Such convergent alleles will be $F_{ST}$-outliers compared to
+  older neutral variation, untill there is sufficient time for
+  migration to smooth out them out.}
 This pattern may be very hard to distinguish from local adaptation using population genomic approaches
 alone. This is especially problematic as boundaries between convergent alleles may often
 occur where gene flow rates are low, i.e.\ historical and ecological breaks, even if
@@ -1246,7 +1263,7 @@ is on order of the total effective population size.
 This quantity has not been worked out for a model with simultaneous local sweeps,
 but will be somewhat analogous to the ``spatial $\Lambda$-Fleming--Viot'' models of \citet{barton2013modelling},
 in which local sweeps occur independently across the range.
-Lineages that are close to the sweep ($\sim v/\chi$ Morgans) will be moved
+Lineages that are \gc{closely linked to the sweeping allele} ($\sim v/\chi$ Morgans) will be moved
 towards the center of the sweep (a displacement $O(\chi)$), 
 and pairs of lineages caught up in the same sweep could be forced to coalesce 
 \citep[see ][for work on geographic
