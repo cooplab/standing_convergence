@@ -108,7 +108,7 @@ There are an increasing number of examples where
 different populations within a species have
 adapted to similar environments by means of independent genetic changes. 
 In some cases this convergent evolution \mfp{is the result of quite
-distinct genetic changes, involving very different genes and pathways} despite shared selection pressures; 
+distinct genetic changes, involving very different genes and pathways,} despite shared selection pressures; 
 in other cases independent adaptations are identical down the same
 nucleotide change
 \citep{Jeong20141,stern2013genetic,MartinOrgogozo:13, Conte2012}. 
@@ -135,7 +135,7 @@ subject to a constant selection pressure,
 either through selection on multiple mutations present as standing variation within the population
 before selection pressures switch \citep{Orr:01,softsweepsI},
 or due to multiple adaptive alleles that arise after selection pressures switch \citep{softsweepsII}. 
-The previous work has shown that 
+Previous work has shown that 
 a primary determinant of the probability that multiple alleles contribute to adaptation
 is the product of the population size and the mutation rate \citep[see][for a review]{MesserPetrov}. 
 
@@ -152,13 +152,13 @@ In \citet{ralphcoop2010} we formulated a simple model of \gc{convergent adaptati
 that is exposed to some novel, spatially homogeneous selection pressure.
 We assumed that a single mutational change was sufficient to adapt
 the population after the change in environment. Under this assumption,
-selected alleles arise and spread locally. However, if the geographic
+selected alleles arise and spread locally.  See Figure
+\ref{fig:sim-spread}. However, if the geographic
 area is large enough multiple selected alleles can
 arise independently and spread before any one has spread across all of
-space ( Figure \ref{fig:sim-spread}).  one allele's rapid spatial spread can be
-halted by running into convergent allele. See Figure
-\ref{fig:sim-spread}. A somewhat analogous situation also arises in spatial models of clonal
-inference in asexuals \citep{gordo_adaptive_2006,martens_interfering_2011,otwinowski_clonal_2014}.}
+space. Therefore, one allele's rapid spatial spread can be halted by
+running into convergent allele.A somewhat analogous situation also
+arises in spatial models of clonal inference in asexuals \citep{gordo_adaptive_2006,martens_interfering_2011,otwinowski_clonal_2014}.}
 
 
 
@@ -196,11 +196,11 @@ present at mutation-selection balance before the selection pressures switch.
 Below,
 we show that convergent adaptation within a widespread species is likely to be
 common \gc{when ranges, population sizes, or mutational targets are large}, as has already been seen for a number of traits. 
-On this basis owe argue 
+On this basis we argue 
 that the genetics of adaptation may often be geographically local \gc{even
 when selection pressures are geographically broad}, 
 % and that we should expect to see relatively few wide-spread sweeps even when selection pressures are wide-spread. 
-and that widespread selective sweeps \mfp{should tend to} occur
+and that widespread selective sweeps \mfp{should tend to occur only}
 when adaptation is highly constrained (e.g.\ by small mutation rate or
 the need for a linked combination of alleles).
 We discuss the \gc{history, and implications,} of this view for the evolutionary
@@ -222,7 +222,7 @@ either as selectively equivalent mutations, or by linked \gc{neutral} variation.
   equivalent (both in terms how deleterious they were before, and how
   advantagous they are after, the
   environmental shift). Note that these mutations do not have to arise at the same locus,
-  just that all of the mutated type of selective equivalent. As such,
+  just that all of the mutated type are selective equivalent. As such,
   these could be mutations arising at the same base pair or knockout
   mutations of any one of a number of genes in a pathway as long as carrying at least one of these alleles
   is sufficient to adapt an individual to the new environment.}
@@ -253,12 +253,13 @@ homozygote for the mutant alleles. \mfp{Note that this means that we
 As for the other parameters,
 suppose that each offspring of a neutral parent is of the mutant type with probability $\mu$,
 and that the mean squared geographic distance between parent and child
-is $\sigma^2$. \mfp{Note that we assume that the dispersal kernel is
+is $\sigma^2$. \mfp{We assume that the dispersal kernel is
   not heavy tailed, e.g. Gaussian, see \citet{ralphcoop2010} for
   discussion of heavy tailed kernels and \citet{hallatschek_acceleration_2014} for recent progress
   on rapid spreading due to very long distance dispersal.}
 The species occupies an area with mean density
-$\rho$ of haploid individuals \gc{(twice the number of diploid individuals)} per unit area.
+$\rho$ of alleles per unit area \gc{(twice the number of diploid
+  individuals per unit area)}.
 
 %We assume that dispersal occurs by local movement of
 %individuals. Specifically we will assume that individuals dispersal a
@@ -293,8 +294,9 @@ is approximately
 \lambda = 2 s_b \mu \rho 
 \end{equation}
 \gc{In geographic areas already
- occupied by the mutant type (i.e. in regions it has spread to already), new mutations are selectively excluded
- (i.e. are effectively neutral), and so unlikely to establish over the
+ occupied by the mutant type (i.e. in regions were the beneficial
+ allele has spread to), new mutations are selectively excluded,
+ i.e. are effectively neutral, and so unlikely to establish over the
  short-time scales considered here.  }
 
 Before $t=0$, on the other hand, the allele is deleterious.
@@ -352,7 +354,7 @@ quickly settles down to spread spatially as a traveling wave of constant speed.
 The behavior of this wave of advance of a beneficial allele was first described by 
 \citet{fisher1937wave} and \citet*{KPP1937}. 
 Under reasonably general conditions, the speed of advance of this wave is $v = \sigma \sqrt{2s}$. 
-(See \citet{ralphcoop2010} for a more thorough review of these travelling waves.)
+See \citet{ralphcoop2010} for a more thorough review of these travelling waves.
 Note that the speed of the wave will vary
 with details of the space that individuals migrate across
 \citep[e.g.\ see ][ for comparisons to migration on discrete grids]{Slatkin-speed:76,SlatkinCharlesworth:78}.
@@ -425,7 +427,7 @@ so their boundaries form straight lines on short time-scales
 space-time point $(x,t)$ and asking the probability that no successful
 alleles have spread there yet.} The grey dashed line shows a cone radiating backward in space-time,
 originating $(x,t)$, with slope $v$, its radius at $t=0$ is $v t$. 
-Point $x$ at time $t$ is not yet adapted because no successful alleles appear within this grey cone.
+Our point $x$ at time $t$ is not yet adapted because no successful alleles appear within this grey cone.
 }
   \label{fig:cartoon}
 \end{figure}
@@ -1108,7 +1110,7 @@ broader mutational target).
 
 \gc{Our inclusion of standing variation 
 before environmental change greatly increase the probability of
-convergence with a species. }
+convergence within a species. }
 While at face value this increase seems unsurprising,
 this relationship differs markedly from the case of multiple competing
 alleles in a panmictic population \citep[see discussion above and in ][]{softsweepsI,softsweepsII}. 
@@ -1140,10 +1142,10 @@ limited set of populations \citep{Berg:14}.
 
 More generally, if geographic convergence is common, we should often expect to see
 selected alleles that are strongly geographically restricted as they
-have simply not had time for neutral mixing to spread them across the
+have simply not had time for neutral gene flow to spread them across the
 landscape. \gc{Such convergent alleles will be $F_{ST}$-outliers compared to
   older neutral variation, untill there is sufficient time for
-  migration to smooth out them out.}
+  migration to smooth out them out across the landscape.}
 This pattern may be very hard to distinguish from local adaptation using population genomic approaches
 alone. This is especially problematic as boundaries between convergent alleles may often
 occur where gene flow rates are low, i.e.\ historical and ecological breaks, even if
