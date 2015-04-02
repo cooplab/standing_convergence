@@ -9,10 +9,10 @@
 \usepackage{color}
 \usepackage[utf8]{inputenc}  % for special characters in authors' names
 
-\newcommand{\gc}[1]{{\it\color{blue} #1}}
-\newcommand{\mfp}[1]{{\it\color{red} #1}}
+\newcommand{\gc}[1]{{\it\color{blue}#1}}
+\newcommand{\mfp}[1]{{\it\color{red}#1}}
 
-\newcommand{\plr}[1]{{\it\color{green}(#1)}}
+\newcommand{\plr}[1]{{\it\color{green}#1}}
 \usepackage{lineno}  %%%% FOR AMNAT
 \newcommand{\var}{\mathop{\mbox{Var}}}
 \renewcommand{\P}{\mathbb{P}}
@@ -325,19 +325,21 @@ but with somewhat larger probability of local establishment,
 \gc{following the environmental shift}.
 (This approximation will be good 
 if the logarithm of the size of each extant family is small relative to the establishment time,
+\plr{since then new families quickly ``catch up'' to the size of already-extant families,}
 and the spatial distribution of each is small relative to the spread between the families.)
 To find $\lambda_0$, consider a mutation that arose \plr{$T$ generations ago}, 
 and let \gc{$Z_T$ be the number of its descendants at time $0$}.
 At time $t=0$, when the environment shifts, there are $Z_T$ individuals present with the mutation,
 and each has probability $p_s$ of establishing, approximately independently.
 Therefore, the probability that at least one descendant of this mutation establish and fix locally is $1-(1-p_s)^{Z_T}$,
-so defining $\zeta(u,t) = \E[u^{Z_t} | Z_0=1 ]$ to be the generating function of $Z_T$,
+% so defining $\zeta(u,t) = \E[u^{Z_t} | Z_0=1 ]$ to be the generating function of $Z_T$,
 the mean number of clusters of standing variants destined to fix locally, per unit area, is
 \begin{align*}
-    \mu \rho \int_0^\infty \left( 1- \zeta(1-p_s,T) \right) dT .
+    % \mu \rho \int_0^\infty \left( 1- \zeta(1-p_s,T) \right) dT .
+    \mu \rho \int_0^\infty \E\left[1- (1-p_s)^{Z_T}\right] dT .
 \end{align*}
 For $s_b$ small, using $p_s \approx 2s_b$ and that $\E[Z_T]=(1-s_d)^T$,
-we know that $\zeta(1-2s_b,T) \approx 1-2s_b \E[Z_T] = 1-2s_b (1-s_d)^T$,
+\plr{we know that $\E[(1-2s_b)^{Z_T}] \approx 1-2s_b \E[Z_T] = 1-2s_b (1-s_d)^T$,}
 resulting in the approximation
 \begin{align}
     \lambda_0 &= \mu \rho \int_0^\infty 2s_b (1-s_d)^{T} dT \\
@@ -403,8 +405,8 @@ independent of the rate of spatial spread.
 Introducing new mutations cause some qualitative changes
 beyond dependence on new parameters:
 the cells formed by a Voronoi tessellation have straight sides,
-but the introduction of new mutations cause these to curve.
-% \citep[see Figure 1 of ][ for a graphical depiction of this point]{ralphcoop2010}.
+but the introduction of new mutations cause these to curve
+\citep[because the radii of the colliding circles differ; see Figure 1 of ][ for a graphical depiction of this point]{ralphcoop2010}.
 
 
 \begin{figure}[ht]
@@ -703,7 +705,7 @@ fitness cost of G6PD-deficiency alleles before malaria ($s_d$) was \mfp{high}.
 Note that the conflicting roles of $\rho$ and $\sigma$ mean that even in
 species where levels of neutral differentiation are low, geographic
 convergent adaptation may be common. This is because low levels of
-neutral genetic differentiation can be due to high population
+neutral genetic differentiation between geographic regions can be due to high population
 densities rather than high dispersal distances, and high population
 densities would allow convergent adaptation. As such geographic convergent
 evolution may be common even in species with little neutral population structure.
@@ -912,9 +914,10 @@ before the environmental shift, and so are more able to respond
 immediately.
 
 Here we focus primarily on the second effect. 
-Let's imagine for the moment that all classes of beneficial allele 
-have the same beneficial selection coefficient, \gc{or} at least that beneficial selection coefficients are similar enough that our selective exclusion
-approximation holds over the time scale on which we examine the process.
+Let's imagine for the moment \plr{that there are several classes of beneficial allele,}
+all having the same beneficial selection coefficient 
+(\gc{or} at least that beneficial selection coefficients are similar enough that our selective exclusion
+approximation holds over the time scale on which we examine the process).
 Each class of mutations $j$ has its own mutation rate $\mu_j$ and selective disadvantage $s_{d,j}$ prior to the environmental switch. 
 As they have the same beneficial selection coefficient after the switch, 
 all of the waves travel outward at a rate $v$. 
