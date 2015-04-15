@@ -7,12 +7,13 @@
 \usepackage{hyperref}
 %\usepackage{latexml} % for \iflatexml
 \usepackage{color}
+\usepackage[dvipsnames]{xcolor}
 \usepackage[utf8]{inputenc}  % for special characters in authors' names
 
 \newcommand{\gc}[1]{{\it\color{blue}#1}}
 \newcommand{\mfp}[1]{{\it\color{red}#1}}
+\newcommand{\plr}[1]{{\it\color{Fuchsia}#1}}
 
-\newcommand{\plr}[1]{{\it\color{green}#1}}
 \usepackage{lineno}  %%%% FOR AMNAT
 \newcommand{\var}{\mathop{\mbox{Var}}}
 \renewcommand{\P}{\mathbb{P}}
@@ -1317,6 +1318,15 @@ If it is rare for gene flow to rapidly spread selected alleles across a species 
 how then do selected alleles ever become fixed within species? 
 Drift alone will act only slowly to sort variants within species into
 divergence among species. 
+\plr{Of course, effective population sizes estimated from genetic diversity
+    are nearly always small enough that fixation of neutral alleles by drift
+    is expected to take less time than the divergence time between species.
+    However, this observation is somewhat circular,
+    and as reviewed by \citet{leffler2012revisiting},
+    we do not understand why the implied ``effective population sizes'' differ so much
+    from census population sizes;
+    selective processes (as described here) are likely part of the explanation \citep{corbettdetig2015natural}.
+}
 \gc{Slight selective differences in the pleiotropic effects (or linked
   background) among convergent alleles could allow one allele to
   press into areas occupied by other alleles.}
