@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: display/standing-variation-paper.aux
+The style file: amnat.bst
+Reallocated str_pool (elt_size=1) to 130000 items from 65000.
+Reallocated str_pool (elt_size=1) to 195000 items from 130000.
+Reallocated str_pool (elt_size=1) to 260000 items from 195000.
+Reallocated str_pool (elt_size=1) to 325000 items from 260000.
+Reallocated str_pool (elt_size=1) to 390000 items from 325000.
+Database file #1: standing_patches_refs.bib
+Warning--there's a number but no volume in barton2013genetic
+You've used 107 entries,
+            2782 wiz_defined-function locations,
+            13818 strings with 366308 characters,
+and the built_in function-call counts, 68924 in all, are:
+= -- 5547
+> -- 3343
+< -- 76
++ -- 1329
+- -- 1173
+* -- 5297
+:= -- 11212
+add.period$ -- 326
+call.type$ -- 107
+change.case$ -- 916
+chr.to.int$ -- 104
+cite$ -- 108
+duplicate$ -- 4700
+empty$ -- 4812
+format.name$ -- 1479
+if$ -- 13367
+int.to.chr$ -- 4
+int.to.str$ -- 1
+missing$ -- 1116
+newline$ -- 433
+num.names$ -- 430
+pop$ -- 1933
+preamble$ -- 1
+purify$ -- 816
+quote$ -- 0
+skip$ -- 1472
+stack$ -- 0
+substring$ -- 3502
+swap$ -- 2617
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 942
+warning$ -- 1
+while$ -- 470
+width$ -- 0
+write$ -- 1284
+(There was 1 warning)
