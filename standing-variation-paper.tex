@@ -1,8 +1,8 @@
 \documentclass{article}
 \usepackage{fullpage}
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage[authoryear]{natbib}
-\usepackage{marginnote}
 \usepackage{graphicx}
 \usepackage{hyperref}
 %\usepackage{latexml} % for \iflatexml
@@ -18,15 +18,9 @@
 \newcommand{\var}{\mathop{\mbox{Var}}}
 \renewcommand{\P}{\mathbb{P}}
 \newcommand{\E}{\mathbb{E}}
-\newcommand{\R}{\mathbb{R}}
 
 %\usepackage{setspace}
 %\doublespacing
-
-%\iflatexml  % no margin notes in latexml
-% \newcommand{\marginnote}[1]{}
-%\newcommand{\marginnote}[1]{{\it\color{red}(#1)}}
-%\fi
 
 \bibliographystyle{amnat}
 
@@ -854,7 +848,7 @@ standing variant (which follows from competing our two exponential
 waiting times).}
 \gc{For applications we evaluate this integral numerically.}
 %To evaluate this integral, again see Appendix \ref{apx:integrals}.
-%\marginnote{put in this value in terms of Gaussian CDF?}
+%\plr{put in this value in terms of Gaussian CDF?}
 
 Furthermore, if we define $a_0$ to be the mean area occupied by a typical standing variant, 
 then $a_0$ is given by the proportion of the range occupied by standing variants divided by the mean density of unique standing variants,
