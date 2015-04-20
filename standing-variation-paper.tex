@@ -12,7 +12,7 @@
 
 \newcommand{\gc}[1]{{\it\color{blue}#1}}
 \newcommand{\mfp}[1]{{\it\color{red}#1}}
-\newcommand{\plr}[1]{{\it\color{Fuchsia}#1}}
+\newcommand{\plr}[1]{{\it\color{blue}#1}}
 
 \usepackage{lineno}  %%%% FOR AMNAT
 \newcommand{\var}{\mathop{\mbox{Var}}}
@@ -696,6 +696,27 @@ Overall, the range of characteristic lengths observed are reasonably
 consistent with the average diameter of a G6PD variant in Eurasia of
 800km, especially for the lower population density, as long as the
 fitness cost of G6PD-deficiency alleles before malaria ($s_d$) was \mfp{high}. 
+
+
+\gc{Finally, while the form of eqn. \eqref{eqn:defines_chi}, specifying
+the characteristic length, is not
+particularly intuitive we can use it to ask when we should expect
+multiple adaptative alleles within a large geographic region  where our selective pressure
+is present (thanks to Sam Yeaman for proposing this
+interpretation). Consider the case where this geographic area is a fairly regular
+shape of area $G$ and diameter $\sqrt{G}$. Denote the total effective population size
+over this area by $N = \rho G$, and the standard deviation of dispersal as a
+fraction of the diameter of this area by $\sigma_G  = \sigma/
+\sqrt{G}$. Measuring distance in units of the diameter of $\sqrt{G}$,
+we expect multiple mutations when $\chi<1$ a
+condition which will be met when 
+\begin{equation}
+N > \frac{\sigma_G}{ \mu \pi \sqrt{2s_b} \left(1 -  \sigma_G \sqrt{2s_b} /\log (1-s_d) \right)},
+\end{equation}
+this is found by rearranging eqn. \eqref{eqn:defines_chi} having set
+$\chi=1$. This nicely shows that $\sigma_G/\mu$ is ae primary
+determinant of the critical population density necessary for
+convergent evolution.}
 
 Note that the conflicting roles of $\rho$ and $\sigma$ mean that even in
 species where levels of neutral differentiation are low, geographic

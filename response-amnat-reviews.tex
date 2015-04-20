@@ -32,7 +32,7 @@ Thanks to Flo, Sam, and you for all of the useful comments, they were very helpf
  
 Best wishes\\
 Peter Ralph and Graham Coop\\
-3/19/15
+4/7/15
 \newpage 
 
 
@@ -74,10 +74,10 @@ After 90: ``somewhat larger probability of local establishment'' -- it is not at
 
 Equation 2: If the mutation selection balance is $\mu/s_d$, then the number of copies of the allele on average per unit area is $\rho mu/ s_d$. The probability that this leads to a successfully establishment is $2 s_b$ per copy approximately, which gives $2 s_b \mu \rho / s_d$ for $\lambda_0$. This seems like an easier derivation to me. (For large $s_d$, this diverges from your result -- which is more correct?)
 
-\response{We have extended the description here to more clearly give the ``classic'' mutation-selection balance interpretation. We think it is important to work through this in the simple spatial case (via branching processes) rather than just move straight from the result people are familiar with deriving under the panmictic model. This allows folks to see that the result is valid. }
+\response{This difference arises from taking a continuous time approach. We have extended the description here to more clearly give the ``classic'' mutation-selection balance interpretation. We think it is important to work through this in the simple spatial case (via branching processes) rather than just move straight from the result people are familiar with deriving under the panmictic model. This allows folks to see that the result is valid in our spatial setting. }
 
-\gc{Peter is the difference coming about in part because the deterministic result is an approximation? Or because we are working in continuous time (or another reason?)?}
-\plr{Continuous time: in a discrete-time model, the mean density of individuals resulting from a rate-1 Poisson rain of branching processes would be $1/s_d$; in continuous time, it would be $1/\log(1/(1-s_d))$.  So, I wouldn't say that one is more valid that the other.  Hmph, confusing.}
+%\gc{Peter is the difference coming about in part because the deterministic result is an approximation? Or because we are working in continuous time (or another reason?)?}
+%\plr{Continuous time: in a discrete-time model, the mean density of individuals resulting from a rate-1 Poisson rain of branching processes would be $1/s_d$; in continuous time, it would be $1/\log(1/(1-s_d))$.  So, I wouldn't say that one is more valid that the other.  Hmph, confusing.}
 
 P3, somewhere. It would be worth explicitly giving the formula for lambda somewhere.
 
@@ -320,18 +320,21 @@ $$Ncrit == (\sigma * \log[1-s]) / (\sqrt{2}  \mu  \pi * (\sqrt{s} \log[1-s] - \s
 
 (see attached mathematica file for a more clear version). If N is less than this value, then the characteristic length would be greater than 1, and convergent genetic evolution would not be expected. I'm sure there are some nicer ways that this could be expressed to show various features of importance when certain parameters are small (for example, when sigma is small, it drops out of the denominator, and then Ncrit is a simple function of sigma in the numerator). The scale of sigma is now expressed as a proportion of the total species range, so sigma can realistically be quite small for some species. Of course, this doesn't help us know how fast the characteristic length decreases once $N > Ncrit$, but Eq. 4 does that. I'm not sure if I've made an obvious blunder in here somewhere, but perhaps this is a useful approach? In any case, it seems worth acknowledging in the discussion that some species are quite unlikely to have convergent genetic evolution, due to their small range size, total population size, or high dispersal distance. The discussion currently says that convergent genetic evolution may be quite common (and line 466 even suggests it may be rare for gene flow to spread a selected allele across the range of a species). Delineating when this is important is especially interesting because the signal of convergent evolution can resemble local adaptation (e.g., line 400-408). If this approach makes sense, it could be discussed along with the section from lines 225-229, which presents a very important conclusion arising from this work.
 
+\response{Thanks, this is a nice way of interpreting the result! We have added a paragraph giving this intepretation in roughly the locaiton in the text suggested.}
 
-\gc{Not sure this helps much. Thoughts Peter? By equating $\rho$ to N is he implicitly measuring $\sigma$ in units of range radius?}
-\plr{I like it.  (and, he mentions that $\sigma$ is as a fraction of the range, er, should be range diameter, I think.)
-What this comes down to is $N > \frac{ \sigma }{ \sqrt{2 s_b} \mu \pi ( 1 + \sigma \sqrt{s_b}/\log(1/(1-s_d)))}$,
-which since $\pi \sqrt{2s_b}$ will be something of order 1, is roughly just $N > \sigma/\mu$, or $N \mu > \sigma$.
-This is a bit surprising, but very concrete.  What do you think?
-}
+%\gc{
+
+%Not sure this helps much. Thoughts Peter? By equating $\rho$ to N is he implicitly measuring $\sigma$ in units of range radius?}
+%\plr{I like it.  (and, he mentions that $\sigma$ is as a fraction of the range, er, should be range diameter, I think.)
+%What this comes down to is $N > \frac{ \sigma }{ \sqrt{2 s_b} \mu \pi ( 1 + \sigma \sqrt{s_b}/\log(1/(1-s_d)))}$,
+%which since $\pi \sqrt{2s_b}$ will be something of order 1, is roughly just $N > \sigma/\mu$, or $N \mu > \sigma$.
+%This is a bit surprising, but very concrete.  What do you think?
+%}
 
 Another general consideration is that the trait needs to be non-genetically-redundant for the kind of genetic convergent evolution discussed here, in that there needs to be few genes that could evolve to give the phenotype of interest (ideally, just one, given the model formulation). In both skin pigmentation and malaria resistance, there is only one (or a few) gene(s) that can be mutated to give the phenotype, but many quantitative traits are much more genetically redundant. In a highly genetically redundant case, a very different but interesting prediction can be made: if the characteristic length is small, then we might expect different genetic solutions to the same evolutionary problem in populations separated by distance $> \chi$ i.e., genetically non-convergent, but phenotypically convergent evolution). This is an interesting corollary of the work that could be explored in the future. Then, the ratio of {mutational target size within a single gene} vs. {mutation target size in all other genes that affect the trait with similar s} becomes important for whether evolution is genetically convergent or not. While redundant mutations in quantitative traits would likely have small s, they would also have a higher total target mutation rate across many genes, so species with relatively smaller total size might have small chi and high probability of evolving different genetic solutions for the same phenotype. The section on lines 418-426 touches on this a bit. This suggests that the model could be generalized by considering three classes of mutation with the same (redundant) value of s: 1) same nucleotide, 2) same gene, 3) all other genes. The characteristic length just gives the likelihood of there being multiple independent evolutionary lineages that arise and fix locally, making a tessellation (I think?), and the probability of the alleles being from class 1, 2, or 3 is then just determined by their relative mutational target sizes/rates. The type of convergence/parallelism is then defined by whether it is at the level of QTN (class 1), QTL (class 2), or phenotypic with a different genetic basis (class 3). If the approach I suggested above is sound, then this type of evolution would be common for most quantitative traits in most species (because the high mutation rate at the whole-trait level would compensate for the smaller total population size).
 
-\response{In general we think that highly polygenic traits may often result in very different sets of alleles/loci being used  in different populations. }
-\plr{er, should say a bit more here, but unsure how to say something that's not ``yes, we know.'' Isn't there more discussion of this in RC10?}
+\response{We are interested in this area, and agree with the reviewer, but we don't want to expand on it given that the paper is already heavy on discussion.  In general we think that highly polygenic traits may often result in very different sets of alleles/loci being used in different populations. We are currently thinking on expanding on this point to form another paper. }
+%\plr{er, should say a bit more here, but unsure how to say something that's not ``yes, we know.'' Isn't there more discussion of this in RC10?}
 
 Perhaps I am carrying this too far, but it suggests part of the reason why we might sometimes see so many outliers when we use approaches like Bayenv to look at putatively locally adapted quantitative traits. If different populations are evolving in response to a spatially homogenous temporal change in selection pressure (e.g., climate change) via highly redundant traits, then as long as the characteristic length is small, they would evolve different alleles at different loci in different populations. Because climatic variables are correlated with space, it is natural that they would often match up with the tesselations, resulting in associations between snps and local environment. As long as the environment changes faster than the period required for drift to homogenize these responses and wipe out the structure, this signature would be prevalent, but spurious. With suitably rapid changes in environment, alleles could have quite different values of s without enough time to homogenize them across the range of the species (e.g., as discussed around line 316). Obviously, I like how the paper discusses how this kind of evolution would generate signatures resembling local adaptation! I guess I'm arguing that this problem could be much more general, and extend to non-genetically convergent evolution.
 
