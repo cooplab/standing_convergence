@@ -52,13 +52,13 @@ University of California -- Davis, Davis, CA, 95616\\
 % standing deleterious variation
 % higher mutation rate => more importance of standing
 % G6PD a combination of new and standing
-% interpolates betw panmixia and 2010
+% interpolates   panmixia and 2010
 % pleiotropy pre-shift biases adaptation
 % establishment phase
 % selective sweeps and species coherence, gene flow
 
 \linenumbers
-\modulolinenumbers[2]
+%\modulolinenumbers[2]
 
 \section*{Abstract}
 The extent to which populations experiencing shared selective pressures
@@ -215,7 +215,7 @@ We assume that separately arising mutations are distinguishable --
 either as selectively equivalent mutations, or by linked \gc{neutral} variation.
 \gc{We assume that all alleles of the mutated type are selectively
 equivalent (both in terms how deleterious they were before, and how
-advantagous they are after, the environmental shift). 
+advantageous they are after, the environmental shift). 
 Note that these mutations do not have to arise at the same locus,
 just that they are selectively equivalent:
 these could be mutations arising at the same base pair, 
@@ -280,7 +280,7 @@ so the collections of times and locations at which mutants appear and establish 
 is well--approximated by a Poisson process in space and time.
 \gc{By this we mean that there is a constant rate across space and
   time at which new
-  mutations arise, and the occurance of new mutations in any region of
+  mutations arise, and the occurrence of new mutations in any region of
   space-time is independent of that in non-overlapping intervals
   in which the mutated type has not already appeared.}
 The rate of this Poisson process,
@@ -714,9 +714,14 @@ condition which will be met when
 N > \frac{\sigma_G}{ \mu \pi \sqrt{2s_b} \left(1 -  \sigma_G \sqrt{2s_b} /\log (1-s_d) \right)},
 \end{equation}
 this is found by rearranging eqn. \eqref{eqn:defines_chi} having set
-$\chi=1$. This nicely shows that $\sigma_G/\mu$ is ae primary
+$\chi=1$. This nicely shows that $\sigma_G/\mu$ is a primary
 determinant of the critical population density necessary for
-convergent evolution.}
+convergent evolution, when $\sigma_G$ is small. As $\sigma_G
+s_b/s_d$ becomes large, e.g. because the allele is not too deleterious
+before the environmental shift, we get our standing variation only
+case where the dependence of  $\sigma_G$
+drops out leaving the critical population size as $1/(2 \mu \pi
+s_b/s_d)$}
 
 Note that the conflicting roles of $\rho$ and $\sigma$ mean that even in
 species where levels of neutral differentiation are low, geographic
@@ -1171,7 +1176,7 @@ More generally, if geographic convergence is common, we should often expect to s
 selected alleles that are strongly geographically restricted as they
 have simply not had time for neutral gene flow to spread them across the
 landscape. \gc{Such convergent alleles will be $F_{ST}$-outliers compared to
-  older neutral variation, untill there is sufficient time for
+  older neutral variation, until there is sufficient time for
   migration to smooth out them out across the landscape.}
 This pattern may be very hard to distinguish from local adaptation using population genomic approaches
 alone. This is especially problematic as boundaries between convergent alleles may often
@@ -1333,15 +1338,15 @@ If it is rare for gene flow to rapidly spread selected alleles across a species 
 how then do selected alleles ever become fixed within species? 
 Drift alone will act only slowly to sort variants within species into
 divergence among species. 
-\plr{Of course, effective population sizes estimated from genetic diversity
-    are nearly always small enough that fixation of neutral alleles by drift
-    is expected to take less time than the divergence time between species.
-    However, this observation is somewhat circular,
-    and as reviewed by \citet{leffler2012revisiting},
-    we do not understand why the implied ``effective population sizes'' differ so much
-    from census population sizes;
-    selective processes (as described here) are likely part of the explanation \citep{corbettdetig2015natural}.
-}
+%\plr{Of course, effective population sizes estimated from genetic diversity
+ %   are nearly always small enough that fixation of neutral alleles by drift
+  %  is expected to take less time than the divergence time between species.
+   % However, this observation is somewhat circular,
+   % and as reviewed by \citet{leffler2012revisiting},
+   % we do not understand why the implied ``effective population sizes'' differ so much
+   % from census population sizes;
+   % selective processes (as described here) are likely part of the explanation \citep{corbettdetig2015natural}.
+%}
 \gc{Slight selective differences in the pleiotropic effects (or linked
   background) among convergent alleles could allow one allele to
   press into areas occupied by other alleles.}
@@ -1478,6 +1483,11 @@ Whitlock, Molly Przeworski, and  Sam Yeaman for helpful comments on an
 earlier version of the paper. All figures and calculations were
 performed in R \citep{R_stats}. The figure color paletes were generated using
 Karthik Ram's ``Wes Anderson'' R color palette \url{https://github.com/karthik/wesanderson}.
+This work was supported by grants from the
+National Science Foundation under Grant No. 1262645 to PLR and GC and by the
+National Institute of General Medical Sciences of the National
+Institutes of Health under award numbers NIH RO1GM83098 and
+RO1GM107374 to GC.
 
 \bibliography{standing_patches_refs}
 
