@@ -24,6 +24,9 @@
 
 \bibliographystyle{amnat}
 
+% turn on/off figures
+\newif\iffigures
+\figuresfalse
 
 
 \title{The role of standing variation in geographic convergent adaptation}
@@ -1343,7 +1346,9 @@ RO1GM107374 to GC.
 %%%Figure 1
 \begin{figure}[ht]
   \begin{center}
-%    \includegraphics[width=\textwidth]{sims/Peter_sims.png}
+      \iffigures
+      \includegraphics[width=\textwidth]{sims/Peter_sims}
+      \fi
   \end{center}
   \caption{
 {\bf Simulation of the geographic spread of new mutations}. Simulation
@@ -1363,7 +1368,9 @@ simulation are given in \citet{ralphcoop2010}.
 %%Figure 2
 \begin{figure}[ht]
   \begin{center}
-  %  \includegraphics[width=\textwidth]{spreading_alleles_trimmed_2}
+      \iffigures
+        \includegraphics[width=\textwidth]{spreading_alleles_trimmed_2}
+      \fi
   \end{center}
   \caption{
 {\bf Cartoon space-time diagram of the geographic spread of standing and new mutations}. 
@@ -1394,7 +1401,9 @@ This shows the location $x$ is not yet adapted at time $t$ because no successful
 %%%Figure 3
 \begin{figure}[ht]
 \begin{center}
-%  \includegraphics[width=1.0\textwidth]{G6pd_Howes_et_al_1475-2875-12-418-4}   %{charlen-by-sd-limit}
+    \iffigures
+      \includegraphics[width=1.0\textwidth]{G6pd_Howes_et_al_1475-2875-12-418-4}   %{charlen-by-sd-limit}
+    \fi
 \caption{ 
 {\bf Map of G6PD-deficiency allele frequencies across Asia.} 
 The pie chart shows the frequency of G6PD-deficiency alleles. 
@@ -1410,7 +1419,9 @@ Figure taken from \citet{Howes-g6pd-variants}
 %%Figure 4
 \begin{figure}[ht]
 \begin{center}
- % \includegraphics[width=1.0\textwidth]{G6PD_charlengths}   %{charlen-by-sd-limit}
+    \iffigures
+      \includegraphics[width=1.0\textwidth]{G6PD_charlengths}   %{charlen-by-sd-limit}
+    \fi
 \caption{ %
 {\bf Characteristic length, in kilometers, as a function of selective disadvantage}, 
 compared to the corresponding quantity without standing variation (equation \eqref{eqn:chi_new}) 
@@ -1427,7 +1438,9 @@ plotted as a single black dotted line.
 %%Figure 5
 \begin{figure}[ht]
 \begin{center}
-  %\includegraphics[width=1.0\textwidth]{G6PD_charlengths_sb}   %{charlen-by-sd-limit}
+    \iffigures
+      \includegraphics[width=1.0\textwidth]{G6PD_charlengths_sb}   %{charlen-by-sd-limit}
+    \fi
 \caption{ %
 {\bf Characteristic length, in kilometers, as a function of selective advantage}, at two population densities,
 holding the prior disadvantage of the allele fixed at $s_d=0.05$ and the mutation rate fixed at $\mu=10^{-6}$.  
@@ -1442,7 +1455,9 @@ and to the quantity only considering standing variants (equation \eqref{eqn:chi_
 %%%Figure 6
 \begin{figure}[ht]
 \begin{center}
- % \includegraphics[width=1.0\textwidth]{G6PD_chartimes_sd_sb.pdf}   %{charlen-by-sd-limit}
+    \iffigures
+      \includegraphics[width=1.0\textwidth]{G6PD_chartimes_sd_sb.pdf}   %{charlen-by-sd-limit}
+    \fi
 \caption{ %
 {\bf Mean adaptation times} as a function of selective advantage and disadvantage.
 We compare these to the corresponding quantities without standing variation and only considering standing variants.
@@ -1454,7 +1469,9 @@ We compare these to the corresponding quantities without standing variation and 
 %%Figure 7
 \begin{figure}[ht]
 \begin{center}
-  %\includegraphics[width=1.0\textwidth]{G6PD_standing_var_proportion}
+    \iffigures
+      \includegraphics[width=1.0\textwidth]{G6PD_standing_var_proportion}
+    \fi
 \caption{ %
 {\bf Mean proportion of patches arising from standing variation,} 
 as a function of selective disadvantage, at two population densities.
@@ -1471,7 +1488,9 @@ We set $\mu=10^{-5}$ and $s_b=0.05$ to match our G6PD example.} \label{G6PD_stan
 %%Figure 8.
 \begin{figure}[ht]
 \begin{center}
- % \includegraphics[width=1.0\textwidth]{pleiotropy_calc}
+    \iffigures
+      \includegraphics[width=1.0\textwidth]{pleiotropy_calc}
+    \fi
 \caption{ %
 {\bf Proportion of space covered by rarer but less negatively pleiotropic
   mutation}. Empty circles give the result for standing variation only,
