@@ -308,7 +308,7 @@ We assume that the allele, once established,
 quickly settles down to spread spatially as a traveling wave of constant speed. 
 The behavior of this wave of advance of a beneficial allele was first described by 
 \citet{fisher1937wave} and \citet*{KPP1937}. 
-Under reasonably general conditions, the speed of advance of this wave is $v = \sigma \sqrt{2s}$. 
+Under reasonably general conditions, the speed of advance of this wave is $v = \sigma (2s)^{1/2}$. 
 See \citet{ralphcoop2010} for a more thorough review of these travelling waves.
 Note that the speed of the wave will vary
 with details of the space that individuals migrate across
@@ -449,7 +449,7 @@ In that area there are at least $15$ common, clinically relevant variants \citep
 predispose individuals to haemolytic anaemia, 
 and are found in at least 10 localities;
 see \citet{Howes-g6pd-variants} for more details.)
-Therefore, the average width of an area occupied by an allele is $\sqrt{10^7/15} \approx  800$km. 
+Therefore, the average width of an area occupied by an allele is $(10^7/15)^{1/2} \approx  800$km. 
 The coding region of G6PD is 515 codons long, 
 and around 140 distinct deficiency alleles have been observed. 
 Assuming a mutation rate of $\approx 10^{-8}$ per base pair per generation, 
@@ -528,7 +528,8 @@ then $\chi$ gives the distance spread unobstructed by the descendants of a new m
 before it is expected that one other successful mutation would have arisen in the area covered so far.
 The explicit formula for $\chi$ in two dimensions can be found by
 rearranging eqn. \eqref{eqn:chi_def_1} but is cumbersome; here we omit
-it. In one dimension things are a little prettier and the characteristic length is $\chi = ( \sqrt{\lambda_0^2 + 2 \lambda/v} - \lambda_0 )/( 2 \lambda / v )$.
+it. In one dimension things are a little prettier and the
+characteristic length is $\chi = ( \left(\lambda_0^2 + 2 \lambda/v \right) - \lambda_0 )^{1/2}/( 2 \lambda / v )$.
 Substituting expressions for $\lambda_0$, $\lambda$, and $v$ from above,
 in two-dimensions we can rewrite eqn. \eqref{eqn:chi_def_1} as
 \begin{equation} \label{eqn:defines_chi}
@@ -591,7 +592,7 @@ A larger selective advantage ($s_b$) acts in two conflicting
 ways: aiding the rapid geographic spread of established alleles, and also helping more independent copies
 to escape drift and become established. 
 The effect of helping locally establish alleles wins out, since increasing the selective benefit $s_b$ decreases the characteristic length. 
- (This can be shown in general by differentiating \eqref{eqn:defines_chi} with respect to $z=\sqrt{s_b}$,
+ (This can be shown in general by differentiating \eqref{eqn:defines_chi} with respect to $z=s_b^{1/2}$,
 showing that $\partial_{z} \chi = - ( C_1 z \chi + C_2 \chi^2 )/(C_3 z^2 + C_4 z \chi ) \le 0$ for appropriate nonnegative constants $C_{1-4}$.) 
 This effect is strongest when only standing variation contributes ($s_b^{-1/2}$, equation \eqref{eqn:chi_standing}), 
 as in that case the speed of spread does not matter only the
@@ -610,10 +611,10 @@ particularly intuitive we can use it to ask when we should expect
 multiple adaptative alleles within a large geographic region  where our selective pressure
 is present (thanks to Sam Yeaman for proposing this
 interpretation). Consider the case where this geographic area is a fairly regular
-shape of area $G$ and diameter $\sqrt{G}$. Denote the total effective population size
+shape of area $G$ and diameter $G^{1/2}$. Denote the total effective population size
 over this area by $N = \rho G$, and the standard deviation of dispersal as a
 fraction of the diameter of this area by $\sigma_G  = \sigma/
-\sqrt{G}$. Measuring distance in units of the diameter of $\sqrt{G}$,
+G^{1/2}$. Measuring distance in units of the diameter of $G^{1/2}$,
 we expect multiple mutations when $\chi<1$ a
 condition which will be met when 
 \begin{equation}
@@ -859,7 +860,8 @@ and so substituting multiple values for $s_b$ in equation \eqref{eqn-prop-space-
 would only provide a short-term approximation to a longer term dynamic. 
 Even if the initial tessellation has formed with purely class 2 alleles, 
 the first allele would have a selective advantage $\delta s =s_{b,1}-s_{b,2}$,
-and so would arise at rate $2\rho \mu_1 \delta s $ and would spread at speed $\sigma \sqrt{\delta s}$. 
+and so would arise at rate $2\rho \mu_1 \delta s $ and would spread at
+speed $\sigma \delta s^{1/2}$. 
 An extension of our Poisson process model could incorporate these effects, 
 by thinning the Poisson process of establishing mutations by correctly,
 but is considerably less tractable.
