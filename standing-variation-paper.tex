@@ -517,7 +517,7 @@ If it does not encounter other locally fixed, beneficial mutants,
 it will cover a distance $L$ in time $L/v$. In doing so (in two-dimensions) it will have
 started from a point in space and spread out to cover a circular geographic region of area $\pi L^2$.
 The cylinder in space-time with this circle as a base and
-height $L/v$ has volume of this cylinder is $\pi L^2 \times (L/v)$.
+height $L/v$ has a volume of $\pi L^2 \times (L/v)$.
 Therefore, the number of other successfully established mutations that
 would have appeared in the circle it has covered up until this time is Poisson with mean
 $\lambda_0 \pi L^2 + \lambda \pi L^3 /v$ in two dimensions
@@ -547,7 +547,7 @@ the value we would obtain just from standing variation:
 \chi = \sqrt{ -\log(1-s_d) / 2 s_b \rho \mu \pi } + O(1/\sigma).
 \end{equation}
 On the other hand, if the mutant allele is highly deleterious before $t=0$,
-then standing variation is unimportant the characteristic length is approaches the value from \citet{ralphcoop2010}:
+then standing variation is unimportant and the characteristic length is approaches the value from \citet{ralphcoop2010}:
 \begin{equation} \label{eqn:chi_new}
 \chi = ( \sigma / \rho \mu \pi \sqrt{2 s_b} )^{1/3} + O(1/\log(1-s_d)).
 \end{equation}
@@ -598,8 +598,8 @@ The effect of helping locally establish alleles wins out, since increasing the s
  (This can be shown in general by differentiating \eqref{eqn:defines_chi} with respect to $z=s_b^{1/2}$,
 showing that $\partial_{z} \chi = - ( C_1 z \chi + C_2 \chi^2 )/(C_3 z^2 + C_4 z \chi ) \le 0$ for appropriate nonnegative constants $C_{1-4}$.) 
 This effect is strongest when only standing variation contributes ($s_b^{-1/2}$, equation \eqref{eqn:chi_standing}), 
-as in that case the speed of spread does not matter only the
-  initial density of established alleles after the environmental shift. 
+as in that case only the initial density of established alleles after the environmental shift matters,
+not the speed of spread.
 The dependence of the characteristic length on $s_b$ when only new
 mutations contribute is much weaker (of order $s_b^{-1/6}$, equation \eqref{eqn:chi_new})
 Overall, the range of characteristic lengths observed are reasonably
@@ -618,8 +618,8 @@ shape of area $G$ and diameter $G^{1/2}$. Denote the total effective population 
 over this area by $N = \rho G$, and the standard deviation of dispersal as a
 fraction of the diameter of this area by $\sigma_G  = \sigma/
 G^{1/2}$. Measuring distance in units of the diameter of $G^{1/2}$,
-we expect multiple mutations when $\chi<1$ a
-condition which will be met when 
+we expect multiple mutations when $\chi<1$, 
+a condition which will be met when 
 \begin{equation}
 N > \frac{\sigma_G}{ \mu \pi \sqrt{2s_b} \left(1 -  \sigma_G \sqrt{2s_b} /\log (1-s_d) \right)},
 \end{equation}
